@@ -1,9 +1,9 @@
 ﻿# AZ-500 Azure Security
 
-- **あなたはMCTですか？** - [MCT 用 GitHub ユーザーガイド](https://microsoftlearning.github.io/MCT-User-Guide/)を確認してください
+- **あなたはMCTですか？** - [MCT 用 GitHub ユーザーガイド](https://microsoftlearning.github.io/MCT-User-Guide-JA/)を確認してください
 - **ラボの手順を手動でビルドする必要がありますか？** - 手順は[MicrosoftLearning/Docker-Build](https://github.com/MicrosoftLearning/Docker-Build) リポジトリで利用できます
 
-> [MCTコースウェアフォーラム](https://www.microsoft.com/en-us/learning/mct-central.aspx)を必ず利用して、コースの内容に関する提案や一般的なコメントを行ってください。また、バグとコースエラーについては[コースウェアサポートフォーラム](https://trainingsupport.microsoft.com/ja-jp)で報告することができます。
+> [MCTコースウェアフォーラム](https://www.microsoft.com/ja-jp/learning/mct-central.aspx)を必ず利用して、コースの内容に関する提案や一般的なコメントを行ってください。また、バグとコースエラーについては[コースウェアサポートフォーラム](https://trainingsupport.microsoft.com/ja-jp)で報告することができます。
  
 新しい変更をサポートするために、2019年11月1日から新しい AZ-500 GitHub リポジトリを導入しました。その時点で、すべての AZ-500 ラボはこのリポジトリに置き換えられました。
 
