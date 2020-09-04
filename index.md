@@ -1,25 +1,25 @@
----
-title: Online Hosted Instructions
+﻿---
+title: オンライン ホステッド インストラクション
 permalink: index.html
 layout: home
 ---
 
-# Content Directory
+# コンテンツ ディレクトリ
 
-Hyperlinks to each of the lab exercises and demos are listed below.
+各ラボの演習とデモへのハイパーリンクを以下に一覧表示します。
 
-## Labs
+## ラボ
 
 {% assign labs = site.pages | where_exp:"page", "page.url contains '/Instructions/Labs'" %}
-| Module | Lab |
+| モジュール | ラボ |
 | --- | --- | 
 {% for activity in labs  %}| {{ activity.lab.module }} | [{{ activity.lab.title }}{% if activity.lab.type %} - {{ activity.lab.type }}{% endif %}]({{ site.github.url }}{{ activity.url }}) |
 {% endfor %}
 
-## Demos
+## デモ
 
 {% assign demos = site.pages | where_exp:"page", "page.url contains '/Instructions/Demos'" %}
-| Module | Demo |
+| モジュール | デモ |
 | --- | --- | 
 {% for activity in demos  %}| {{ activity.demo.module }} | [{{ activity.demo.title }}]({{ site.github.url }}{{ activity.url }}) |
 {% endfor %}
