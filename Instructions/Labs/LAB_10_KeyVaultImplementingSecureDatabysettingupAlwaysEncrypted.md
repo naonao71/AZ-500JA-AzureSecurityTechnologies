@@ -33,7 +33,7 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
 
 ### 予想時間: 60 分
 
-> このラボのすべてのリソースに対して、**東部 (米国)**リージョンを使用しています。クラスで使用する地域であることを講師に確認します。 
+> このラボのすべてのリソースに対して、**東部 (米国)** リージョンを使用しています。クラスで使用する地域であることを講師に確認します。 
 
 この演習では、次のタスクを行います。
 
@@ -51,7 +51,7 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
 
 1. Azure portal **`https://portal.azure.com/`** にサインインします。
 
-    >**注**: このラボで使用している Azure サブスクリプションで所有者ロールまたは共同作成者ロールを持つアカウントを使用して Azure ポータルにサインインします。
+    >**注**: このラボで使用している Azure サブスクリプションで所有者ロールまたは共同作成者ロールを持つアカウントを使用して Azure portal にサインインします。
 
 1. Azure portal で Azure portal ページの上部にある **「リソース、サービス、ドキュメントの検索」** テキスト ボックスで、**「カスタム テンプレートをデプロイする」** と入力し、**「Enter」** キーを押します。
 
@@ -129,7 +129,7 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
 
 1. **az500-10-vm1**  Azure VM へのリモート デスクトップ セッション内で、Azure portal `https://portal.azure.com/` にサインインします。
 
-    >**注**: このラボで使用している Azure サブスクリプションで所有者ロールまたは共同作成者ロールを持つアカウントを使用して Azure ポータルにサインインします。
+    >**注**: このラボで使用している Azure サブスクリプションで所有者ロールまたは共同作成者ロールを持つアカウントを使用して Azure portal にサインインします。
 
 1. Azure portal の右上にある最初のアイコンをクリックして、Cloud Shell を開きます。メッセージが表示されたら、「**PowerShell**」 と 「**ストレージの作成**」 を選択します。   
 
@@ -228,7 +228,7 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
 1.  Cloud Shell ペイン内の PowerShell セッションで、次を実行してシークレットをコンテナーに追加します。
 
     ```powershell
-    $secret = Set-AZKeyVaultSecret -VaultName $kv.VaultName -Name 'SQLPassword' -SecretValue $secretvalue
+    $secret = Set-AZKeyVaultSecret -VaultName $kv.VaultName -Name 'SQLPassword' -SecretValue $secretvalue
     ```
 
     >**注**: シークレットの名前は SQLPassword です。 
@@ -517,4 +517,4 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
     Remove-AzResourceGroup -Name "AZ500LAB10" -Force -AsJob
     ```
 
-1.  **「Cloud Shell」**ペインを閉じます。 
+1. **「Cloud Shell」** ペインを閉じます。 

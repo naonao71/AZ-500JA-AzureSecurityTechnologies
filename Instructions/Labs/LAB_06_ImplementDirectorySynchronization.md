@@ -379,7 +379,7 @@ lab:
     ```powershell
     Remove-AzResourceGroup -Name "AZ500LAB06" -Force -AsJob
     ```
-1. **「Cloud Shell」**ペインを閉じます。
+1. **「Cloud Shell」** ペインを閉じます。
 
     >**注**: 最後に、Azure AD テナントを削除します。
 

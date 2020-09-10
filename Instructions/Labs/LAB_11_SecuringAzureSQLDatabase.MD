@@ -182,4 +182,4 @@ Azure SQL データベースのセキュリティ機能を確認するように�
     ```powershell
     Remove-AzResourceGroup -Name "AZ500LAB11" -Force -AsJob
     ```
-1. **「Cloud Shell」**ペインを閉じます。 
+1. **「Cloud Shell」** ペインを閉じます。 
