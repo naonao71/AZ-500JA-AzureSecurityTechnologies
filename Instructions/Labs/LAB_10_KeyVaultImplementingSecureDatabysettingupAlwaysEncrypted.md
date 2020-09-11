@@ -1,6 +1,6 @@
 ﻿---
 lab:
-    title: '10 - キー コンテナー (Always Encrypted を設定して、セキュアなデータを実装する)'
+    title: '10 - Key Vault (Always Encrypted を設定して、セキュアなデータを実装する)'
     module: 'モジュール 03 – データとアプリケーションのセキュリティ保護'
 ---
 
