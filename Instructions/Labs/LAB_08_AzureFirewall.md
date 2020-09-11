@@ -1,7 +1,7 @@
 ---
 lab:
     title: '08 - Azure Firewall'
-    module: 'モジュール 02 プラットフォーム保護の実装'
+    module: 'モジュール 02 - プラットフォーム保護の実装'
 ---
 
 # ラボ 08: Azure Firewall
