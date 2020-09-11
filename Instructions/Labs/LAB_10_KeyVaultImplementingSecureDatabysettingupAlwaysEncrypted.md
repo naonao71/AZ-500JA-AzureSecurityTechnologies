@@ -33,7 +33,7 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
 
 ### 予想時間: 60 分
 
-> このラボのすべてのリソースに対して、**東部 (米国)**リージョンを使用しています。クラスで使用する地域であることを講師に確認します。 
+> このラボのすべてのリソースに対して、**米国東部**リージョンを使用しています。クラスで使用する地域であることを講師に確認します。 
 
 この演習では、次のタスクを行います。
 
@@ -53,7 +53,7 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
 
     >**注**: このラボで使用している Azure サブスクリプションで所有者ロールまたは共同作成者ロールを持つアカウントを使用して Azure ポータルにサインインします。
 
-1. Azure portal で Azure portal ページの上部にある **「リソース、サービス、ドキュメントの検索」** テキスト ボックスで、**「カスタム テンプレートをデプロイする」** と入力し、**「Enter」** キーを押します。
+1. Azure portal で Azure portal ページの上部にある **「リソース、サービス、ドキュメントの検索」** テキスト ボックスで、**「カスタム テンプレートのデプロイ」** と入力し、**「Enter」** キーを押します。
 
 1. **Custom deployment** ブレードで、**エディターで独自のテンプレートをビルド** のオプションをクリックします。
 
@@ -76,13 +76,13 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
    |場所| **(US) 米国東部** |
    |VM サイズ| **Standard_D2s_v3** |
    |VM 名| **az500-10-vm1** |
-   |管理者ユーザー名| **受講生** |
+   |管理者ユーザー名| **Student** |
    |管理者のパスワード| **Pa55w.rd1234** |
    |Virtual Network 名| **az500-10-vnet1** |
 
     >**注**: Azure VM をプロビジョニングできる Azure リージョンを識別するには、[**https://azure.microsoft.com/ja-jp/regions/offers/**](https://azure.microsoft.com/ja-jp/regions/offers/) を参照してください。
 
-1. [**Review + create**] をクリックし、[**作成**] をクリックします。
+1. [**確認および作成**] をクリックし、[**作成**] をクリックします。
 
     >**注**: デプロイが完了するのを待ちます。 
 
@@ -96,7 +96,7 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
 
    |設定|値|
    |---|---|
-   |ユーザー名| **受講生** |
+   |ユーザー名| **Student** |
    |パスワード| **Pa55w.rd1234** |
 
     >**注**: リモート デスクトップ セッションと **サーバー マネージャー** が読み込まれるまで待ちます。   
@@ -152,7 +152,7 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
 
     >**注**: この出力には、コンテナー名とコンテナー URI が表示されます。コンテナー URI の形式は `https://<vault_name>.vault.azure.net/` です
 
-1. 「Cloud Shell」 ウィンドウを閉じます。 
+1. 「Cloud Shell」 ウィンドウを最小化します。 
 
 1. Azure portal の、Azure portal ページの上部にある **「ソース、サービス、ドキュメントの検索」** テキスト ボックスで、 **「リソース グループ」**と入力し、**「Enter」** キーを押します。
 
@@ -178,11 +178,11 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
 
 このタスクでは、キー コンテナーにキーを追加し、キーに関する情報を表示します。 
 
-1. Azure portal 上の Cloud Shell ペインで PowerShell セッションを開きます。
+1. Azure portal 上の Cloud Shell ウィンドウで PowerShell セッションを開きます。
 
-1. Cloud Shell ペインの左上のドロップダウン メニューで、「**PowerShell**」 が選択されていることを確認します。
+1. Cloud Shell ウィンドウの左上のドロップダウン メニューで、「**PowerShell**」 が選択されていることを確認します。
 
-1. Cloud Shell ペイン内の PowerShell セッションで次のコマンドを実行して、ソフトウェアで保護されたキーをキー コンテナーに追加します。 
+1. Cloud Shell ウィンドウ内の PowerShell セッションで次のコマンドを実行して、ソフトウェアで保護されたキーをキー コンテナーに追加します。 
 
     ```powershell
     $kv = Get-AzKeyVault -ResourceGroupName 'AZ500LAB10'
@@ -192,19 +192,19 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
 
     >**注**: キーの名前は MyLabKey です。
 
-1. Cloud Shell ペイン内の PowerShell セッションで次を実行して、キーが作成されたことを確認します。
+1. Cloud Shell ウィンドウ内の PowerShell セッションで次を実行して、キーが作成されたことを確認します。
 
     ```powershell
     Get-AZKeyVaultKey -VaultName $kv.VaultName
     ```
 
-1. Cloud Shell ペイン内の PowerShell セッションで次を実行して、キー識別子を表示します。
+1. Cloud Shell ウィンドウ内の PowerShell セッションで次を実行して、キー識別子を表示します。
 
     ```powershell
     $key.key.kid
     ```
 
-1. Cloud Shell ペインを最小化します。 
+1. 「Cloud Shell」 ウィンドウを最小化します。 
 
 1. Azure portal に戻り、キー コンテナー ブレードの 「**設定**」 セクションで、「**キー**」 をクリックします。
 
@@ -217,15 +217,15 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
 
 #### タスク 4: Key Vault にシークレットを追加する
 
-1. Cloud Shell ペインを復元します。
+1. Cloud Shell ウィンドウを復元します。
 
-1. Cloud Shell ペイン内の PowerShell セッションで次のコマンドを実行して、安全な文字列値を持つ変数を作成します。
+1. Cloud Shell ウィンドウ内の PowerShell セッションで次のコマンドを実行して、安全な文字列値を持つ変数を作成します。
 
     ```powershell
     $secretvalue = ConvertTo-SecureString 'Pa55w.rd1234' -AsPlainText -Force
     ```
 
-1.  Cloud Shell ペイン内の PowerShell セッションで、次を実行してシークレットをコンテナーに追加します。
+1.  Cloud Shell ウィンドウ内の PowerShell セッションで、次を実行してシークレットをコンテナーに追加します。
 
     ```powershell
     $secret = Set-AZKeyVaultSecret -VaultName $kv.VaultName -Name 'SQLPassword' -SecretValue $secretvalue
@@ -233,13 +233,13 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
 
     >**注**: シークレットの名前は SQLPassword です。 
 
-1.  Cloud Shell ペイン内の PowerShell セッションで次を実行して、シークレットが作成されたことを確認します。
+1.  Cloud Shell ウィンドウ内の PowerShell セッションで次を実行して、シークレットが作成されたことを確認します。
 
     ```powershell
     Get-AZKeyVaultSecret -VaultName $kv.VaultName
     ```
 
-1. Cloud Shell ペインを最小化します。 
+1. Cloud Shell ウィンドウを最小化します。 
 
 1. Azure portal でキー コンテナー ブレードに戻り、「**設定**」 セクションで 「**シークレット**」 をクリックします。
 
@@ -275,7 +275,7 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
     |設定|値|
     |----|----|
     |名前|**sqlApp**|
-    |リダイレクト URI (オプション)|**Web** および **https://sqlapp**|
+    |リダイレクト URI (省略可能)|**Web**、 **https://sqlapp**|
 
 1. 「**アプリケーションの登録**」 ブレードで、「**登録**」 をクリックします。 
 
@@ -293,7 +293,7 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
 
     |設定|値|
     |----|----|
-    |詳細| **Key1** |
+    |説明| **Key1** |
     |有効期限| **1 年** |
 	
 1. 「**追加**」 をクリック して、アプリケーションの認証資格情報を更新します。
@@ -302,28 +302,28 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
 
     >**注**: この値を記録します。これは、次のタスクで必要になります。 
 
-    >**注**: ブレードから移動する*前*に、必ず値をコピーしてください。その時点では、クリア テキスト値を取得することができなくなります。
+    >**注**: ブレードから移動する*前*に、必ずクライアント シークレット値をコピーしてください。移動すると値を取得することができなくなります。
 
 
 #### タスク 2: アプリケーションからキー コンテナーへのアクセスを許可するポリシーを作成する
 
 このタスクでは、新しく登録されたアプリに、キー コンテナーに格納されているシークレットにアクセスするためのアクセス許可を付与します。
 
-1. Azure portal 上の Cloud Shell ペインで PowerShell セッションを開きます。
+1. Azure portal 上の Cloud Shell ウィンドウで PowerShell セッションを開きます。
 
-1. Cloud Shell ペインの左上のドロップダウン メニューで、「**PowerShell**」 が選択されていることを確認します。
+1. Cloud Shell ウィンドウの左上のドロップダウン メニューで、「**PowerShell**」 が選択されていることを確認します。
 
-1. Cloud Shell ペイン内の PowerShell セッションで次のコマンドを実行して、前のタスクで記録した**アプリケーション (クライアント) ID** を格納する変数を作成します (`<Azure_AD_Application_ID>` プレースホルダーを **アプリケーション (クライアント) ID** の値に置き換えます)。
+1. Cloud Shell ウィンドウ内の PowerShell セッションで次のコマンドを実行して、前のタスクで記録した**アプリケーション (クライアント) ID** を格納する変数を作成します (`<Azure_AD_Application_ID>` プレースホルダーを **アプリケーション (クライアント) ID** の値に置き換えます)。
    
     ```powershell
     $applicationId = '<Azure_AD_Application_ID>'
     ```
-1. Cloud Shell ペイン内の PowerShell セッションで次のコマンドを実行して、キー コンテナー名を格納する変数を作成します。
+1. Cloud Shell ウィンドウ内の PowerShell セッションで次のコマンドを実行して、キー コンテナー名を格納する変数を作成します。
 	```
     $kvName = (Get-AzKeyVault -ResourceGroupName 'AZ500LAB10').VaultName
     ```
 
-1. Cloud Shell ペイン内の PowerShell セッションで次のコマンドを実行して、前のタスクで登録したアプリケーションにキー コンテナーの権限を付与します。
+1. Cloud Shell ウィンドウ内の PowerShell セッションで次のコマンドを実行して、前のタスクで登録したアプリケーションにキー コンテナーの権限を付与します。
 
     ```powershell
     Set-AZKeyVaultAccessPolicy -VaultName $kvName -ResourceGroupName AZ500LAB10 -ServicePrincipalName $applicationId -PermissionsToKeys get,wrapKey,unwrapKey,sign,verify,list
@@ -345,22 +345,22 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
     |---|--- |
     |サブスクリプション|このラボで使用する Azure サブスクリプションの名前|
     |リソース グループ|**AZ500LAB10**|
-    |データベース名|**医療用**|
+    |データベース名|**medical**|
 
 1. 「**サーバー**」 ドロップダウン リストのすぐ下にある 「**新規作成**」 をクリックし、「**新しいサーバー**」 ブレードで次の設定を指定し 「**OK**」 をクリックします (既定値のままにします)。
 
     |設定|値|
     |---|---|
     |サーバー名|有効で、グローバルにユニークな任意の名前|
-    |サーバー管理者のログイン| **受講生** |
+    |サーバー管理者のログイン| **Student** |
     |パスワード| **Pa55w.rd1234** |
     |場所| **(US) 米国東部** |
 
-1. 「**Review + create**」 をクリックし、「**作成**」 をクリックします。 
+1. 「**確認および作成**」 をクリックし、「**作成**」 をクリックします。 
 
     >**注**: SQL Database が作成されるのを待ちます。プロビジョニングには約 2 分かかります。 
 
-1. Azure portal で、「**SQL データベース**」 ブレードに戻り、SQL データベースのリストで、**医療用**エントリをクリックします。
+1. Azure portal で、「**SQL データベース**」 ブレードに戻り、SQL データベースのリストで、**medical** をクリックします。
 
 1. SQL データベース ブレードの「**設定**」 セクションで、「**接続文字列**」 をクリックします。 
 
@@ -377,7 +377,7 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
 
 このタスクでは、SQL Server Management Studio を使用して SQL データベースに接続し、テーブルを作成します。次に、Azure Key Vault から自動生成されたキーを使用して 2 つのデータ列を暗号化します。 
 
-1. Azure portal の**医療用** SQL データベースのブレードで、「**概要**」 をクリックし、「**サーバー名**」 を指定して、「**サーバー ファイアウォールの設定**」 をクリックします。  
+1. Azure portal の SQL データベースのブレードで、「**概要**」 をクリックし、「**サーバー名**」 を指定して、「**ファイアウォール設定の表示**」 をクリックします。  
 
     >**注**: サーバー名を記録します。このタスクの後半でサーバー名が必要になります。
 
@@ -394,7 +394,7 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
     |サーバー タイプ| **データベース エンジン** |
     |サーバー名|このタスクで前に指定したサーバー名|
     |認証: **SQL Server の認証**
-    |ログイン| **受講生** |
+    |ログイン| **Student** |
     |パスワード| **Pa55w.rd1234** |
 
 1. 「**サーバーに接続**」 ダイアログ ボックスで、「**接続**」 をクリックします。
