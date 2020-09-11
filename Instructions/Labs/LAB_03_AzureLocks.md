@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     title: '03 - Resource Manager ロック'
     module: 'モジュール 01 - IDとアクセスの管理'
@@ -175,4 +175,4 @@ lab:
     Remove-AzResourceGroup -Name "AZ500LAB03" -Force -AsJob
     ```
 
-1.  **「Cloud Shell」**ペインを閉じます。 
+1.  **「Cloud Shell」** ペインを閉じます。 

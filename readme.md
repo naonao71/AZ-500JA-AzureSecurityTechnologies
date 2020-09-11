@@ -1,6 +1,6 @@
-﻿# AZ-500 (プレビュー): Microsoft Azure Security Technologies
+﻿# AZ-500 (プレビュー): Microsoft Azure セキュリティ技術
 
-- **[ラボへのリンク (HTML 形式)](https://microsoftlearning.github.io/AZ500-AzureSecurityTechnologies/)**
+- **[ラボへのリンク (HTML 形式)](https://microsoftlearning.github.io/AZ-500JA-AzureSecurityTechnologies/)**
 
 - **あなたは MCT ですか?** - [MCT 向け GitHub ユーザー ガイド](https://microsoftlearning.github.io/MCT-User-Guide-JA/)をご覧ください
 

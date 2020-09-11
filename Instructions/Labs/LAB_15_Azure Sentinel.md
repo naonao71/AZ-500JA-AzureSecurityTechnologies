@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     title: '15 - Azure Sentinel'
     module: 'モジュール 04 - セキュリティ操作の管理'
@@ -54,7 +54,7 @@ Azure Sentinel ベースの脅威検出と応答の概念実証を作成する�
 
 1. **「Azure Sentinel に追加するワークスペースの選択」** ブレードで、Azure Monitor ラボで作成した 「Log Analytics ワークスペース」 を選択し、**「Azure Sentinel の追加」** をクリックします。
 
-    >**注**: Azure Sentinel には、ワークスペースに対して非常に具体的な要件があります。たとえば、Azure Security Center によって作成されたワークスペースは使用できません。「クイック スタート](https://docs.microsoft.com/ja-jp/azure/sentinel/quickstart-onboard)で続きを読む[Azure Sentinel をオンボードにする」(https://docs.microsoft.com/ja-jp/azure/sentinel/quickstart-onboard)
+    >**注**: Azure Sentinel には、ワークスペースに対して非常に具体的な要件があります。たとえば、Azure Security Center によって作成されたワークスペースは使用できません。で続きを読む[クイック スタート: Azure Sentinel をオンボードにする](https://docs.microsoft.com/ja-jp/azure/sentinel/quickstart-onboard)
 	
 #### タスク 2: Azure アクティビティ データ コネクタを使用するように Azure Sentinel を構成します。 
 
@@ -62,7 +62,7 @@ Azure Sentinel ベースの脅威検出と応答の概念実証を作成する�
 
 1. Azure portal の **Azure Sentinel | 「概要」** ブレードの **「構成」** セクションで 、**「データ コネクタ」** をクリックします。 
 
-1. **Azure Sentinel** 上** | 「データ コネクタ」** ブレードで、使用可能なコネクタの一覧を確認し、**Azure アクティビティ** コネクタを表すエントリをクリックして説明を確認し、**「コネクタ ページを開く」** をクリックします。
+1. **Azure Sentinel | データ コネクタ** ブレードで、使用可能なコネクタの一覧を確認し、**Azure アクティビティ** コネクタを表すエントリをクリックして説明を確認し、**「コネクタ ページを開く」** をクリックします。
 
 1. **「Azure アクティビティ」** ブレードで、**「Azure アクティビティ ログの構成」** リンクをクリックします。
 
@@ -156,6 +156,7 @@ Azure Sentinel ベースの脅威検出と応答の概念実証を作成する�
 
 #### タスク 5: カスタム アラートを作成し、自動化された応答としてプレイブックを構成する
 
+
 1. Azure portal で、**Azure Sentinel** に移動します。
 
 1. **Azure Sentinel | 概要** ブレードの **「構成」** セクションで 、**「分析」** をクリックします。
@@ -222,7 +223,7 @@ Azure Sentinel ベースの脅威検出と応答の概念実証を作成する�
 
 1. ブレードに中程度または高い重大度レベルのインシデントが表示されることを確認します。
 
-    >**注**: インシデントが **Azure Sentinel** に表示されるまでに最大5分かかる場合があります** | インシデント** ブレード。 
+    >**注**: インシデントが **Azure Sentinel** に表示されるまでに最大5分かかる場合があります **| インシデント** ブレード。 
 
     >**注**: **Azure Sentinel | プレイブック** ブレードで成功した実行と失敗した実行の数がわかります。
 
@@ -243,4 +244,4 @@ Azure Sentinel ベースの脅威検出と応答の概念実証を作成する�
     ```powershell
     Remove-AzResourceGroup -Name "AZ500LAB131415" -Force -AsJob
     ```
-1. **「Cloud Shell」**ペインを閉じます。
+1. **「Cloud Shell」** ペインを閉じます。

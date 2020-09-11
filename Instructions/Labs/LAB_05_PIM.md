@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     title: '05 - Azure AD Privileged Identity Management'
     module: 'モジュール 01 - ID とアクセスの管理'
@@ -72,7 +72,7 @@ Azure Privileged Identity Management (PIM) を使用してジャストインタ�
 
 #### タスク 2: 有資格メンバーをアクティブ化して追加する承認を要求するようにロールを構成する
 
-1. Azure Portal で、「**Azure AD Privileged Identity Management**」 ブレードに戻り 、「**Azure AD ロール **」 をクリックします。
+1. Azure Portal で、「**Azure AD Privileged Identity Management**」 ブレードに戻り 、「**Azure AD ロール**」 をクリックします。
 
 1. **AdatumLab500-04** \| 「**クイック スタート**」 ブレードの 「**管理**」 セクションで 、「**ロール**」 をクリックします。
 
@@ -284,7 +284,7 @@ Azure Privileged Identity Management (PIM) を使用してジャストインタ�
 
 1. 「**アクセス レビューの作成**」 ブレードで、「**開始**」 をクリック します。
  
-    >**注意**: レビューがデプロイされ、**AdatumLab500-04** に表示されるのに約 1 分かかります** | **「**レビューにアクセス**」 ブレード。Web ページを更新する必要がある場合があります。レビューのステータスは 「**アクティブ**」 になります。 
+    >**注意**: レビューがデプロイされ、**AdatumLab500-04** に表示されるのに約 1 分かかります **|** 「**レビューにアクセス**」 ブレード。Web ページを更新する必要がある場合があります。レビューのステータスは 「**アクティブ**」 になります。 
 
 1. **AdatumLab500-04** \| 「**アクセス レビュー**」 ブレードの 「**グローバル管理者レビュー**」 ヘッダーの下にある 「**グローバル閲覧者**」 エントリをクリックします。 
 
@@ -346,7 +346,7 @@ Azure Privileged Identity Management (PIM) を使用してジャストインタ�
     Remove-AzResourceGroup -Name "AZ500LAB04" -Force -AsJob
     ```
 
-1.  **「Cloud Shell」**ペインを閉じます。 
+1.  **「Cloud Shell」** ペインを閉じます。 
 
 1. Azure portal に戻り、**ディレクトリ + サブスクリプション** フィルターを使用して **AdatumLab500-04** Azure Active Directory テナントに切り替えます。 
 
