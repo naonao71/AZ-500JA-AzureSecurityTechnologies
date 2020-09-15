@@ -1,4 +1,4 @@
-﻿# AZ-500 (プレビュー): Microsoft Azure セキュリティ技術
+﻿# AZ-500: Microsoft Azure セキュリティ技術
 
 - **[ラボへのリンク (HTML 形式)](https://microsoftlearning.github.io/AZ-500JA-AzureSecurityTechnologies/)**
 
