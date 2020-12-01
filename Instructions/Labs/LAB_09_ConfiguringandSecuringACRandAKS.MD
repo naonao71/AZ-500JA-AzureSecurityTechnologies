@@ -40,7 +40,7 @@ Azure Container Registry と Azure Kubernetes Service を使用して概念実�
 - タスク 1: Azure Container Registry の作成
 - タスク 2:  Dockerfile を作成し、コンテナーを構築して、Azure Container Registry にプッシュする
 - タスク 3: Azure Kubernetes Service クラスターを作成する
-- タスク 4: AkS クラスターに ACR にアクセスするためのアクセス許可を付与する
+- タスク 4: AKS クラスターに ACR にアクセスするためのアクセス許可を付与する
 - タスク 5: AKS への外部サービスのデプロイ
 - タスク 6: 外部 AKS ホスト サービスにアクセスできることを確認する
 - タスク 7: AKS への内部サービスの展開
@@ -96,7 +96,7 @@ Azure Container Registry と Azure Kubernetes Service を使用して概念実�
 
 1. 「Cloud Shell」 ウィンドウ内の Bash セッションで、次の手順を実行して Dockerfile からイメージを構築し、新しい ACR にイメージをプッシュします。 
 
-    >**注**: コマンド ラインの末尾の後続ピリオドが必要です。現在のディレクトリを Dockerfile の場所として指定します。 
+    >**注**: コマンド ラインの末尾の「**.**」が必要です。現在のディレクトリを Dockerfile の場所として指定します。 
 
     ```sh
     ACRNAME=$(az acr list --resource-group AZ500LAB09 --query '[].{Name:name}' --output tsv)
@@ -135,7 +135,7 @@ Azure Container Registry と Azure Kubernetes Service を使用して概念実�
     |サブスクリプション|このラボで使用する Azure サブスクリプションの名前|
     |リソース グループ| **AZ500LAB09** |
     |Kubernetes クラスター名| **MyKubernetesCluster** |
-    |リージョン| **(US) East US** |
+    |リージョン| **(US) 米国東部** |
     |ノード数| **1** |
 
 1. 「**次へ:**」 をクリックします 「**ノード プール **」 をクリックし 「**Kubernetes クラスターの作成**」 ブレードの 「**ノード プール**」 タブで、次の設定を指定します (既定値を他のノードのままにします)。    
@@ -147,9 +147,9 @@ Azure Container Registry と Azure Kubernetes Service を使用して概念実�
 	
 1. 「**次へ:**」 をクリックします「**認証**」 の 「**Kubernetes クラスターの作成**」 ブレードの 「**認証**」 タブで、既定値を受け入れて、「**次へ:**」 をクリックします。「**ネットワーク >**」 をクリックします。 
 
-    >**注**: クラスターにアタッチされたクラウド リソースを管理するために Kubernetes クラスターで使用されるクラスター インフラストラクチャ サービス プリンシパルを作成しています。詳細については、[Azure Kubernetes Service のサービス プリンシパル](https://docs.microsoft.com/ja-jp/azure/aks/kubernetes-service-principal) ページを参照してください。 
+    >**注**: クラスターにアタッチされたクラウド リソースを管理するために Kubernetes クラスターで使用されるクラスター インフラストラクチャ サービス プリンシパルを作成しています。詳細については、[Azure Kubernetes Service のサービス プリンシパル](https://docs.microsoft.com/ja-jp/azure/AKS/kubernetes-service-principal) ページを参照してください。 
 
-    >**注**: Kubernetes のロール ベースの Access Control を有効にしています。詳細については、[Azure Kubernetes Service と Azure Active Directory の統合](https://docs.microsoft.com/ja-jp/azure/aks/azure-ad-integration)に関するページを参照してください。  
+    >**注**: Kubernetes のロール ベースの Access Control を有効にしています。詳細については、[Azure Kubernetes Service と Azure Active Directory の統合](https://docs.microsoft.com/ja-jp/azure/AKS/azure-ad-integration)に関するページを参照してください。  
 
 1. 「**Kubernetes クラスターの作成**」 ブレードの 「**ネットワーク**」 タブで、次の設定を指定します (既定値を他のユーザーのままにします)。   
 
@@ -158,7 +158,7 @@ Azure Container Registry と Azure Kubernetes Service を使用して概念実�
     |ネットワークの構成| **詳細** |
     |DNS 名のプレフィックス|有効な、グローバルに一意の DNS ホスト名|
 
-    >**注**: AKS はプライベート クラスターとして設定できます。これにより、API サーバーにプライベート IP が割り当てられるため、API サーバーとノード プール間のネットワーク トラフィックがプライベート ネットワーク上にのみ残ります。詳細については、[Azure Kubernetes Service のプライベート クラスター の作成](https://docs.microsoft.com/ja-jp/azure/aks/private-clusters)に関するページを参照してください。 
+    >**注**: AKS はプライベート クラスターとして設定できます。これにより、API サーバーにプライベート IP が割り当てられるため、API サーバーとノード プール間のネットワーク トラフィックがプライベート ネットワーク上にのみ残ります。詳細については、[Azure Kubernetes Service のプライベート クラスター の作成](https://docs.microsoft.com/ja-jp/azure/AKS/private-clusters)に関するページを参照してください。 
 
 1. 「**次へ: **」 をクリックします「**統合**」 をクリックし、「**Kubernetes クラスターの作成**」 ブレードの 「**統合**」 タブで、「**コンテナーの監視**」 を 「**無効**」 に設定します。         
 
@@ -183,7 +183,7 @@ Azure Container Registry と Azure Kubernetes Service を使用して概念実�
 1. 「Cloud Shell」 ウィンドウ内の Bash セッションで、次の手順を実行して Kubernetes クラスターに接続します。
 
     ```sh
-    az aks get-credentials --resource-group AZ500LAB09 --name MyKubernetesCluster
+    az AKS get-credentials --resource-group AZ500LAB09 --name MyKubernetesCluster
     ```
 
 1. 「Cloud Shell」 ウィンドウ内の Bash セッションで、Kubenetes クラスターのノードを一覧表示するには、次の手順を実行します。 
@@ -194,16 +194,16 @@ Azure Container Registry と Azure Kubernetes Service を使用して概念実�
 
     >**注**: 「**状態**」 が 「**準備完了**」 と表示されていることを確認します。   
 
-#### タスク 4: AkS クラスターに ACR にアクセスするためのアクセス許可を付与する
+#### タスク 4: AKS クラスターに ACR にアクセスするためのアクセス許可を付与する
 
-このタスクでは、AkS クラスターに ACR へのアクセス許可を付与します。 
+このタスクでは、AKS クラスターに ACR へのアクセス許可を付与します。 
 
 1. 「Cloud Shell」 ウィンドウ内の Bash セッションで、このラボで先ほど作成した Azure Container Registry インスタンスを使用するように AKS クラスターを構成するには、次の手順を実行します。 
 
     ```sh
     ACRNAME=$(az acr list --resource-group AZ500LAB09 --query '[].{Name:name}' --output tsv)
 
-    az aks update -n MyKubernetesCluster -g AZ500LAB09 --attach-acr $ACRNAME
+    az AKS update -n MyKubernetesCluster -g AZ500LAB09 --attach-acr $ACRNAME
     ```
 
     >**注**: このコマンドは、ACR に 'acrpull' ロールの割り当てを付与します。
