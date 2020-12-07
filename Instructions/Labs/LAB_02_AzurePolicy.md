@@ -149,4 +149,4 @@ Azure Policy の使用方法を示す概念実証を作成するように求め�
     Remove-AzResourceGroup -Name "AZ500LAB02" -Force -AsJob
     ```
 
-1.  **「Cloud Shell」**ペインを閉じます。 
+1.  **Cloud Shell** ペインを閉じます。 
