@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     title: '03 - Resource Manager ロック'
     module: 'モジュール 01 - ID とアクセスの管理'
