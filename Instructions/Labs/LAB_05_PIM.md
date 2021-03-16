@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     title: '05 - Azure AD Privileged Identity Management'
     module: 'モジュール 01 - ID とアクセスの管理'
