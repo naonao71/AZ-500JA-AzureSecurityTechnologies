@@ -78,7 +78,7 @@ lab:
 
 このタスクでは、仮想マシンにエンドポイント保護をインストールするための Security Center の推奨事項を実装します。 
 
-1. Azure portal で、**Security Center \** に移動する| 「**概要**」 ブレード。 
+1. Azure portal で、**Security Center** に移動する| 「**概要**」 ブレード。 
 
 1. 「**Security Center| 概要**」 ブレードで、「**セキュア スコア**」 タイルを確認します。
 
@@ -104,7 +104,7 @@ lab:
 
 このタスクでは、仮想マシンでの Just In Time VM アクセスを有効にする Security Center の推奨事項を実装します。 
 
-1. Azure portal で、**Security Center \** に移動する| 「**概要**」 ブレード。 
+1. Azure portal で、**Security Center** に移動する| 「**概要**」 ブレード。 
 
 1. 「**Cloud Security \| Azure Defender**」 ブレードで、「**ジャスト イン タイム VM アクセス**」 タブをクリックし、「**未構成**」を選択して、「**myVM**」 エントリをクリックします。
 

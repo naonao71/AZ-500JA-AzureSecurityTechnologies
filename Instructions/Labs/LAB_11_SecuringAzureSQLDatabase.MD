@@ -1,6 +1,6 @@
 ﻿---
 lab:
-    title: '11 - Azure SQL Database のセキュリティ保護'
+    title: '11 - Azure SQL データベースのセキュリティ保護'
     module: 'モジュール 03 - データとアプリケーションのセキュリティ保護'
 ---
 

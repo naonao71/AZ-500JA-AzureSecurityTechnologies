@@ -1,7 +1,7 @@
 ﻿---
 lab:
-    title: '09 - ACR と AKS の設定とセキュリティ保護'
-    module: 'モジュール 02 プラットフォーム保護の実装'
+    title: '09 - ACR と AKS の構成とセキュリティ保護'
+    module: 'モジュール 02 - プラットフォーム保護の実装'
 ---
 
 # 課題 09: ACR と AKS の構成とセキュリティ保護
@@ -33,7 +33,7 @@ Azure Container Registry と Azure Kubernetes Service を使用して概念実�
 
 ### 予想時間: 45 分
 
-> このラボのすべてのリソースに対して、**東部 (米国)**リージョンを使用しています。クラスで使用する地域であることを講師に確認します。 
+> このラボのすべてのリソースに対して、**東部 (米国)** リージョンを使用しています。クラスで使用する地域であることを講師に確認します。 
 
 この演習では、次のタスクを行います。
 
@@ -124,7 +124,7 @@ Azure Container Registry と Azure Kubernetes Service を使用して概念実�
 
 このタスクでは、Azure Kubernetes Service を作成し、デプロイされたリソースを確認します。 
 
-1. Azure portal ページの上部の 「**リソース、サービス、ドキュメントの検索**」 テキスト ボックスで、**Kubernetes サービス** を入力し **Enter ** キーを押します。
+1. Azure portal ページの上部の 「**リソース、サービス、ドキュメントの検索**」 テキスト ボックスで、**Kubernetes サービス** を入力し **Enter** キーを押します。
 
 1. 「**Kubernetes サービス**」 ブレードで 、「**+ 追加**」 をクリックし、ドロップダウン メニューで 「**Kubernetes クラスターの追加**」 をクリックします
 
@@ -139,7 +139,7 @@ Azure Container Registry と Azure Kubernetes Service を使用して概念実�
     |可用性ゾーン |**なし**|
     |ノード数|**1**|
 
-1. 「**次へ**」 をクリックします。 「**ノード プール **」 をクリックし 「**Kubernetes クラスターの作成**」 ブレードの 「**ノード プール**」 タブで、次の設定を指定します (既定値を他のノードのままにします)。
+1. 「**次へ**」 をクリックします。 「**ノード プール**」 をクリックし 「**Kubernetes クラスターの作成**」 ブレードの 「**ノード プール**」 タブで、次の設定を指定します (既定値を他のノードのままにします)。
 
     |設定|値|
     |----|----|
@@ -148,9 +148,9 @@ Azure Container Registry と Azure Kubernetes Service を使用して概念実�
 	
 1. 「**次へ**」 をクリックします。 「**認可**」 の 「**Kubernetes クラスターの作成**」 ブレードの 「**認可**」 タブで、既定値を受け入れて、「**次へ**」 をクリックします。 「**ネットワーク**」 をクリックします。 
 
-    >**注意**: クラスターにアタッチされたクラウド リソースを管理するために Kubernetes クラスターで使用されるクラスター インフラストラクチャ サービス プリンシパルを作成しています。詳細については、[Azure Kubernetes Service のサービス プリンシパル](https://docs.microsoft.com/en-us/azure/aks/kubernetes-service-principal) ページを参照してください。
+    >**注意**: クラスターにアタッチされたクラウド リソースを管理するために Kubernetes クラスターで使用されるクラスター インフラストラクチャ サービス プリンシパルを作成しています。詳細については、[Azure Kubernetes Service のサービス プリンシパル](https://docs.microsoft.com/ja-jp/azure/aks/kubernetes-service-principal) ページを参照してください。
 
-    >**注意**: Kubernetes のロール ベースの Access Control を有効にしています。詳細については、[Azure Kubernetes Service と Azure Active Directory の統合](https://docs.microsoft.com/en-us/azure/aks/azure-ad-integration)に関するページを参照してください。 
+    >**注意**: Kubernetes のロール ベースの Access Control を有効にしています。詳細については、[Azure Kubernetes Service と Azure Active Directory の統合](https://docs.microsoft.com/ja-jp/azure/aks/azure-ad-integration)に関するページを参照してください。 
 
 1. 「**Kubernetes クラスターの作成**」 ブレードの 「**ネットワーク**」 タブで、次の設定を指定します (既定値を他のユーザーのままにします)。
 
@@ -159,7 +159,7 @@ Azure Container Registry と Azure Kubernetes Service を使用して概念実�
     |ネットワークの構成|**Azure CNI**|
     |DNS 名のプレフィックス|有効な、グローバルに一意の DNS ホスト名|
 
-    >**注意**: AKS はプライベート クラスターとして設定できます。これにより、API サーバーにプライベート IP が割り当てられるため、API サーバーとノード プール間のネットワーク トラフィックがプライベート ネットワーク上にのみ残ります。詳細については、[Azure Kubernetes Service のプライベート クラスター の作成](https://docs.microsoft.com/en-us/azure/aks/private-clusters)に関するページを参照してください。
+    >**注意**: AKS はプライベート クラスターとして設定できます。これにより、API サーバーにプライベート IP が割り当てられるため、API サーバーとノード プール間のネットワーク トラフィックがプライベート ネットワーク上にのみ残ります。詳細については、[Azure Kubernetes Service のプライベート クラスター の作成](https://docs.microsoft.com/ja-jp/azure/aks/private-clusters)に関するページを参照してください。
 
 1. 「**次へ**」 をクリックします。 「**統合**」 をクリックし、「**Kubernetes クラスターの作成**」 ブレードの 「**統合**」 タブで、「**コンテナーの監視**」 を 「**無効**」 に設定します。 
 

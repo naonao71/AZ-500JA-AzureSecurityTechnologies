@@ -1,6 +1,6 @@
 ﻿---
 lab:
-    title: '10 - キー コンテナー (Always Encrypted を設定して、セキュアなデータを実装する)'
+    title: '10 - Key Vault (Always Encrypted を設定して、セキュアなデータを実装する)'
     module: 'モジュール 03 - データとアプリケーションのセキュリティ保護'
 ---
 
@@ -69,7 +69,7 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
    
     >**注意**: 仮想マシンへのログオンに使用される管理資格情報を変更できますが、変更する必要はありません。
 
-    >**注意**: Azure VM をプロビジョニングできる Azure リージョンを識別するには、[**https://azure.microsoft.com/ja-jp/regions/offers/**](https://azure.microsoft.com/en-us/regions/offers/) を参照してください。
+    >**注意**: Azure VM をプロビジョニングできる Azure リージョンを識別するには、[**https://azure.microsoft.com/ja-jp/regions/offers/**](https://azure.microsoft.com/ja-jp/regions/offers/) を参照してください。
 
 1. 「**確認と作成**」 ボタンをクリックし、「**作成**」 ボタンをクリックしてデプロイを確認します。 
 
@@ -79,7 +79,7 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
 
 ### 演習 2: キーとシークレットを使用してキー コンテナーのリソースを構成する
 
->**注意**: このラボのすべてのリソースに対して、**東部 (米国)**リージョンを使用しています。クラスで使用する地域であることを講師に確認します。 
+>**注意**: このラボのすべてのリソースに対して、**東部 (米国)** リージョンを使用しています。クラスで使用する地域であることを講師に確認します。 
 
 この演習では、次のタスクを行います。
 
@@ -329,10 +329,8 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
     |設定|値|
     |---|---|
     |規則名|**Mgmt VM を許可する**|
-    |開始 IP|az500-10-vm1 のパブリック IP アドレス
-終了IP|
-    |終了 IP|az500-10-vm1 のパブリック IP アドレス
-終了IP|
+    |開始 IP|az500-10-vm1 のパブリック IP アドレス終了IP|
+    |終了 IP|az500-10-vm1 のパブリック IP アドレス終了IP|
 
 1. 「**保存**」 と 「**OK**」 をクリックして変更を保存し、確認ウィンドウを閉じます。 
 
@@ -372,18 +370,18 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
 1. 次のコードをクエリ ウィンドウに貼り付け、「**実行**」 をクリックします。これにより、**患者**テーブルが作成されます。
 
      ```sql
-     CREATE TABLE 「dbo」.「Patients」(
-		「PatientId」 「int」 IDENTITY(1,1),
-		「SSN」 「char」(11) NOT NULL,
-		「FirstName」 「nvarchar」(50) NULL,
-		「LastName」 「nvarchar」(50) NULL,
-		「MiddleName」 「nvarchar」(50) NULL,
-		「StreetAddress」 「nvarchar」(50) NULL,
-		「City」 「nvarchar」(50) NULL,
-		「ZipCode」 「char」(5) NULL,
-		「State」 「char」(2) NULL,
-		「BirthDate」 「date」 NOT NULL 
-     PRIMARY KEY CLUSTERED (「PatientId」 ASC) ON 「PRIMARY」 );
+     CREATE TABLE [dbo].[Patients](
+		[PatientId] [int] IDENTITY(1,1),
+		[SSN] [char](11) NOT NULL,
+		[FirstName] [nvarchar](50) NULL,
+		[LastName] [nvarchar](50) NULL,
+		[MiddleName] [nvarchar](50) NULL,
+		[StreetAddress] [nvarchar](50) NULL,
+		[City] [nvarchar](50) NULL,
+		[ZipCode] [char](5) NULL,
+		[State] [char](2) NULL,
+		[BirthDate] [date] NOT NULL 
+     PRIMARY KEY CLUSTERED ([PatientId] ASC) ON [PRIMARY] );
      ```
 1. テーブルが正常に作成されたら、「**オブジェクト エクスプローラー**」 ペインで、 「**医療用**」 データベース ノード、「**テーブル**」 ノードを展開します。「**dbo.Patients**」 ノードを右クリックして 「**列の暗号化**」 をクリックします。 
 

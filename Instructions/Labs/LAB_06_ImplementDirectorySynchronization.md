@@ -1,6 +1,6 @@
 ﻿---
 lab:
-    title: '06 - ディレクトリ同期を導入する'
+    title: '06 - ディレクトリ同期の導入'
     module: 'モジュール 01 - ID とアクセスの管理'
 ---
 
@@ -54,7 +54,7 @@ lab:
 
     >**注意**: `<custom-label>`プレースホルダーを、グローバルに一意である可能性がある有効な DNS 名に置き換えます。`<location>` プレースホルダーを、このラボで使用する Active Directory ドメイン コントローラーをホストする Azure VM をデプロイするリージョンの名前に置き換えます。
 
-    >**注意**: Azure VM をプロビジョニングできる Azure リージョンを識別するには、[**https://azure.microsoft.com/ja-jp/regions/offers/**](https://azure.microsoft.com/en-us/regions/offers/) を参照してください。
+    >**注意**: Azure VM をプロビジョニングできる Azure リージョンを識別するには、[**https://azure.microsoft.com/ja-jp/regions/offers/**](https://azure.microsoft.com/ja-jp/regions/offers/) を参照してください。
 
 1. コマンドが **True** へ戻したことを確認します。そうでない場合は、コマンドが **True**へ戻すまで、`<custom-label>`の異なる値で同じコマンドを再実行します。
 
@@ -208,7 +208,7 @@ lab:
 
 1. 「**Virtual Machines**」 ブレードで **adVM** エントリをクリックします。 
 
-1. 「**adVM**」 ブレードで 「**接続 **」 をクリックし、ドロップ ダウン メニューの 「**RDP**」 をクリックします。 
+1. 「**adVM**」 ブレードで 「**接続**」 をクリックし、ドロップ ダウン メニューの 「**RDP**」 をクリックします。 
 
 1. 「**IPアドレス**」 パラメーターで、「**ロード バランサーのパブリック IP アドレス**」 を選択し、「**RDP ファイルのダウンロード**」 をクリックして、リモート デスクトップ経由で **adVM** AzureVM に接続します。認証を求められたら、次の資格情報を入力します。
 
@@ -235,7 +235,7 @@ lab:
 
 1. 「**タスク**」 ウィンドウの 「**ToSync**」 セクションで、「**新規作成**」 をクリックし、カスケード メニューの 「**ユーザー**」 をクリックします。
 
-1. 「**ユーザーの作成**」 ウィンドウで、次の設定で新しいユーザー アカウントを作成し (他のユーザーの既存の値をそのまま使用)、「**OK **」 をクリックします。
+1. 「**ユーザーの作成**」 ウィンドウで、次の設定で新しいユーザー アカウントを作成し (他のユーザーの既存の値をそのまま使用)、「**OK**」 をクリックします。
 
    |設定|値|
    |---|---|
@@ -253,7 +253,7 @@ lab:
 
 1. Azure portal の 「**リソース、サービス、ドキュメントの検索**」 テキスト ボックスで、Azure portal ページの上部に「**Azure Active Directory**」と入力し、**Enter** キーを押します。
 
-1. Azure portal の **AdatumSync \| **「**概要**」 ブレードで、「**Azure AD Connect**」 をクリックします。
+1. Azure portal の **AdatumSync|** 「**概要**」 ブレードで、「**Azure AD Connect**」 をクリックします。
 
 1. 「**AdatumSync \| Azure AD Connect**」 ブレードで、「**Azure AD Connect のダウンロード**」 リンクをクリックします。「**Microsoft Azure Active Directory Connect**」 ダウンロード ページにリダイレクトされます。
 
@@ -282,7 +282,7 @@ lab:
 
 1. 「**ディレクトリの接続**」 ページに戻り、**adatum.com** エントリが構成されたディレクトリとして表示されていることを確認し、「**次へ**」 をクリックします。
 
-1. 「**Azure AD サインインの構成**」 ページで、**UPN サフィックスが検証済みのドメイン名と一致しない場合は、ユーザーがオンプレミスの資格情報を使用して Azure AD にサインインできないことを示す**警告を確認し、「**確認済みドメインにすべての UPN サフィックスを一致させずに続行する **」 チェック ボックスをオンにし、「**次へ**」 をクリックします。
+1. 「**Azure AD サインインの構成**」 ページで、**UPN サフィックスが検証済みのドメイン名と一致しない場合は、ユーザーがオンプレミスの資格情報を使用して Azure AD にサインインできないことを示す**警告を確認し、「**確認済みドメインにすべての UPN サフィックスを一致させずに続行する**」 チェック ボックスをオンにし、「**次へ**」 をクリックします。
 
     >**注意**: 前述したように、カスタムの Azure AD DNS ドメイン **adatum.com** を確認できなかったため、これが予想されます。
 
@@ -321,7 +321,7 @@ lab:
 
 1. 「**aduser1**」 ウィンドウの 「**組織**」 セクションの 「**部署**」 テキスト ボックスに「**売上**」と入力し、「**OK**」 をクリックします。
 
-1. **adVM ** へのリモート デスクトップ セッション内で、**Windows PowerShell** を起動します。
+1. **adVM** へのリモート デスクトップ セッション内で、**Windows PowerShell** を起動します。
 
 1. 「**管理者: Windows PowerShell**」 コンソールから、次のコマンドを実行して、Azure AD Connect の累計同期を開始します。
 
@@ -331,7 +331,7 @@ lab:
     Start-ADSyncSyncCycle -PolicyType Delta
     ```
 
-1. **Aduser1 \** を表示している Internet Explorerウィンドウに切り替えます。 | 「**プロファイル**」 ブレードを表示している Internet Explorer ウィンドウに切り替え、ページを更新して、「**部署**」 プロパティが 「**営業**」 に設定されていることを確認します。
+1. **Aduser1** を表示している Internet Explorerウィンドウに切り替えます。 | 「**プロファイル**」 ブレードを表示している Internet Explorer ウィンドウに切り替え、ページを更新して、「**部署**」 プロパティが 「**営業**」 に設定されていることを確認します。
 
     >**注意**: 「**部署**」 属性が設定されていない場合は、もう 1 分待ってからページを再度更新する必要がある場合があります。
 
@@ -401,4 +401,4 @@ lab:
 
 1. 「**'AdatumSync' ディレクトリの削除**」 ブレードに戻り、「**削除**」 をクリックします。
 
-> このタスクに関する追加情報については、[https://docs.microsoft.com/ja-jp/azure/active-directory/users-groups-roles/directory-delete-howto](https://docs.microsoft.com/en-us/azure/active-directory/users-groups-roles/directory-delete-howto) を参照してください。
+> このタスクに関する追加情報については、[https://docs.microsoft.com/ja-jp/azure/active-directory/users-groups-roles/directory-delete-howto](https://docs.microsoft.com/ja-jp/azure/active-directory/users-groups-roles/directory-delete-howto) を参照してください。
