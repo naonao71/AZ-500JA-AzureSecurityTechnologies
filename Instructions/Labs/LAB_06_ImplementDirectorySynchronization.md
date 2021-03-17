@@ -1,4 +1,4 @@
----
+﻿---
 lab:
     title: '06 - ディレクトリ同期の導入'
     module: 'モジュール 01 - ID とアクセスの管理'
@@ -253,7 +253,7 @@ lab:
 
 1. Azure portal の 「**リソース、サービス、ドキュメントの検索**」 テキスト ボックスで、Azure portal ページの上部に「**Azure Active Directory**」と入力し、**Enter** キーを押します。
 
-1. Azure portal の **AdatumSync|** 「**概要**」 ブレードで、「**Azure AD Connect**」 をクリックします。
+1. Azure portal の **AdatumSync |** 「**概要**」 ブレードで、「**Azure AD Connect**」 をクリックします。
 
 1. 「**AdatumSync \| Azure AD Connect**」 ブレードで、「**Azure AD Connect のダウンロード**」 リンクをクリックします。「**Microsoft Azure Active Directory Connect**」 ダウンロード ページにリダイレクトされます。
 
