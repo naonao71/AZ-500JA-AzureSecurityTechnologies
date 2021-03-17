@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     title: '02 - Azure Policy'
     module: 'モジュール 01 - ID とアクセスの管理'
