@@ -33,7 +33,7 @@ Azure Container Registry と Azure Kubernetes Service を使用して概念実�
 
 ### 予想時間: 45 分
 
-> このラボのすべてのリソースに対して、**東部 (米国)**リージョンを使用しています。クラスで使用する地域であることを講師に確認します。 
+> このラボのすべてのリソースに対して、**東部 (米国)** リージョンを使用しています。クラスで使用する地域であることを講師に確認します。 
 
 この演習では、次のタスクを行います。
 
@@ -124,7 +124,7 @@ Azure Container Registry と Azure Kubernetes Service を使用して概念実�
 
 このタスクでは、Azure Kubernetes Service を作成し、デプロイされたリソースを確認します。 
 
-1. Azure portal ページの上部の 「**リソース、サービス、ドキュメントの検索**」 テキスト ボックスで、**Kubernetes サービス** を入力し **Enter ** キーを押します。
+1. Azure portal ページの上部の 「**リソース、サービス、ドキュメントの検索**」 テキスト ボックスで、**Kubernetes サービス** を入力し **Enter** キーを押します。
 
 1. 「**Kubernetes サービス**」 ブレードで 、「**+ 追加**」 をクリックし、ドロップダウン メニューで 「**Kubernetes クラスターの追加**」 をクリックします
 
@@ -155,7 +155,7 @@ Azure Container Registry と Azure Kubernetes Service を使用して概念実�
     |ネットワークの構成|**Azure CNI**|
     |DNS 名のプレフィックス|有効な、グローバルに一意の DNS ホスト名|
 
-    >**注**: AKS はプライベート クラスターとして設定できます。これにより、API サーバーにプライベート IP が割り当てられるため、API サーバーとノード プール間のネットワーク トラフィックがプライベート ネットワーク上にのみ残ります。詳細については、「Azure Kubernetes Service のプライベート クラスター の作成](https://docs.microsoft.com/ja-jp/azure/aks/private-clusters)に関するページを参照してください。
+    >**注**: AKS はプライベート クラスターとして設定できます。これにより、API サーバーにプライベート IP が割り当てられるため、API サーバーとノード プール間のネットワーク トラフィックがプライベート ネットワーク上にのみ残ります。詳細については、[Azure Kubernetes Service のプライベート クラスター の作成](https://docs.microsoft.com/ja-jp/azure/aks/private-clusters) に関するページを参照してください。
 
 1. 「**次へ: 統合 >**」 をクリックし、「**Kubernetes クラスターの作成**」 ブレードの 「**統合**」 タブで、「**コンテナーの監視**」 を 「**無効**」 に設定します。 
 
