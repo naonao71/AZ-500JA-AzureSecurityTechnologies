@@ -50,13 +50,13 @@ lab:
 1. 「Cloud Shell」 ウィンドウ内の PowerShell セッションで、次のコマンドを実行してリソース グループを作成します (場所のパラメーターの値について講師に確認します)。
 
     ```powershell
-    New-AzResourceGroup -Name AZ500LAB03 -Location 'EastUS'
+    New-AzResourceGroup -Name AZ500Lab03 -Location 'EastUS'
     ```
 
 1. 「Cloud Shell」 ウィンドウ内の PowerShell セッションで、次の手順を実行して、新しく作成したリソース グループにストレージ アカウントを作成します。
     
     ```powershell
-    New-AzStorageAccount -ResourceGroupName AZ500LAB03 -Name (Get-Random -Maximum 999999999999999) -Location  EastUS -SkuName Standard_LRS -Kind StorageV2 
+    New-AzStorageAccount -ResourceGroupName AZ500Lab03 -Name (Get-Random -Maximum 999999999999999) -Location  EastUS -SkuName Standard_LRS -Kind StorageV2 
     ```
 
    >**注意**:  ストレージ アカウントが作成されるまで待ちます。これには数分間かかることがあります。 
@@ -69,9 +69,9 @@ lab:
 
 1. Azure portal の、Azure portal ページの上部にある **「ソース、サービス、ドキュメントの検索」** テキスト ボックスで、 **「リソース グループ」** と入力し、**「Enter」** キーを押します。
 
-1. 「**リソース グループ**」 ブレードで、**AZ500LAB03** リソース グループ エントリを選択します。
+1. 「**リソース グループ**」 ブレードで、**AZ500Lab03** リソース グループ エントリを選択します。
 
-1. 「**AZ500LAB03** リソース グループ」 ブレードのリソースの一覧で、新しいストレージ アカウントを選択します。 
+1. 「**AZ500Lab03** リソース グループ」 ブレードのリソースの一覧で、新しいストレージ アカウントを選択します。 
 
 1. 「**設定**」 セクションで、「ロック」アイコンをクリックします。
 
@@ -90,23 +90,23 @@ lab:
 
 1. 「ストレージ アカウント」 ブレードの 「**設定**」 セクションで、「**構成**」 をクリックします。
 
-1. 「**セキュアな転送が必須**」 オプションを 「**無効**」 に設定し、「**保存**」 をクリックします。
+1. 「**安全な転送が必須**」 オプションを 「**無効**」 に設定し、「**保存**」 をクリックします。
 
 1. **ストレージ アカウントの更新に失敗した**ことを示す通知を見つけることができます。
 
 1. Azure portal の上部にあるツール バーの 「**通知**」 アイコンをクリックし、次のテキストのような通知を確認します。 
 
-	> **"ストレージ アカウント 'xxxxxxxx' を更新できませんでした。エラー: 次のスコープがロックされているため、スコープ 'xxxxxxxx' は書き込み操作を実行できません。'/subscriptions/xxxxx-xxx-xxxx-xxxx-xxxxxxxx/resourceGroups/AZ500LAB03/providers/Microsoft.Storage/storageAccounts/xxxxxxx'.ロックを解除して、もう一度実行してください"**
+	> **"ストレージ アカウント 'xxxxxxxx' を更新できませんでした。エラー: 次のスコープがロックされているため、スコープ 'xxxxxxxx' は書き込み操作を実行できません。'/subscriptions/xxxxx-xxx-xxxx-xxxx-xxxxxxxx/resourceGroups/AZ500LAB03/providers/Microsoft.Storage/storageAccounts/xxxxxxx'.ロックを解除してから、もう一度お試しください。"**
 
 1. ストレージ アカウントの 「**構成**」 ブレードに戻り、「**破棄**」 をクリックします。 
 
-1. 「ストレージ アカウント」 ブレードで 「**概要**」 を選択し、「**概要**」 ブレードで 「**削除**」 をクリックします。
+1. 「ストレージ アカウント」 ブレードで 「**概要**」 を選択し、「**削除**」 をクリックします。
 
 1. 「**ストレージ アカウントの削除」**」 ブレードで、ストレージ アカウントの名前を入力して、続行することを確認し、「**削除**」 をクリックします。
 
 1. 次のテキストのように、新しく生成された通知を確認します。 
 
-	> **「ストレージ アカウント 'xxxxxxx' を削除できませんでした。エラー: 次のスコープがロックされているため、スコープ 'xxxxxxx' は削除操作を実行できません。'/subscriptions/xxxx-xxxx-xxxx-xxxx-xxxxxx/resourceGroups/AZ500LAB03/providers/Microsoft.Storage/storageAccounts/xxxxxxx'.ロックを解除して、もう一度やり直してください。」**
+	> **「ストレージ アカウント 'xxxxxxx' を削除できませんでした。エラー: 次のスコープがロックされているため、スコープ 'xxxxxxx' は削除操作を実行できません。'/subscriptions/xxxx-xxxx-xxxx-xxxx-xxxxxx/resourceGroups/AZ500LAB03/providers/Microsoft.Storage/storageAccounts/xxxxxxx'.ロックを解除してから、もう一度お試しください。」**
 
    >**注意**:  読み取り専用ロックによってリソースの誤った削除と変更が停止することを確認しました。
 
@@ -124,8 +124,8 @@ lab:
 
    |設定|値|
    |---|---|
-   |ロック名|**ロックの削除**|
-   |ロックの種類|**取り消し**|
+   |ロック名|**削除ロック**|
+   |ロックの種類|**削除**|
 
 1. 「**OK**」 をクリックします。 
 
@@ -135,11 +135,11 @@ lab:
 
 1. 「ストレージ アカウント」 ブレードの 「**設定**」 セクションで、「**構成**」 をクリックします。
 
-1. 「**セキュアな転送が必須**」 オプションを 「**無効**」 に設定し、「**保存**」 をクリックします。
+1. 「**安全な転送が必須**」 オプションを 「**無効**」 に設定し、「**保存**」 をクリックします。
 
    >**注意**:  今回は、変更が成功するはずです。
 
-1. 「ストレージ アカウント」 ブレードで 「**概要**」 を選択し、「**概要**」 ブレードで 「**削除**」 をクリックします。
+1. 「ストレージ アカウント」 ブレードで 「**概要**」 を選択し、「**削除**」 をクリックします。
 
 1. 「**ストレージ アカウントの削除」**」 ブレードで、ストレージ アカウントの名前を入力して、続行することを確認し、「**削除**」 をクリックします。
 
@@ -172,7 +172,7 @@ lab:
 1.  「Cloud Shell」 ウィンドウ内の PowerShell セッションで、次の手順を実行してリソース グループを削除します。
 
     ```powershell
-    Remove-AzResourceGroup -Name "AZ500LAB03" -Force -AsJob
+    Remove-AzResourceGroup -Name "AZ500Lab03" -Force -AsJob
     ```
 
 1.  **「Cloud Shell」** ウィンドウを閉じます。 
