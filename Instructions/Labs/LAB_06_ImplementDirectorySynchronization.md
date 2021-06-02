@@ -58,7 +58,7 @@ lab:
 
 1. コマンドが **True** へ戻したことを確認します。そうでない場合は、コマンドが **True**へ戻すまで、`<custom-label>`の異なる値で同じコマンドを再実行します。
 
-1. 功を奏した結果となった`<custom-label>` の値を記録します。これは、次のタスクで必要になります。
+1. **True** になった`<custom-label>` の値を記録します。これは、次のタスクで必要になります。
 
 1. Cloud Shell ペインを閉じます。
 
@@ -66,28 +66,28 @@ lab:
 
 このタスクでは、Active Directory ドメイン コントローラーをホストする Azure VM をデプロイします
 
-1. 同じブラウザーの画面で別のブラウザー タブを開き、[https://github.com/Azure/azure-quickstart-templates/tree/master/active-directory-new-domain](https://github.com/Azure/azure-quickstart-templates/tree/master/active-directory-new-domain) に移動します。 
+1. 同じブラウザーの画面で別のブラウザー タブを開き、[https://github.com/Azure/azure-quickstart-templates/tree/master/application-workloads/active-directory/active-directory-new-domain](https://github.com/Azure/azure-quickstart-templates/tree/master/application-workloads/active-directory/active-directory-new-domain) に移動します。 
 
-1. 「**新しい Windows VM を作成し、新しい AD フォレスト、ドメイン、および DC を作成する**」 ページで、「**Azure にデプロイ**」 をクリックします。これにより、ブラウザーが Azure portal の 「**新しい AD フォレストで Azure VM を作成する**」 ブレードに自動的にリダイレクトされます。
+1. 「**Create a new Windows VM and create a new AD Forest, Domain and DC**」 ページで、「**Deploy to Azure **」 をクリックします。これにより、ブラウザーが Azure portal の 「**カスタムテンプレートからのデプロイ**」 ブレードに自動的にリダイレクトされます。
 
-1. 「**新しい AD フォレストを使用して Azure VM を作成する**」 ブレードで、「**パラメーターの編集**」 をクリックします。
+1. 「**カスタム デプロイ**」 ブレードで、「**パラメーターの編集**」 をクリックします。
 
-1. 「**パラメーターの編集**」 ブレードで、「**ロード ファイル**」 をクリックし、「**開く**」 ダイアログ ボックスで、**\\\\AllFiles\Labs\\06\\active-directory-new-domain\\azuredeploy.parameters.json** をクリックし、「**開く**」 をクリックして、「**保存**」 をクリックします。 
+1. 「**パラメーターの編集**」 ブレードで、「**ファイルの読み込み**」 をクリックし、「**開く**」 ダイアログ ボックスで、**\\\\AllFiles\Labs\\06\\active-directory-new-domain\\azuredeploy.parameters.json** をクリックし、「**開く**」 をクリックして、「**保存**」 をクリックします。 
 
 1. 「**新しい AD フォレストを使用して Azure VM を作成する**」 ブレードで、次の設定を指定します (他のユーザーには既存の値を残します)。
 
    |設定|値|
    |---|---|
    |サブスクリプション|Azure サブスクリプションの名前|
-   |リソース グループ|「**新規作成**」 をクリックし、「**AZ500LAB06**」という名前を入力します|
+   |リソース グループ|「**新規作成**」 をクリックし、「**AZ500Lab06**」という名前を入力します|
    |リージョン|前のタスクで特定した Azure リージョン|
-   |管理者ユーザー名|**受講生**|
+   |管理者ユーザー名|**student**|
    |管理者のパスワード|**Pa55w.rd1234**|
    |ドメイン名|**adatum.com**|
    |DNS プレフィックス|前のタスクで特定した DNS ホスト名|
    |VM サイズ|**Standard_D2s_v3**|
 
-1. 「**新しい AD フォレストを使用して Azure VM を作成する**」 ブレードで、「**レビューと作成**」 をクリックし、「**作成**」 をクリックします。
+1. 「**カスタム デプロイ**」 ブレードで、「**確認と作成**」 をクリックし、「**作成**」 をクリックします。
 
     >**注意**: デプロイが完了するのを待たず、代わりに次の演習に進みます。デプロイには約 15 分間かかります。このラボの 3 番目の演習では、このタスクでデプロイされた仮想マシンを使用します。
 
@@ -112,7 +112,7 @@ lab:
 
 1. 現在の Azure AD テナントの 「**概要**」 が表示されているブレードで、「**+ テナントの作成**」 をクリックします。
 
-1. 「**ディレクトリの作成**」 ブレードの 「**基本**」 タブで、オプション 「**Azure Active Directory**」 が選択されていることを確認し、「**次へ**」 をクリックします。**構成 >**。
+1. 「**ディレクトリの作成**」 ブレードの 「**基本**」 タブで、オプション 「**Azure Active Directory**」 が選択されていることを確認し、「**次:構成**」 をクリックします。
 
 1. 「**ディレクトリの作成**」 ブレードの 「**構成**」 タブで、次の設定を指定します。
 
@@ -126,7 +126,7 @@ lab:
 
     >**注意**: 「**初期ドメイン名**」 テキスト ボックスの緑色のチェック マークは、入力したドメイン名が有効で一意であるかどうかを示します。(後で使用するために、初期ドメイン名を記録してください)。
 
-1. **「レビューと作成」** をクリックし、**「作成」** をクリックします。
+1. **「確認および作成」** をクリックし、**「作成」** をクリックします。
 
     >**注意**: 新しいテナントが作成されるのを待ちます。**通知** アイコンを使用して、デプロイ ステータスを監視します。 
 
@@ -134,11 +134,11 @@ lab:
 
 このタスクでは、新しい Azure AD テナントにカスタム DNS 名を追加します。 
 
-1. Azure portal のツール バーで、Cloud Shell アイコンの右側にある 「**Directory + subscription**」 アイコンをクリックします。 
+1. Azure portal のツール バーで、Cloud Shell アイコンの右側にある 「**ディレクトリ + サブスクリプション**」 アイコンをクリックします。 
 
-1. 「**Directory + subscription**」 ブレードで、新しく作成したテナント、**AdatumSync** をクリックします。
+1. 「**ディレクトリ + サブスクリプション**」 ブレードで、新しく作成したテナント、**AdatumSync** をクリックします。
 
-    >**注意**: **AdatumSync** エントリが **Directory + subscription** のフィルター リストに表示されない場合は、ブラウザーの画面を更新する必要があります。
+    >**注意**: **AdatumSync** エントリが **ディレクトリ + サブスクリプション** のフィルター リストに表示されない場合は、ブラウザーの画面を更新する必要があります。
 
 1. 「**AdatumSync**」 ブレードの 「**管理**」 セクションで、「**カスタム ドメイン名**」 をクリック します。
 
@@ -166,8 +166,8 @@ lab:
    |名前|**syncadmin**|
    |パスワード|「**パスワードの自動生成**」 オプションが選択されていることを確認し、「**パスワードの表示**」 をクリックします。|
    |グループ|**0 グループが選択されました**|
-   |ロール|「**ユーザー**」 をクリックし、「**グローバル管理者**」 をクリックし、「**選択**」 をクリックします。|
-   |利用場所|**米国**|  
+   |役割|「**ユーザー**」 をクリックし、「**グローバル管理者**」 をクリックし、「**選択**」 をクリックします。|
+   |利用場所|**United States**|  
 
     >**注意**: 完全なユーザー名を記録します。ドロップダウン リストの右側にある 「**クリップボードにコピー**」 ボタンをクリックして、ドメイン名を表示することで、値をコピーできます。 
 
@@ -202,7 +202,7 @@ lab:
 
    > このタスクを開始する前に、このラボの最初の演習で開始した Template deployment が正常に完了したことを確認します。
 
-1. Azure portal で、このラボの最初の演習で Azure VM をデプロイした Azure サブスクリプションに関連付けられている Azure AD テナントに **Directory + subscription** フィルターを設定します。
+1. Azure portal で、このラボの最初の演習で Azure VM をデプロイした Azure サブスクリプションに関連付けられている Azure AD テナントに **ディレクトリ  + サブスクリプション** フィルターを設定します。
 
 1. Azure portal の 「**リソース、サービス、ドキュメントの検索**」 テキスト ボックスで、Azure portal ページの上部に「**Virtual Machines**」と入力し、**Enter** キーを押します。
 
@@ -214,116 +214,120 @@ lab:
 
    |設定|値|
    |---|---|
-   |ユーザー名|**受講生**|
+   |ユーザー名|**student**|
    |パスワード|**Pa55w.rd1234**|
 
-    >**注意**: リモート デスクトップ セッションと **サーバー マネージャー** が読み込まれるまで待ちます。  
+    >**注意**: リモート デスクトップ セッションと **Server Manager** が読み込まれるまで待ちます。  
 
     >**注意**: **adVM** Azure VM へのリモート デスクトップ セッションでは、次の手順を実行します。 
 
-1. **サーバー マネージャー** で 「**ローカル サーバー**」 をクリックし、「**IE セキュリティ強化の構成**」 をクリックします。
+1. **Server Manager** で 「**Local Server**」 をクリックし、「**IE Enhanced Security Configuration**」 をクリックします。
 
-1. 「**Internet Explorer セキュリティ強化の構成**」 ダイアログ ボックスで、両方のオプションを 「**オフ**」 に設定し、「**OK**」 をクリックします。
+1. 「**IE Enhanced Security Configuration**」 ダイアログ ボックスで、両方のオプションを 「**Off**」 に設定し、「**OK**」 をクリックします。
 
-1. **サーバー マネージャー** で、「**ツール**」 をクリックし、ドロップダウン メニューの 「**Active Directory 管理センター**」 をクリックします。
+1. **Server Manager** で、「**Tools**」 をクリックし、ドロップダウン メニューの 「**Active Directory Administratice Center**」 をクリックします。
 
-1. **Active Directory 管理センター** で、「**adatum (ローカル)**」 をクリックし、「**タスク**」 ウィンドウで 「**新規作成**」 をクリックして、カスケード メニューで、**組織単位** をクリックします。
+1. **Active Directory Administratice Center** で、「**adatum (local)**」 をクリックし、「**Tasks**」 ウィンドウの「**adatum (local)**」配下で「**New**」 をクリックして、カスケード メニューで、**Organizational Unit** をクリックします。
 
-1. 「**組織単位の作成**」 ウィンドウの 「**名前**」 テキスト ボックスに「**ToSync**」と入力し、「**OK**」 をクリックします。
+1. 「**Organizational Unit**」 ウィンドウの 「**Name**」 テキスト ボックスに「**ToSync**」と入力し、「**OK**」 をクリックします。
 
-1. 新しくクレートされた **ToSync** 組織単位をダブルクリックして、Active Directory 管理センター コンソールの詳細ウィンドウにその内容が表示されるようにします。 
+1. 新しく作成された **ToSync** 組織単位をダブルクリックして、Active Directory Administratice Center コンソールの詳細ウィンドウにその内容が表示されるようにします。 
 
-1. 「**タスク**」 ウィンドウの 「**ToSync**」 セクションで、「**新規作成**」 をクリックし、カスケード メニューの 「**ユーザー**」 をクリックします。
+1. 「**Tasks**」 ウィンドウの 「**ToSync**」 セクションで、「**New**」 をクリックし、カスケード メニューの 「**User**」 をクリックします。
 
-1. 「**ユーザーの作成**」 ウィンドウで、次の設定で新しいユーザー アカウントを作成し (他のユーザーの既存の値をそのまま使用)、「**OK**」 をクリックします。
+1. 「**Crreate User**」 ウィンドウで、次の設定で新しいユーザー アカウントを作成し (他のユーザーの既存の値をそのまま使用)、「**OK**」 をクリックします。
 
    |設定|値|
    |---|---|
-   |氏名|**aduser1**|
-   |ユーザー UPN ログオン|**aduser1**|
-   |ユーザー SamAccountName のログオン|**aduser1**|
-   |パスワード|**Pa55w.rd1234**|
-   |その他のパスワード オプション|**パスワードは期限切れになることはありません**|
+   |First name|**aduser1**|
+   |User UPN Logon|**aduser1**|
+   |User SamAccountName Logon|**aduser1**|
+   |Password|**Pa55w.rd1234**|
+   |Other password options|**Password never expires**|
 
 #### タスク 2: Azure AD Connect をインストールする
 
 このタスクでは、仮想マシンに AD Connect をインストールします。 
 
-1. **adVM** へのリモート デスクトップ セッション内で Internet Explorer を起動し、[Azure portal](https://portal.azure.com) に移動して、前の演習で作成した **syncadmin** ユーザー アカウントを使用してサインインします。メッセージが表示されたら、記録した完全なユーザー名と **Pa55w.rd1234** パスワードを指定します。
+1. **adVM** へのリモート デスクトップ セッション内で Internet Explorer を起動します。
+
+1. [Microsoft Edge](https://www.microsoft.com/ja-jp/edge/business/download) の最新のビルド、 Windows 64-bit 用のインストーラーをダウンロードして仮想マシンにインストールします。
+
+   >**注意**: Azure Portal が Internet Explorer のサポートを終了したので Microsoft Edge を使用します。
+
+1. Microsoft Edge を起動し、[Azure portal](https://portal.azure.com) に移動して、前の演習で作成した **syncadmin** ユーザー アカウントを使用してサインインします。メッセージが表示されたら、記録した完全なユーザー名と **Pa55w.rd1234** パスワードを指定します。
 
 1. Azure portal の 「**リソース、サービス、ドキュメントの検索**」 テキスト ボックスで、Azure portal ページの上部に「**Azure Active Directory**」と入力し、**Enter** キーを押します。
 
-1. Azure portal の **AdatumSync |** 「**概要**」 ブレードで、「**Azure AD Connect**」 をクリックします。
+1. Azure portal の **AdatumSync \| Overview**」 ブレードで、「**Azure AD Connect**」 をクリックします。
 
-1. 「**AdatumSync \| Azure AD Connect**」 ブレードで、「**Azure AD Connect のダウンロード**」 リンクをクリックします。「**Microsoft Azure Active Directory Connect**」 ダウンロード ページにリダイレクトされます。
+1. 「**AdatumSync \| Azure AD Connect**」 ブレードで、「**Download Azure AD Connect**」 リンクをクリックします。「**Microsoft Azure Active Directory Connect**」 ダウンロード ページにリダイレクトされます。
 
-1. 「**Microsoft Azure Active Directory Connect**」 ダウンロード ページで、「**ダウンロード**」 をクリックします。
+1. 「**Microsoft Azure Active Directory Connect**」 ダウンロード ページで、「**Download**」 をクリックします。
 
-1. メッセージが表示されたら、「**実行**」 をクリックして、**Microsoft Azure Active Directory Connect** ウィザードを開始します。
+1. メッセージが表示されたら、「**Run**」 をクリックして、**Microsoft Azure Active Directory Connect** ウィザードを開始します。
 
-1. **Microsoft Azure Active Directory Connect** ウィザードの 「**Azure AD Connect へようこそ**」 ページで、「**ライセンス条項とプライバシーに関する通知に同意する**」 チェック ボックスをオンにし、「**続行**」 をクリックします。
+1. **Microsoft Azure Active Directory Connect** ウィザードの 「**Welcome to Azure AD Connect**」 ページで、「**I agree to the license terms and privacy notice.**」 チェック ボックスをオンにし、「**Continue**」 をクリックします。
 
-1. **Microsoft Azure Active Directory Connect** ウィザードの 「**簡単設定**」 ページ で、「**カスタマイズ**」 オプションをクリックします。
+1. **Microsoft Azure Active Directory Connect** ウィザードの 「**Express Settings**」 ページ で、「**Customize**」 オプションをクリックします。
 
-1. 「**必須コンポーネントのインストール**」 ページで、オプションの構成オプションをすべて選択したままにして、「**インストール**」 をクリックします。
+1. 「**Install required components**」 ページで、すべてのオプション設定を解除し、「**install**」 をクリックします。
 
-1. 「**ユーザー サインイン**」 ページで、「**パスワード ハッシュ同期**」 のみが有効になっていることを確認し、「**次へ**」 をクリックします。
+1. 「**User sign-in**」 ページで、「**Password Hash Synchronization**」 のみが有効になっていることを確認し、「**Next**」 をクリックします。
 
-1. 「**Azure AD への接続**」 ページで、前の演習で作成した **syncadmin** ユーザー アカウントの資格情報を使用して認証し、「**次へ**」 をクリックします。 
+1. 「**Connect to Azure AD**」 ページで、前の演習で作成した **syncadmin** ユーザー アカウントの資格情報を使用して認証し、「**次へ**」 をクリックします。 
 
-1. 「**ディレクトリの接続**」 ページで、**adatum.com** フォレスト エントリの右側にある 「**ディレクトリの追加**」 ボタンをクリックします。
+1. 「**Connect to Azure AD**」 ページで、**adatum.com** フォレスト エントリの右側にある 「**Add Directory**」 ボタンをクリックします。
 
-1. 「**AD フォレスト アカウント**」 ウィンドウで、「**新しい AD アカウントの作成**」 オプションが選択されていることを確認し、次の資格情報を指定して、「**OK**」 をクリックします。
+1. 「**AD forest account**」 ウィンドウで、「**Create new AD account**」 オプションが選択されていることを確認し、次の資格情報を指定して、「**OK**」 をクリックします。
 
    |設定|値|
    |---|---|
    |ユーザー名|**ADATUM\\Student**|
    |パスワード|**Pa55w.rd1234**|
 
-1. 「**ディレクトリの接続**」 ページに戻り、**adatum.com** エントリが構成されたディレクトリとして表示されていることを確認し、「**次へ**」 をクリックします。
+1. 「**Connect your directories**」 ページに戻り、**adatum.com** エントリが構成されたディレクトリとして表示されていることを確認し、「**Next**」 をクリックします。
 
-1. 「**Azure AD サインインの構成**」 ページで、**UPN サフィックスが検証済みのドメイン名と一致しない場合は、ユーザーがオンプレミスの資格情報を使用して Azure AD にサインインできないことを示す**警告を確認し、「**確認済みドメインにすべての UPN サフィックスを一致させずに続行する**」 チェック ボックスをオンにし、「**次へ**」 をクリックします。
+1. 「**Azure AD sign-in configuration**」 ページで、**UPN サフィックスが検証済みのドメイン名と一致しない場合は、ユーザーがオンプレミスの資格情報を使用して Azure AD にサインインできないことを示す**警告を確認し、「**Continue without matching all UPN suffixes to cerified domains**」 チェック ボックスを**オン**にし、「**Next**」 をクリックします。
 
     >**注意**: 前述したように、カスタムの Azure AD DNS ドメイン **adatum.com** を確認できなかったため、これが予想されます。
 
-1. 「**ドメインと OU のフィルタリング**」 ページで、「**選択したドメインと OU の同期**」 のオプションをクリックし、すべてのチェックボックスをオフにして、「**ToSync**」 OU の横にあるチェックボックスのみをクリックして、「**次へ**」 をクリックします。
+1. 「**Domain and OU filtering**」 ページで、「**Sync selected domains and OUs**」 のオプションをクリックし、すべてのチェックボックスをオフにして、「**ToSync**」 OU の横にあるチェックボックスのみをクリックして、「**Next**」 をクリックします。
 
-1. 「**ユーザーを一意に識別**」 ページで、既定の設定を受け入れ、「**次へ**」 をクリックします。
+1. 「**Uniquely identifying your users**」 ページで、既定の設定を受け入れ、「**Next**」 をクリックします。
 
-1. 「**ユーザーおよびデバイスのフィルタリング**」 ページで、既定の設定を受け入れて、「**次へ**」 をクリックします。
+1. 「**Filter users and devices**」 ページで、既定の設定を受け入れて、「**Next**」 をクリックします。
 
-1. 「**オプション機能**」 ページで、既定の設定を受け入れ、「**次へ**」 をクリックします。
+1. 「**Optional features**」 ページで、既定の設定を受け入れ、「**Next**」 をクリックします。
 
-1. 「**構成の準備完了**」 ページで、「**構成が完了したら、同期プロセスを開始してください**」 チェック ボックスがオンになっていることを確認し、「**インストール**」 をクリックします。
+1. 「**Ready to configure**」 ページで、「**Start the synchronization process when configuration completes.**」 チェック ボックスがオンになっていることを確認し、「**Install**」 をクリックします。
 
     >**注意**: インストールにはおよそ 2 分かかります。
 
-1. 「**構成の完了**」 ページの情報を確認し、「**終了する**」 をクリック して 「**Microsoft Azure Active Directory Connect**」 ウィンドウを閉じます。
+1. 「**Configuration complete**」 ページの情報を確認し、「**Exit**」 をクリック して 「**Microsoft Azure Active Directory Connect**」 ウィンドウを閉じます。
 
 
 #### タスク 3: ディレクトリ同期を確認する
 
 このタスクでは、ディレクトリ同期が機能していることを確認します。 
 
-1. **adVM** へのリモート デスクトップ セッション内の、Azure portal を表示する Internet Explorer ウィンドウで 、Adatum Lab Azure AD テナントの 「**ユーザー - すべてのユーザー**」 ブレードに移動します。
+1. **adVM** へのリモート デスクトップ セッション内の、Azure portal を表示する Microsoft Edge ウィンドウで 、Adatum Lab Azure AD テナントの 「**Users \| All users**」 ブレードに移動します。
 
-1. 「**ユーザー \| すべてのユーザー**」 ブレードで、ユーザー オブジェクトのリストに **aduser1** アカウントが含まれていることを確認してください。 
+1. 「**Users \| All users**」 ブレードで、ユーザー オブジェクトのリストに **aduser1** アカウントが含まれていることを確認してください。 
 
-1. **aduser1** アカウントを選択し、**「プロファイル」 > 「Id」セクションで、「ソース」** セクションで、「**ソース**」 属性が **Windows Server AD** に設定されていることを確認してください。
+    >**注意**: **aduser1** ユーザー アカウントが表示されるまで、数分待ってから 「**Refresh**」 を選択する必要がある場合があります。
 
-    >**注意**: **aduser1** ユーザー アカウントが表示されるまで、数分待ってから 「**更新**」 を選択する必要がある場合があります。
+1. 「**Users \| All users**」 ブレードで **aduser1** エントリを選択します。
 
-1. 「**ユーザー \| すべてのユーザー**」 ブレードで **aduser1** エントリを選択します。
+1. 「**aduser1 \| Profile**」 ブレードの 「**Job info**」 セクションで、「**Department**」 属性が設定されていません。
 
-1. **「aduser1」 \| プロファイル**」 ブレードの 「**ジョブ情報**」 セクションで、「**部署**」 属性が設定されていません。
+1. **adVM** へのリモート デスクトップ セッションで、**Active Directory Administratice Center** に切り替え、**ToSync** OU のオブジェクトのリストで **aduser1** エントリを選択し、「**Tasks**」 ウィンドウの 「**aduser1**」 セクションで、「**Properties**」 を選択します。
 
-1. **adVM** へのリモート デスクトップ セッションで、**Active Directory 管理センター** に切り替え、**ToSync** OU のオブジェクトのリストで **aduser1** エントリを選択し、「**タスク**」 ウィンドウの 「**ToSync**」 セクションで、「**プロパティ**」 を選択します。
-
-1. 「**aduser1**」 ウィンドウの 「**組織**」 セクションの 「**部署**」 テキスト ボックスに「**売上**」と入力し、「**OK**」 をクリックします。
+1. 「**aduser1**」 ウィンドウの 「**Organization**」 セクションの 「**Department**」 テキスト ボックスに「**Sales**」と入力し、「**OK**」 をクリックします。
 
 1. **adVM** へのリモート デスクトップ セッション内で、**Windows PowerShell** を起動します。
 
-1. 「**管理者: Windows PowerShell**」 コンソールから、次のコマンドを実行して、Azure AD Connect の累計同期を開始します。
+1. 「**Administrator: Windows PowerShell**」 コンソールから、次のコマンドを実行して、Azure AD Connect の累計同期を開始します。
 
     ```powershell
     Import-Module -Name 'C:\Program Files\Microsoft Azure AD Sync\Bin\ADSync\ADSync.psd1'
@@ -331,9 +335,9 @@ lab:
     Start-ADSyncSyncCycle -PolicyType Delta
     ```
 
-1. **Aduser1** を表示している Internet Explorerウィンドウに切り替えます。 | 「**プロファイル**」 ブレードを表示している Internet Explorer ウィンドウに切り替え、ページを更新して、「**部署**」 プロパティが 「**営業**」 に設定されていることを確認します。
+1. 「**aduser1 \| Profile**」 ブレードを表示している Microsoft Edge ウィンドウに切り替え、ページを更新して、「**Department**」 プロパティが 「**Sales**」 に設定されていることを確認します。
 
-    >**注意**: 「**部署**」 属性が設定されていない場合は、もう 1 分待ってからページを再度更新する必要がある場合があります。
+    >**注意**: 「**Department**」 属性が設定されていない場合は、もう 1 分待ってからページを再度更新する必要がある場合があります。
 
 > **結果**: この演習を完了したら、ディレクトリ同期用の AD DS を準備し、Azure AD Connect をインストールし、ディレクトリ同期を検証しました。
 
@@ -344,7 +348,7 @@ lab:
 
 1. **adVM** へのリモート デスクトップ セッション内で、管理者として Windows PowerShell を起動します。
 
-1. Windows PowerShell コンソールから、次のコマンドを実行して MsOnline PowerShell モジュールをインストールします (メッセージが表示されたら、「続行するには NuGet プロバイダーが必要です」 ダイアログ ボックスで、「**はい**」 と入力して Enter キーを押します)。
+1. Windows PowerShell コンソールから、次のコマンドを実行して MsOnline PowerShell モジュールをインストールします (メッセージが表示されたら、「続行するには NuGet プロバイダーが必要です」 ダイアログ ボックスで、「**Yes**」 と入力して Enter キーを押します)。
 
     ```powershell
     「Net.ServicePointManager」::SecurityProtocol = 「Net.SecurityProtocolType」::Tls12
@@ -374,7 +378,9 @@ lab:
 
     >**注意**: 次に、Azure リソースを削除します
 
-1. Azure portal で、**Directory + Subscription** フィルターを、**adVM** Azure VM をデプロイした Azure サブスクリプションに関連付けられている Azure AD テナントに設定します。
+1. **adVM** へのリモート デスクトップを閉じます。
+
+1. Azure portal で、**ディレクトリ + サブスクリプション** フィルターを、**adVM** Azure VM をデプロイした Azure サブスクリプションに関連付けられている Azure AD テナントに設定します。
 
 1. Azure portal から、Azure portal の右上にあるアイコンをクリックして、 Cloud Shell を開きます。 
 
@@ -383,19 +389,19 @@ lab:
 1. 「クラウド シェル」 ウィンドウ内の 「PowerShell」 セッションで、次の手順を実行して、このラボで作成したリソース グループを削除します。
   
     ```powershell
-    Remove-AzResourceGroup -Name "AZ500LAB06" -Force -AsJob
+    Remove-AzResourceGroup -Name "AZ500Lab06" -Force -AsJob
     ```
 1. **「Cloud Shell」** ウィンドウを閉じます。
 
     >**注意**: 最後に、Azure AD テナントを削除します。
 
-1. Azure portal に戻り、**Directory + Subscription** フィルターを使用して **AdatumSync** Azure Active Directory テナントに切り替えます。
+1. Azure portal に戻り、**ディレクトリ + サブスクリプション** フィルターを使用して **AdatumSync** Azure Active Directory テナントに切り替えます。
 
-1. Azure portal で、「**ユーザー - すべてのユーザー**」 ブレードに移動し、**syncadmin** ユーザー アカウントを表すエントリをクリックし、「**syncadmin - プロファイル**」 ブレードで 「**削除**」 をクリックして、確認を求められたら、「**OK**」 をクリックします。
+1. Azure portal で、「**ユーザー \| すべてのユーザー**」 ブレードに移動し、**syncadmin** ユーザー アカウントを表すエントリをクリックし、「**syncadmin \| プロファイル**」 ブレードで 「**削除**」 をクリックして、確認を求められたら、「**OK**」 をクリックします。
 
 1. **aduser1** ユーザー アカウントを削除するには、同じ手順を繰り返します。
 
-1. Azure AD テナントの 「**AdatumSync - 概要**」 ブレードに移動し、「**テナントの削除**」 をクリックし、「**'AdatumSync' ディレクトリの削除**」 ブレードで 「**Azure リソースを削除する権限を取得**」 のリンクをクリックし、Azure Active Directory の 「**プロパティ**」 ブレードの 「**Azure リソースのアクセス管理**」 で 「**はい**」 をクリックして、「**保存**」 をクリックします。
+1. Azure AD テナントの 「**AdatumSync \| 概要**」 ブレードに移動し、「**テナントの削除**」 をクリックし、「**'AdatumSync' ディレクトリの削除**」 ブレードで 「**Azure リソースを削除するアクセス許可を取得します**」 のリンクをクリックし、Azure Active Directory の 「**プロパティ**」 ブレードの 「**Azure リソースのアクセス管理**」 で 「**はい**」 をクリックして、「**保存**」 をクリックします。
 
 1. Azure portal からサインアウトし、サインインし直します。 
 
