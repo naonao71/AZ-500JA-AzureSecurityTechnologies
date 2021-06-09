@@ -68,7 +68,7 @@ lab:
 
 1. 同じブラウザーの画面で別のブラウザー タブを開き、[https://github.com/Azure/azure-quickstart-templates/tree/master/application-workloads/active-directory/active-directory-new-domain](https://github.com/Azure/azure-quickstart-templates/tree/master/application-workloads/active-directory/active-directory-new-domain) に移動します。 
 
-1. 「**Create a new Windows VM and create a new AD Forest, Domain and DC**」 ページで、「**Deploy to Azure **」 をクリックします。これにより、ブラウザーが Azure portal の 「**カスタムテンプレートからのデプロイ**」 ブレードに自動的にリダイレクトされます。
+1. 「**Create a new Windows VM and create a new AD Forest, Domain and DC**」 ページで、「**Deploy to Azure**」 をクリックします。これにより、ブラウザーが Azure portal の 「**カスタムテンプレートからのデプロイ**」 ブレードに自動的にリダイレクトされます。
 
 1. 「**カスタム デプロイ**」 ブレードで、「**パラメーターの編集**」 をクリックします。
 
