@@ -286,7 +286,7 @@ Azure Firewall のインストールを求められました。これは、組�
 
 1. 「**Srv-Work**」 へのリモート デスクトップ セッションの 「**Server Manager**」 で 「**Local Server**」 をクリックし 、「**IE Enhanced Security Configuration**」 をクリックします。
 
-1. 「**IE Enhanced Security Configuration**」 ダイアログ ボックスで、両方のオプションを 「**Offフ**」 に設定し、「**OK**」 をクリックします。
+1. 「**IE Enhanced Security Configuration**」 ダイアログ ボックスで、両方のオプションを 「**Off**」 に設定し、「**OK**」 をクリックします。
 
 1. **Srv-Work** へのリモート デスクトップ セッション内で 、Internet Explorer を起動し、**`https://www.bing.com`** を参照します。 
 
