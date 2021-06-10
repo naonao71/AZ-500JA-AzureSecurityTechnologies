@@ -33,7 +33,7 @@ Azure Container Registry と Azure Kubernetes Service を使用して概念実�
 
 ### 予想時間: 45 分
 
-> このラボのすべてのリソースに対して、**東部 (米国)** リージョンを使用しています。クラスで使用する地域であることを講師に確認します。 
+> このラボのすべてのリソースに対して、**米国東部** リージョンを使用しています。クラスで使用する地域であることを講師に確認します。 
 
 この演習では、次のタスクを行います。
 
@@ -61,25 +61,25 @@ Azure Container Registry と Azure Kubernetes Service を使用して概念実�
 1. 「Cloud Shell」 ウィンドウ内の Bash セッションで、次の手順を実行して、このラボ用の新しいリソース グループを作成します。
 
     ```sh
-    az group create --name AZ500LAB09 --location eastus
+    az group create --name AZ500Lab09 --location eastus
     ```
 
 1. 「Cloud Shell」 ウィンドウ内の Bash セッションで、次の手順を実行して、リソース グループが作成されたことを確認します。
 
-    ```
-    az group list --query "[?name=='AZ500LAB09']" -o table
+    ```sh
+    az group list --query "[?name=='AZ500Lab09']" -o table
     ```
 
 1. 「Cloud Shell」 ウィンドウ内の Bash セッションで、次のコマンドを実行して新しい Azure Container Registry (ACR) インスタンスを作成します (ACR の名前はグローバルに一意である必要があります)。 
 
     ```sh
-    az acr create --resource-group AZ500LAB09 --name az500$RANDOM$RANDOM --sku Basic
+    az acr create --resource-group AZ500Lab09 --name az500$RANDOM$RANDOM --sku Basic
     ```
 
 1. 「Cloud Shell」 ウィンドウ内の Bash セッションで、次の手順を実行して、新しい ACR が作成されたことを確認します。
 
     ```sh
-    az acr list --resource-group AZ500LAB09
+    az acr list --resource-group AZ500Lab09
     ```
 
     >**注**: ACR の名前を記録します。この名前は、次のタスクで必要になります。
@@ -99,7 +99,7 @@ Azure Container Registry と Azure Kubernetes Service を使用して概念実�
     >**注**: コマンド ラインの末尾の後続ピリオドが必要です。現在のディレクトリを Dockerfile の場所として指定します。 
 
     ```sh
-    ACRNAME=$(az acr list --resource-group AZ500LAB09 --query '[].{Name:name}' --output tsv)
+    ACRNAME=$(az acr list --resource-group AZ500Lab09 --query '[].{Name:name}' --output tsv)
 
     az acr build --image sample/nginx:v1 --registry $ACRNAME --file Dockerfile .
     ```
@@ -126,29 +126,29 @@ Azure Container Registry と Azure Kubernetes Service を使用して概念実�
 
 1. Azure portal ページの上部の 「**リソース、サービス、ドキュメントの検索**」 テキスト ボックスで、**Kubernetes サービス** を入力し **Enter** キーを押します。
 
-1. 「**Kubernetes サービス**」 ブレードで 、「**+ 追加**」 をクリックし、ドロップダウン メニューで 「**Kubernetes クラスターの追加**」 をクリックします
+1. 「**Kubernetes サービス**」 ブレードで 、「**+ 作成**」 をクリックし、ドロップダウン メニューで 「**Create a Kubernetes cluster**」 をクリックします
 
-1. 「**Kubernetes クラスターの作成**」 ブレードの 「**基本**」 タブで、次の設定を指定します (既定値を他のユーザーのままにします)。
+1. 「**Kubernetes クラスターを作成**」 ブレードの 「**基本**」 タブで、次の設定を指定します (既定値をそのままにします)。
 
     |設定|値|
     |----|----|
     |サブスクリプション|このラボで使用している Azure サブスクリプションの名前|
-    |リソース グループ|**AZ500LAB09**|
+    |リソース グループ|**AZ500Lab09**|
     |Kubernetes クラスター名|**MyKubernetesCluster**|
-    |リージョン|**(US) East US**|
+    |地域|**(US) 米国東部**|
     |可用性ゾーン |**なし**|
     |ノード数|**1**|
 
-1. **「次へ: ノード プール >」** をクリックし 「**Kubernetes クラスターの作成**」 ブレードの 「**ノード プール**」 タブで、次の設定を指定します (他の設定は既定値のままにします)。
+1. **「次: ノード プール >」** をクリックし 「**Kubernetes クラスターを作成**」 ブレードの 「**ノード プール**」 タブで、次の設定を指定します (他の設定は既定値のままにします)。
 
     |設定|値|
     |----|----|
     |仮想ノードを有効にする|チェックボックスがオフ|
-    |VM Scale Sets|チェックボックスがオフ|
+    |仮想マシン スケール セットを有効にする|チェックボックスがオフ|
 	
-1. **「次へ: 認証 >**」 の 「**Kubernetes クラスターの作成**」 ブレードの 「**認可**」 タブで、既定値を受け入れて、「**次へ**」 をクリックします。 「**ネットワーク**」 をクリックします。 
+1. **「次: 認証 >**」 の 「**Kubernetes クラスターを作成**」 ブレードの 「**認可**」 タブで、既定値を受け入れて、「**次:ネットワーク**」 をクリックします。 
 
-1. 「**Kubernetes クラスターの作成**」 ブレードの 「**ネットワーク**」 タブで、次の設定を指定します (既定値を他のユーザーのままにします)。
+1. 「**Kubernetes クラスターを作成**」 ブレードの 「**ネットワーク**」 タブで、次の設定を指定します (既定値を他のユーザーのままにします)。
 
     |設定|値|
     |----|----|
@@ -157,19 +157,19 @@ Azure Container Registry と Azure Kubernetes Service を使用して概念実�
 
     >**注**: AKS はプライベート クラスターとして設定できます。これにより、API サーバーにプライベート IP が割り当てられるため、API サーバーとノード プール間のネットワーク トラフィックがプライベート ネットワーク上にのみ残ります。詳細については、[Azure Kubernetes Service のプライベート クラスター の作成](https://docs.microsoft.com/ja-jp/azure/aks/private-clusters) に関するページを参照してください。
 
-1. 「**次へ: 統合 >**」 をクリックし、「**Kubernetes クラスターの作成**」 ブレードの 「**統合**」 タブで、「**コンテナーの監視**」 を 「**無効**」 に設定します。 
+1. 「**次: 統合 >**」 をクリックし、「**Kubernetes クラスターを作成**」 ブレードの 「**統合**」 タブで、「**コンテナーの監視**」 を 「**無効**」 に設定します。 
 
     >**注**: 運用シナリオでは、監視を有効にします。この場合、監視はラボでカバーされていないので無効になります。 
 
-1. 「**Review + create**」 をクリックし、「**作成**」 をクリックします。
+1. 「**確認および作成**」 をクリックし、「**作成**」 をクリックします。
 
     >**注**: デプロイが完了するのを待ちます。10 分間程度かかる場合があります。
 
 1. デプロイが完了したら、Azure portal ページの上部にある 「**リソース、サービス、ドキュメントの検索**」 テキスト ボックスで、**リソース グループ**と入力し、**Enter** キーを押します。
 
-1. 「**リソース グループ**」 ブレードのリソース グループの一覧で、AKS ノードのコンポーネントを保持する **MC_AZ500LAB09_MyKubernetesCluster_eastus** という名前の新しいリソース グループをメモします。このリソース グループのリソースを確認します。 
+1. 「**リソース グループ**」 ブレードのリソース グループの一覧で、AKS ノードのコンポーネントを保持する **MC_AZ500Lab09_MyKubernetesCluster_eastus** という名前の新しいリソース グループをメモします。このリソース グループのリソースを確認します。 
 	
-1. 「**リソース グループ**」 ブレードに戻り、**AZ500LAB09** エントリをクリックします。 
+1. 「**リソース グループ**」 ブレードに戻り、**AZ500Lab09** エントリをクリックします。 
 
     >**注**: リソースの一覧で、AKS クラスターと対応する仮想ネットワークに注意してください。
 
@@ -180,7 +180,7 @@ Azure Container Registry と Azure Kubernetes Service を使用して概念実�
 1. 「Cloud Shell」 ウィンドウ内の Bash セッションで、次の手順を実行して Kubernetes クラスターに接続します。
 
     ```sh
-    az aks get-credentials --resource-group AZ500LAB09 --name MyKubernetesCluster
+    az aks get-credentials --resource-group AZ500Lab09 --name MyKubernetesCluster
     ```
 
 1. 「Cloud Shell」 ウィンドウ内の Bash セッションで、Kubenetes クラスターのノードを一覧表示するには、次の手順を実行します。 
@@ -189,7 +189,7 @@ Azure Container Registry と Azure Kubernetes Service を使用して概念実�
     kubectl get nodes
     ```
 
-    >**注**: クラスタ ノードの**ステータス**が**準備完了**としてリストされていることを確認します。
+    >**注**: クラスタ ノードの**STATUS**が**Ready**としてリストされていることを確認します。
 
 #### タスク 4: ACRにアクセスし、その仮想ネットワークを管理するためのアクセス許可を AKS クラスターに付与する
 
@@ -198,9 +198,9 @@ Azure Container Registry と Azure Kubernetes Service を使用して概念実�
 1. 「Cloud Shell」 ウィンドウ内の Bash セッションで、このラボで先ほど作成した Azure Container Registry インスタンスを使用するように AKS クラスターを構成するには、次の手順を実行します。 
 
     ```sh
-    ACRNAME=$(az acr list --resource-group AZ500LAB09 --query '[].{Name:name}' --output tsv)
+    ACRNAME=$(az acr list --resource-group AZ500Lab09 --query '[].{Name:name}' --output tsv)
 
-    az aks update -n MyKubernetesCluster -g AZ500LAB09 --attach-acr $ACRNAME
+    az aks update -n MyKubernetesCluster -g AZ500Lab09 --attach-acr $ACRNAME
     ```
 
     >**注**: このコマンドは、ACR に 'acrpull' ロールの割り当てを付与します。 
@@ -210,9 +210,9 @@ Azure Container Registry と Azure Kubernetes Service を使用して概念実�
 1. Cloud Shell ペイン内の Bash セッションで、以下を実行して、AKS クラスターにその仮想ネットワークへのコントリビューター ロールを付与します。 
 
     ```sh
-    RG_AKS=AZ500LAB09
+    RG_AKS=AZ500Lab09
     
-    AKS_VNET_NAME=AZ500LAB09-vnet
+    AKS_VNET_NAME=AZ500Lab09-vnet
     
     AKS_CLUSTER_NAME=MyKubernetesCluster
     
@@ -257,7 +257,7 @@ Azure Container Registry と Azure Kubernetes Service を使用して概念実�
 
 1. 「Cloud Shell」 ウィンドウ内の Bash セッションで、前のタスクで実行したコマンドの出力を確認して、デプロイと対応するサービスが作成されたことを確認します。 
 
-    ```
+    ```sh
     deployment.apps/nginxexternal created
     service/nginxexternal created
     ```
@@ -272,7 +272,7 @@ Azure Container Registry と Azure Kubernetes Service を使用して概念実�
     kubectl get service nginxexternal
     ```
 
-1. 「Cloud Shell」 ウィンドウ内の Bash セッションで、出力を確認し、「外部 IP」 列に値を記録します。次の手順で必要になります。 
+1. 「Cloud Shell」 ウィンドウ内の Bash セッションで、出力を確認し、「EXTERNAL-IP」 列の値を記録します。次の手順で必要になります。 
 
 1. Internet Explorer を開き、前の手順で特定した IP アドレスを参照します。
 
@@ -302,7 +302,7 @@ Azure Container Registry と Azure Kubernetes Service を使用して概念実�
 
 1.  Cloud Shell ウィンドウ内の Bash セッションで、出力を確認してデプロイおよび、サービスが作成されたことを確認します。
 
-    ```
+    ```sh
     deployment.apps/nginxinternal created
     service/nginxinternal created
     ```
@@ -313,7 +313,7 @@ Azure Container Registry と Azure Kubernetes Service を使用して概念実�
     kubectl get service nginxinternal
     ```
 
-1. 「Cloud Shell」 ウィンドウ内の Bash セッションで、出力を確認します。外部 IP は、この場合はプライベート IP アドレスです。 
+1. 「Cloud Shell」 ウィンドウ内の Bash セッションで、出力を確認します。EXTERNAL-IP は、この場合はプライベート IP アドレスです。 
 
     >**注**: この IP アドレスを記録します。この名前は、次のタスクで必要になります。 
 
