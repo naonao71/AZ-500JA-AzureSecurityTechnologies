@@ -49,9 +49,9 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
 
     >**注**: このラボで使用している Azure サブスクリプションで所有者ロールまたは共同作成者ロールを持つアカウントを使用して Azure ポータルにサインインします。
 
-1. Azure portal で Azure portal ページの上部にある **「リソース、サービス、ドキュメントの検索」** テキスト ボックスで、**「カスタム テンプレートをデプロイする」** と入力し、**「Enter」** キーを押します。
+1. Azure portal で Azure portal ページの上部にある **「リソース、サービス、ドキュメントの検索」** テキスト ボックスで、**「カスタム テンプレートのデプロイ」** と入力し、**「Enter」** キーを押します。
 
-1. **Custom deployment** ブレードで、**エディターで独自のテンプレートをビルド** のオプションをクリックします。
+1. **カスタム デプロイ** ブレードで、**エディターで独自のテンプレートをビルド** のオプションをクリックします。
 
 1. 「**テンプレートの編集**」 ブレードで、「**ファイルの読み込み**」 をクリックし、**\\Allfiles\\Labs\\10\\az-500-10_azuredeploy.json** ファイルを見つけて、「**開く**」 をクリックします。
 
@@ -62,10 +62,10 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
    |設定|値|
    |---|---|
    |サブスクリプション|このラボで使用する Azure サブスクリプションの名前|
-   |リソース グループ|「**新規作成**」 をクリックして、「**AZ500LAB10**」という名前を入力します。|
-   |場所|**(US) East US**|
-   |管理者ユーザー名|**Student**|
-   |管理者のパスワード|**Pa55w.rd1234**|
+   |リソース グループ|「**新規作成**」 をクリックして、「**AZ500Lab10**」という名前を入力します。|
+   |リージョン|**米国東部**|
+   |Admin Username|**Student**|
+   |Admin Password|**Pa55w.rd1234**|
    
     >**注**: 仮想マシンへのログオンに使用される管理資格情報を変更できますが、変更する必要はありません。
 
@@ -79,7 +79,7 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
 
 ### 演習 2: キーとシークレットを使用してキー コンテナーのリソースを構成する
 
->**注**: このラボのすべてのリソースに対して、**東部 (米国)** リージョンを使用しています。クラスで使用する地域であることを講師に確認します。 
+>**注**: このラボのすべてのリソースに対して、**米国東部** リージョンを使用しています。クラスで使用する地域であることを講師に確認します。 
 
 この演習では、次のタスクを行います。
 
@@ -95,14 +95,14 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
 
 1. 「Cloud Shell」 ウィンドウの左上隅にあるドロップダウン メニューで 「**PowerShell**」 が選択されていることを確認します。
 
-1. 「Cloud Shell」 ウィンドウ内の 「PowerShell」 セッションで次を実行して、リソース グループ **AZ500LAB10** に Azure Key Vault を作成します。（タスク 1 でラボのリソース グループに別の名前を使用した場合は、このタスクでもその名前を使用してください）。キー コンテナー名は一意である必要があります。選択した名前を覚えておいてください。このラボ全体で必要になります。  
+1. 「Cloud Shell」 ウィンドウ内の 「PowerShell」 セッションで次を実行して、リソース グループ **AZ500Lab10** に Azure Key Vault を作成します。（タスク 1 でラボのリソース グループに別の名前を使用した場合は、このタスクでもその名前を使用してください）。キー コンテナー名は一意である必要があります。選択した名前を覚えておいてください。このラボ全体で必要になります。  
 
     ```powershell
     $kvName = 'az500kv' + $(Get-Random)
 
-    $location = (Get-AzResourceGroup -ResourceGroupName 'AZ500LAB10').Location
+    $location = (Get-AzResourceGroup -ResourceGroupName 'AZ500Lab10').Location
 
-    New-AzKeyVault -VaultName $kvName -ResourceGroupName 'AZ500LAB10' -Location $location
+    New-AzKeyVault -VaultName $kvName -ResourceGroupName 'AZ500Lab10' -Location $location
     ```
 
     >**注**: 最後のコマンドの出力には、コンテナー名とコンテナーURIが表示されます。コンテナー URI の形式は `https://<vault_name>.vault.azure.net/` です
@@ -111,7 +111,7 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
 
 1. Azure portal の、Azure portal ページの上部にある **「ソース、サービス、ドキュメントの検索」** テキスト ボックスで、 **「リソース グループ」**と入力し、**「Enter」** キーを押します。
 
-1. 「**リソース グループ**」 ブレードのリソース グループのリストで、**AZ500LAB10**（または以前にリソース グループに選択した他の名前）エントリをクリックします。
+1. 「**リソース グループ**」 ブレードのリソース グループのリストで、**AZ500Lab10**（または以前にリソース グループに選択した他の名前）エントリをクリックします。
 
 1. リソースグループブレードで、新しく作成されたキー コンテナーを表すエントリをクリックします。 
 
@@ -121,11 +121,11 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
 
     |設定|値|
     |----|----|
-    |テンプレートから構成する (オプション)|**キー、シークレット、および証明書管理**|
+    |テンプレートから構成する (オプション)|**キー、シークレット、および証明書の管理**|
     |キーのアクセス許可|「**すべて選択**」 をクリックして、**16 個**の権限を選択します|
     |シークレットのアクセス許可|「**すべて選択**」 をクリックして、合計 **8 個**の権限を選択します|
     |証明書のアクセス許可|「**すべて選択**」をクリックして、合計 **16 個**の権限を選択します|
-    |プリンシパルの選択|「**選択なし**」 をクリックし、「**プリンシパル**」 ブレードでユーザー アカウントを選択して、「**選択**」 をクリックします|
+    |プリンシパルの選択|「**選択されていません**」 をクリックし、「**プリンシパル**」 ブレードでユーザー アカウントを選択して、「**選択**」 をクリックします|
 
 1. 「**アクセス ポリシーの追加**」 ブレードに戻り、「**追加**」 をクリックしてアクセス ポリシーを追加します。次に、キー コンテナーの 「アクセス ポリシー」 ブレードに戻り、変更を保存するには、「**保存**」 をクリックします。 
 
@@ -140,7 +140,7 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
 1. Cloud Shell ペイン内の PowerShell セッションで次のコマンドを実行して、ソフトウェアで保護されたキーをキー コンテナーに追加します。 
 
     ```powershell
-    $kv = Get-AzKeyVault -ResourceGroupName 'AZ500LAB10'
+    $kv = Get-AzKeyVault -ResourceGroupName 'AZ500Lab10'
 
     $key = Add-AZKeyVaultKey -VaultName $kv.VaultName -Name 'MyLabKey' -Destination 'Software'
     ```
@@ -205,7 +205,7 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
     >**注**: シークレットの最新バージョンを取得するには `https://<key_vault_name>.vault.azure.net/secrets/<secret_name>` を参照するか、特定のバージョンを取得するには `https://<key_vault_name>.vault.azure.net/secrets/<secret_name>/<secret_version>` を参照します。
 
 
-### 演習 3Azure SQL データベースとデータ駆動型アプリケーションを構成する
+### 演習 3 Azure SQL データベースとデータ駆動型アプリケーションを構成する
 
 この演習では、次のタスクを行います。
 
@@ -229,7 +229,7 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
     |設定|値|
     |----|----|
     |名前|**sqlApp**|
-    |リダイレクト URI (オプション)|**Web** および **https://sqlapp**|
+    |リダイレクト URI (省略可能)|**Web** および **https://sqlapp**|
 
 1. 「**アプリケーションの登録**」 ブレードで、「**登録**」 をクリックします。 
 
@@ -241,18 +241,18 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
 
 1. 「**sqlApp**」 ブレードの 「**管理**」 セクションで、「**証明書とシークレット**」 をクリックします。
 
-1. **sqlApp |** 「**証明書と秘密**」 ブレードの 「**クライアント シークレット**」 セクションで、「**+新しいクライアント シークレット**」をクリックします
+1. **sqlApp \| 証明書とシークレット**」 ブレードの 「**クライアント シークレット**」 セクションで、「**+新しいクライアント シークレット**」をクリックします
 
 1. 「**クライアント シークレットの追加**」 ペインで、次の設定を指定します。
 
     |設定|値|
     |----|----|
     |説明|**Key1**|
-    |有効期限|**1 年**|
+    |有効期限|**12か月**|
 	
 1. 「**追加**」 をクリック して、アプリケーションの認証資格情報を更新します。
 
-1. **sqlApp** で **|** 「**証明書と秘密**」 ブレードで、**Key1** の値を特定します。
+1. **sqlApp \| 証明書とシークレット**」 ブレードで、**Key1** の値を特定します。
 
     >**注**: この値を記録します。この名前は、次のタスクで必要になります。 
 
@@ -274,7 +274,7 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
     ```
 1. Cloud Shell ペイン内の PowerShell セッションで次のコマンドを実行して、キー コンテナー名を格納する変数を作成します。
 	```
-    $kvName = (Get-AzKeyVault -ResourceGroupName 'AZ500LAB10').VaultName
+    $kvName = (Get-AzKeyVault -ResourceGroupName 'AZ500Lab10').VaultName
 
     $kvName
     ```
@@ -282,7 +282,7 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
 1. Cloud Shell ペイン内の PowerShell セッションで次のコマンドを実行して、前のタスクで登録したアプリケーションにキー コンテナーの権限を付与します。
 
     ```powershell
-    Set-AZKeyVaultAccessPolicy -VaultName $kvName -ResourceGroupName AZ500LAB10 -ServicePrincipalName $applicationId -PermissionsToKeys get,wrapKey,unwrapKey,sign,verify,list
+    Set-AZKeyVaultAccessPolicy -VaultName $kvName -ResourceGroupName AZ500Lab10 -ServicePrincipalName $applicationId -PermissionsToKeys get,wrapKey,unwrapKey,sign,verify,list
     ```
 
 1. 「Cloud Shell」 ペインを閉じます。 
@@ -320,19 +320,17 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
 
 このタスクでは、SQL Server Management Studio を使用して SQL データベースに接続し、テーブルを作成します。次に、Azure Key Vault から自動生成されたキーを使用して 2 つのデータ列を暗号化します。 
 
-1. Azure Portal で、**医療用** SQL データベースのブレードに移動し、「**必須事項**」 セクションでサーバー名を特定してから、ツールバーで 「**サーバーファイアウォールの設定**」 をクリックします。  
+1. Azure Portal で、**medical** SQL データベースのブレードに移動し、「**必須事項**」 セクションでサーバー名を特定してから、ツールバーで 「**サーバーファイアウォールの設定**」 をクリックします。  
 
     >**注**: サーバー名を記録します。このタスクの後半でサーバー名が必要になります。
 
-1. **ファイアウォール設定**ブレードで、「**ルール名**」 までスクロールし、次の設定を指定します。 
+1. **ファイアウォール設定**ブレードで、次の設定を指定します。 
 
     |設定|値|
     |---|---|
     |規則名|**Mgmt VM を許可する**|
-    |開始 IP|az500-10-vm1 のパブリック IP アドレス
-終了IP|
-    |終了 IP|az500-10-vm1 のパブリック IP アドレス
-終了IP|
+    |開始 IP|az500-10-vm1 のパブリック IP アドレス|
+    |終了 IP|az500-10-vm1 のパブリック IP アドレス|
 
 1. 「**保存**」 と 「**OK**」 をクリックして変更を保存し、確認ウィンドウを閉じます。 
 
@@ -351,25 +349,25 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
 
     >**注**: このラボの残りの手順は、**az500-10-vm1** Azure VM へのリモート デスクトップ セッション内で実行されます。 
 
-1. 「**スタート**」 をクリックし、「**スタート**」 メニューの 「**Microsoft SQL Server ツール 18**」 フォルダーを展開して、「**Micosoft SQL Server Management Studio**」 メニュー項目をクリックします。
+1. 「**スタート**」 をクリックし、「**スタート**」 メニューの 「**Microsoft SQL Server Tools 18**」 フォルダーを展開して、「**Micosoft SQL Server Management Studio**」 メニュー項目をクリックします。
 
 1. 「**サーバーに接続**」 ダイアログ ボックスで、次の設定を指定します。 
 
     |設定|値|
     |---|---|
-    |サーバー タイプ|**データベース エンジン**|
-    |サーバー名|このタスクで前に指定したサーバー名|
-    |認証|**SQL Server 認可**|
+    |Server type|**Database Engine**|
+    |Server name|このタスクで前に指定したサーバー名|
+    |Authentication|**SQL Server Authentication**|
     |ログイン|**Student**|
     |パスワード|**Pa55w.rd1234**|
 
-1. 「**サーバーに接続**」 ダイアログ ボックスで、「**接続**」 をクリックします。
+1. 「**Connect to Server**」 ダイアログ ボックスで、「**Connect**」 をクリックします。
 
-1. 「**SQL Server Management Studio**」 コンソールの 「**オブジェクト エクスプローラー**」 ペインで、「**データベース**」 フォルダーを展開します。
+1. 「**SQL Server Management Studio**」 コンソールの 「**Object Explorer**」 ペインで、「**Databases**」 フォルダーを展開します。
 
-1. 「**オブジェクト エクスプローラ**」 ペインで、**医療用**データベースを右クリックし、「**新しいクエリ**」 をクリックします。
+1. 「**Object Explorer**」 ペインで、**medical**データベースを右クリックし、「**New Query**」 をクリックします。
 
-1. 次のコードをクエリ ウィンドウに貼り付け、「**実行**」 をクリックします。これにより、**患者**テーブルが作成されます。
+1. 次のコードをクエリ ウィンドウに貼り付け、「**Execute**」 をクリックします。これにより、**Patients**テーブルが作成されます。
 
      ```sql
      CREATE TABLE [dbo].[Patients](
@@ -385,15 +383,15 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
 		[BirthDate] [date] NOT NULL 
      PRIMARY KEY CLUSTERED ([PatientId] ASC) ON [PRIMARY] );
      ```
-1. テーブルが正常に作成されたら、「**オブジェクト エクスプローラー**」 ペインで、 「**医療用**」 データベース ノード、「**テーブル**」 ノードを展開します。「**dbo.Patients**」 ノードを右クリックして 「**列の暗号化**」 をクリックします。 
+1. テーブルが正常に作成されたら、「**Object Explorer**」 ペインで、 「**medical**」 データベース ノード、「**Tables**」 ノードを展開します。「**dbo.Patients**」 ノードを右クリックして 「**Encrypt Columns**」 をクリックします。 
 
     >**注**: これにより、**Always Encrypted** ウィザードが起動します。
 
-1. **概要**ページで 「**次へ**」 をクリックします。
+1. **Introduction**ページで 「**Next**」 をクリックします。
 
-1. 「**列の選択**」 ページで、「**SSN**」 列と 「**Birthdate**」 列を選択し、「**SSN**」 列の 「**暗号化の種類**」 を 「**確定的**」 に、「**Birthdate**」 列を 「**ランダム化**」 に設定し、「**次へ**」 をクリックます。
+1. 「**Column Selection**」 ページで、「**SSN**」 列と 「**Birthdate**」 列を選択し、「**SSN**」 列の 「**Encryption Type**」 を 「**Deterministic**」 に、「**Birthdate**」 列を 「**Randomized**」 に設定し、「**Next**」 をクリックます。
 
-1. 「**マスター キーの構成**」 ページで、「**Azure Key Vault**」 を選択し、「**サインイン**」 をクリックします。認証を求められたら、このラボで行った Azure Key Vault インスタンスのプロビジョニングで使用したのと同じユーザー アカウントを使い認証します。「**Azure Key Vault の選択**」 ドロップ ダウン リストに該当のキー コンテナーが表示されるのを確認し、「**次へ**」 をクリックします。
+1. 「**Master Key Configuration**」 ページで、「**Azure Key Vault**」 を選択し、「**サインイン**」 をクリックします。認証を求められたら、このラボで行った Azure Key Vault インスタンスのプロビジョニングで使用したのと同じユーザー アカウントを使い認証します。「**Azure Key Vault の選択**」 ドロップ ダウン リストに該当のキー コンテナーが表示されるのを確認し、「**次へ**」 をクリックします。
 
 1. 「**実行設定**」 ページで 「**次へ**」 をクリックします。
 	
@@ -401,7 +399,7 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
 
 1. 暗号化プロセスが完了したら、「**結果**」 ページで 「**閉じる**」 をクリックします。
 
-1. **SQL Server Management Studio** コンソールで、 「**Object Explorer**」 ウィンドウの 「**医療**」 ノードの下にある 「**セキュリティ**」 および 「**Always Encrypted Keys**」 サブノードを展開します。 
+1. **SQL Server Management Studio** コンソールで、 「**Object Explorer**」 ウィンドウの 「**medical**」 ノードの下にある 「**セキュリティ**」 および 「**Always Encrypted Keys**」 サブノードを展開します。 
 
     >**注**: 「**Always Encrypted Keys**」 サブノードには、「**列マスター キー**」 と 「**列暗号化キー**」 のサブフォルダーが含まれています。
 
