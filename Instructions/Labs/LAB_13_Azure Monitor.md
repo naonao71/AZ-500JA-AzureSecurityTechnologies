@@ -48,7 +48,7 @@ lab:
 1. 「Cloud Shell」 ウィンドウ内の PowerShell セッションで、次の手順を実行して、このラボで使用するリソース グループを作成します。
   
     ```powershell
-    New-AzResourceGroup -Name AZ500Lab131415 -Location 'EastUS'
+    New-AzResourceGroup -Name AZ500LAB131415 -Location 'EastUS'
     ```
 
     >**注**: このリソース グループは、ラボ 13、14、および 15 に使用されます。 
@@ -56,7 +56,7 @@ lab:
 1. 「Cloud Shell」 ウィンドウ内の PowerShell セッションで、次の手順を実行して、新しい Azure Virtual Machine を作成します。 
 
     ```powershell
-    New-AzVm -ResourceGroupName "AZ500Lab131415" -Name "myVM" -Location 'EastUS' -VirtualNetworkName "myVnet" -SubnetName "mySubnet" -SecurityGroupName   "myNetworkSecurityGroup" -PublicIpAddressName "myPublicIpAddress" -OpenPorts 80,3389
+    New-AzVm -ResourceGroupName "AZ500LAB131415" -Name "myVM" -Location 'EastUS' -VirtualNetworkName "myVnet" -SubnetName "mySubnet" -SecurityGroupName   "myNetworkSecurityGroup" -PublicIpAddressName "myPublicIpAddress" -OpenPorts 80,3389
     ```
 
 1.  資格情報の入力を求められた場合:
@@ -71,7 +71,7 @@ lab:
 1. 「Cloud Shell」 ウィンドウ内の PowerShell セッションで、次のコマンドを実行して、**myVM** という名前の仮想マシンが作成され、その 「**ProvisioningState**」 が 「**Succeeded**」 であることを確認します。
 
     ```powershell
-    Get-AzVM -Name 'myVM' -ResourceGroupName 'AZ500Lab131415' | Format-Table
+    Get-AzVM -Name 'myVM' -ResourceGroupName 'AZ500LAB131415' | Format-Table
     ```
 
 1. 「Cloud Shell」 ペインを閉じます。 

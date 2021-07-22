@@ -243,6 +243,6 @@ Azure Sentinel ベースの脅威検出と応答の概念実証を作成する�
 1. 「クラウド シェル」 ウィンドウ内の 「PowerShell」 セッションで、次の手順を実行して、このラボで作成したリソース グループを削除します。
   
     ```powershell
-    Remove-AzResourceGroup -Name "AZ500Lab131415" -Force -AsJob
+    Remove-AzResourceGroup -Name "AZ500LAB131415" -Force -AsJob
     ```
 1. **「Cloud Shell」** ウィンドウを閉じます。

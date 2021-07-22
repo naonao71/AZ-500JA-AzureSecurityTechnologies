@@ -325,7 +325,7 @@ Azure ユーザーとグループの作成方法を示す概念実証を作成�
 1. 「クラウド シェル」 ウィンドウ内の 「PowerShell」 セッションで、次の手順を実行して、このラボで作成したリソース グループを削除します。
   
     ```
-    Remove-AzResourceGroup -Name "AZ500Lab01" -Force -AsJob
+    Remove-AzResourceGroup -Name "AZ500LAB01" -Force -AsJob
     ```
 
 1.  **「Cloud Shell」** ペインを閉じます。 
