@@ -66,7 +66,7 @@ lab:
 
 このタスクでは、Active Directory ドメイン コントローラーをホストする Azure VM をデプロイします
 
-1. 同じブラウザーの画面で別のブラウザー タブを開き、[https://github.com/Azure/azure-quickstart-templates/tree/master/application-workloads/active-directory/active-directory-new-domain](https://github.com/Azure/azure-quickstart-templates/tree/master/application-workloads/active-directory/active-directory-new-domain) に移動します。 
+1. 同じブラウザーの画面で別のブラウザー タブを開き、[https://github.com/Azure/azure-quickstart-templates/tree/master/application-workloads/active-directory/active-directory-new-domain](`https://github.com/Azure/azure-quickstart-templates/tree/master/application-workloads/active-directory/active-directory-new-domain`) に移動します。 
 
 1. 「**Create a new Windows VM and create a new AD Forest, Domain and DC**」 ページで、「**Deploy to Azure**」 をクリックします。これにより、ブラウザーが Azure portal の 「**カスタムテンプレートからのデプロイ**」 ブレードに自動的にリダイレクトされます。
 
@@ -140,7 +140,7 @@ lab:
 
     >**注意**: **AdatumSync** エントリが **ディレクトリ + サブスクリプション** のフィルター リストに表示されない場合は、ブラウザーの画面を更新する必要があります。
 
-1. 「**AdatumSync**」 ブレードの 「**管理**」 セクションで、「**カスタム ドメイン名**」 をクリック します。
+1. 「**AdatumSync \| Azure Active Directory**」ブレードの「**管理**」セクションで、「**カスタム ドメイン名**」をクリックします。
 
 1. 「**AdatumSync \| カスタム ドメイン名**」 ブレードで、「**+ カスタム ドメインの追加**」 をクリックします。
 
@@ -225,6 +225,8 @@ lab:
 
 1. 「**IE Enhanced Security Configuration**」 ダイアログ ボックスで、両方のオプションを 「**Off**」 に設定し、「**OK**」 をクリックします。
 
+1. Internet Explorer を起動して、[https://www.microsoft.com/ja-jp/edge/business/download](`https://www.microsoft.com/en-us/edge/business/download`) に移動します。Microsoft Edge インストール バイナリをダウンロードし、インストールを実行し、既定の設定で Web ブラウザーを構成します。
+
 1. **Server Manager** で、「**Tools**」 をクリックし、ドロップダウン メニューの 「**Active Directory Administratice Center**」 をクリックします。
 
 1. **Active Directory Administratice Center** で、「**adatum (local)**」 をクリックし、「**Tasks**」 ウィンドウの「**adatum (local)**」配下で「**New**」 をクリックして、カスケード メニューで、**Organizational Unit** をクリックします。
@@ -249,15 +251,9 @@ lab:
 
 このタスクでは、仮想マシンに AD Connect をインストールします。 
 
-1. **adVM** へのリモート デスクトップ セッション内で Internet Explorer を起動します。
+1. **adVM** へのリモート デスクトップ セッション内で Microsoft Edge を使用し、[Azure portal](https://portal.azure.com) に移動して、前の演習で作成した **syncadmin** ユーザー アカウントを使用してサインインします。メッセージが表示されたら、記録した完全なユーザー名と **Pa55w.rd1234** パスワードを指定します。
 
-1. [Microsoft Edge](https://www.microsoft.com/ja-jp/edge/business/download) の最新のビルド、 Windows 64-bit 用のインストーラーをダウンロードして仮想マシンにインストールします。
-
-   >**注意**: Azure Portal が Internet Explorer のサポートを終了したので Microsoft Edge を使用します。
-
-1. Microsoft Edge を起動し、[Azure portal](https://portal.azure.com) に移動して、前の演習で作成した **syncadmin** ユーザー アカウントを使用してサインインします。メッセージが表示されたら、記録した完全なユーザー名と **Pa55w.rd1234** パスワードを指定します。
-
-1. Azure portal の 「**リソース、サービス、ドキュメントの検索**」 テキスト ボックスで、Azure portal ページの上部に「**Azure Active Directory**」と入力し、**Enter** キーを押します。
+1. Azure portal の 「**リソース、サービス、ドキュメントの検索**」テキスト ボックスで、Azure portal ページの上部に「**Azure Active Directory**」と入力し、**Enter** キーを押します。
 
 1. Azure portal の **AdatumSync \| Overview**」 ブレードで、「**Azure AD Connect**」 をクリックします。
 
@@ -311,19 +307,21 @@ lab:
 
 このタスクでは、ディレクトリ同期が機能していることを確認します。 
 
-1. **adVM** へのリモート デスクトップ セッション内の、Azure portal を表示する Microsoft Edge ウィンドウで 、Adatum Lab Azure AD テナントの 「**Users \| All users**」 ブレードに移動します。
+1. **adVM** へのリモート デスクトップ セッション内の、Azure portal を表示する Microsoft Edge ウィンドウで 、Adatum Lab Azure AD テナントの「**ユーザー - すべてのユーザー**」ブレードに移動します。
 
-1. 「**Users \| All users**」 ブレードで、ユーザー オブジェクトのリストに **aduser1** アカウントが含まれていることを確認してください。 
+1. 「**ユーザー \| すべてのユーザー**」ブレードで、ユーザー オブジェクトのリストに **aduser1** アカウントが含まれていることを確認してください。 
 
-    >**注意**: **aduser1** ユーザー アカウントが表示されるまで、数分待ってから 「**Refresh**」 を選択する必要がある場合があります。
+1. **aduser1** アカウントを選択し、「**プロファイル > ID**」セクションで、「**ソース**」属性が **Windows Server AD** に設定されていることを確認してください。
 
-1. 「**Users \| All users**」 ブレードで **aduser1** エントリを選択します。
+    >**注**: **aduser1** ユーザー アカウントが表示されるまで、数分待ってから 「**更新**」を選択する必要がある場合があります。
 
-1. 「**aduser1 \| Profile**」 ブレードの 「**Job info**」 セクションで、「**Department**」 属性が設定されていません。
+1. 「**ユーザー \| すべてのユーザー**」 ブレードで **aduser1** エントリを選択します。
 
-1. **adVM** へのリモート デスクトップ セッションで、**Active Directory Administratice Center** に切り替え、**ToSync** OU のオブジェクトのリストで **aduser1** エントリを選択し、「**Tasks**」 ウィンドウの 「**aduser1**」 セクションで、「**Properties**」 を選択します。
+1. 「**aduser1 \| プロファイル**」ブレードの 「**ジョブ情報**」セクションで、「**部署**」属性が設定されていません。
 
-1. 「**aduser1**」 ウィンドウの 「**Organization**」 セクションの 「**Department**」 テキスト ボックスに「**Sales**」と入力し、「**OK**」 をクリックします。
+1. **adVM** へのリモート デスクトップ セッションで、**Active Directory 管理センター** に切り替え、**ToSync** OU のオブジェクトのリストで **aduser1** エントリを選択し、「**タスク**」ペインの「**ToSync**」セクションで、「**プロパティ**」を選択します。
+
+1. 「**aduser1**」ウィンドウの「**組織**」セクションの「**部署**」テキスト ボックスに「**売上**」と入力し、「**OK**」をクリックします。
 
 1. **adVM** へのリモート デスクトップ セッション内で、**Windows PowerShell** を起動します。
 
@@ -378,18 +376,16 @@ lab:
 
     >**注意**: 次に、Azure リソースを削除します
 
-1. **adVM** へのリモート デスクトップを閉じます。
-
-1. Azure portal で、**ディレクトリ + サブスクリプション** フィルターを、**adVM** Azure VM をデプロイした Azure サブスクリプションに関連付けられている Azure AD テナントに設定します。
+1. Azure portal で、**Directory + Subscription** フィルターを、**adVM** Azure VM をデプロイした Azure サブスクリプションに関連付けられている Azure AD テナントに設定します。
 
 1. Azure portal から、Azure portal の右上にあるアイコンをクリックして、 Cloud Shell を開きます。 
 
-1. 「Cloud Shell」 ウィンドウの左上隅にあるドロップダウン メニューで 「**PowerShell**」 を選択し、メッセージが表示されたら 「**確認**」 をクリックします。 
+1. Cloud Shell ペインの左上隅にあるドロップダウン メニューで 「**PowerShell**」を選択し、メッセージが表示されたら 「**確認**」をクリックします。 
 
-1. 「クラウド シェル」 ウィンドウ内の 「PowerShell」 セッションで、次の手順を実行して、このラボで作成したリソース グループを削除します。
+1. Cloud Shell ペイン内の PowerShell セッションで、次の手順を実行して、このラボで作成したリソース グループを削除します。
   
     ```powershell
-    Remove-AzResourceGroup -Name "AZ500Lab06" -Force -AsJob
+    Remove-AzResourceGroup -Name "AZ500LAB06" -Force -AsJob
     ```
 1. **「Cloud Shell」** ウィンドウを閉じます。
 

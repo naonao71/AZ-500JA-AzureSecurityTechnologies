@@ -48,7 +48,7 @@ lab:
 1. 「Cloud Shell」 ウィンドウ内の PowerShell セッションで、次の手順を実行して、このラボで使用するリソース グループを作成します。
   
     ```powershell
-    New-AzResourceGroup -Name AZ500Lab131415 -Location 'EastUS'
+    New-AzResourceGroup -Name AZ500LAB131415 -Location 'EastUS'
     ```
 
     >**注**: このリソース グループは、ラボ 13、14、および 15 に使用されます。 
@@ -56,7 +56,7 @@ lab:
 1. 「Cloud Shell」 ウィンドウ内の PowerShell セッションで、次の手順を実行して、新しい Azure Virtual Machine を作成します。 
 
     ```powershell
-    New-AzVm -ResourceGroupName "AZ500Lab131415" -Name "myVM" -Location 'EastUS' -VirtualNetworkName "myVnet" -SubnetName "mySubnet" -SecurityGroupName   "myNetworkSecurityGroup" -PublicIpAddressName "myPublicIpAddress" -OpenPorts 80,3389
+    New-AzVm -ResourceGroupName "AZ500LAB131415" -Name "myVM" -Location 'EastUS' -VirtualNetworkName "myVnet" -SubnetName "mySubnet" -SecurityGroupName   "myNetworkSecurityGroup" -PublicIpAddressName "myPublicIpAddress" -OpenPorts 80,3389
     ```
 
 1.  資格情報の入力を求められた場合:
@@ -71,7 +71,7 @@ lab:
 1. 「Cloud Shell」 ウィンドウ内の PowerShell セッションで、次のコマンドを実行して、**myVM** という名前の仮想マシンが作成され、その 「**ProvisioningState**」 が 「**Succeeded**」 であることを確認します。
 
     ```powershell
-    Get-AzVM -Name 'myVM' -ResourceGroupName 'AZ500Lab131415' | Format-Table
+    Get-AzVM -Name 'myVM' -ResourceGroupName 'AZ500LAB131415' | Format-Table
     ```
 
 1. 「Cloud Shell」 ペインを閉じます。 
@@ -149,7 +149,9 @@ lab:
 
 1. 「Log Analytics ワークスペース」 ブレードの 「**全般**」 セクションで、「**ログ**」 をクリックします。
 
-1. 「**クエリ**」をクリックし、「**すべてのクエリ**」 の「**Virtual Machines**」 をクリックします。
+1. 必要に応じて、「**Log Analysis へようこそ**」ウィンドウを閉じます。 
+
+1. 「**クエリ**」ペインの「**すべてのクエリ**」列で、リソース タイプの一覧の一番下までスクロールして、「**仮想マシン**」をクリックします。
     
 1. 定義済みクエリの一覧を確認し、テストするクエリを特定し、対応する 「**実行**」 ボタンをクリックします。
 
@@ -164,6 +166,20 @@ lab:
     >**注**: この仮想マシンは作成されたばかりなので、まだデータが存在しない可能性があります。 
 
     >**注**: データを異なる形式で表示するオプションがあります。また、クエリの結果に基づいてアラート ルールを作成することもできます。
+
+    > **注**: 以下の手順で、このラボで前にデプロイした Azure VM に追加の負荷を生成することができます。
+
+    1. Azure VM ブレードに移動します。
+    1. Azure VM ブレードの「**操作**」セクションで、「**コマンドを実行**」を選択し、「**コマンド スクリプトを実行**」ブレードで次のスクリプトを入力し、「**実行**」をクリックします。
+    2. 
+       ```cmd
+       cmd
+       :loop
+       dir c:\ /s > SWAP
+       goto loop
+       ```
+       
+    1. Log Analytics ブレードに切り替えて、クエリを再実行します。データが収集されるまで数分待って、再度クエリを実行する必要があるかもしれません。
 
 > 結果: Log Analytics ワークスペースを使用して、データ ソースとクエリ ログを構成しました。 
 

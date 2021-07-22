@@ -4,7 +4,7 @@ lab:
     module: 'モジュール 03 - データとアプリケーションのセキュリティ保護'
 ---
 
-# 課題 10: Key Vault (Always Encrypted を設定して、セキュアなデータを実装する)
+# 課題 10: キー コンテナー (Always Encrypted を設定して、セキュアなデータを実装する)
 # 受講生用ラボ マニュアル
 
 ## ラボ シナリオ
@@ -24,7 +24,7 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
 
 - 演習 1: ARM テンプレートから基本インフラストラクチャをデプロイする
 - 演習 2: キーとシークレットを使用してキー コンテナーのリソースを構成する
-- 演習 3Azure SQL データベースとデータ駆動型アプリケーションを構成する
+- 演習 3: Azure SQL データベースとデータ駆動型アプリケーションを構成する
 - 演習 4: Azure SQL データベースの暗号化における Azure Key Vault の使用方法を示す
 
 ## ラボ ファイル:
@@ -80,7 +80,7 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
 ### 演習 2: キーとシークレットを使用してキー コンテナーのリソースを構成する
 
 >**注**: このラボのすべてのリソースに対して、**米国東部** リージョンを使用しています。クラスで使用する地域であることを講師に確認します。 
-
+ 
 この演習では、次のタスクを行います。
 
 - タスク 1: Key Vault を作成して構成する
@@ -100,9 +100,9 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
     ```powershell
     $kvName = 'az500kv' + $(Get-Random)
 
-    $location = (Get-AzResourceGroup -ResourceGroupName 'AZ500Lab10').Location
+    $location = (Get-AzResourceGroup -ResourceGroupName 'AZ500LAB10').Location
 
-    New-AzKeyVault -VaultName $kvName -ResourceGroupName 'AZ500Lab10' -Location $location
+    New-AzKeyVault -VaultName $kvName -ResourceGroupName 'AZ500LAB10' -Location $location
     ```
 
     >**注**: 最後のコマンドの出力には、コンテナー名とコンテナーURIが表示されます。コンテナー URI の形式は `https://<vault_name>.vault.azure.net/` です
@@ -140,7 +140,7 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
 1. Cloud Shell ペイン内の PowerShell セッションで次のコマンドを実行して、ソフトウェアで保護されたキーをキー コンテナーに追加します。 
 
     ```powershell
-    $kv = Get-AzKeyVault -ResourceGroupName 'AZ500Lab10'
+    $kv = Get-AzKeyVault -ResourceGroupName 'AZ500LAB10'
 
     $key = Add-AZKeyVaultKey -VaultName $kv.VaultName -Name 'MyLabKey' -Destination 'Software'
     ```
@@ -248,7 +248,7 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
     |設定|値|
     |----|----|
     |説明|**Key1**|
-    |有効期限|**12か月**|
+    |有効期限|**12 か月**|
 	
 1. 「**追加**」 をクリック して、アプリケーションの認証資格情報を更新します。
 
@@ -274,7 +274,7 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
     ```
 1. Cloud Shell ペイン内の PowerShell セッションで次のコマンドを実行して、キー コンテナー名を格納する変数を作成します。
 	```
-    $kvName = (Get-AzKeyVault -ResourceGroupName 'AZ500Lab10').VaultName
+    $kvName = (Get-AzKeyVault -ResourceGroupName 'AZ500LAB10').VaultName
 
     $kvName
     ```
@@ -282,7 +282,7 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
 1. Cloud Shell ペイン内の PowerShell セッションで次のコマンドを実行して、前のタスクで登録したアプリケーションにキー コンテナーの権限を付与します。
 
     ```powershell
-    Set-AZKeyVaultAccessPolicy -VaultName $kvName -ResourceGroupName AZ500Lab10 -ServicePrincipalName $applicationId -PermissionsToKeys get,wrapKey,unwrapKey,sign,verify,list
+    Set-AZKeyVaultAccessPolicy -VaultName $kvName -ResourceGroupName AZ500LAB10 -ServicePrincipalName $applicationId -PermissionsToKeys get,wrapKey,unwrapKey,sign,verify,list
     ```
 
 1. 「Cloud Shell」 ペインを閉じます。 
@@ -422,7 +422,7 @@ Visual Studio を使用して暗号化列にデータを読み込むコンソー
 
 1. プロジェクト テンプレートの一覧で、 **Console App (.NET Framework)** を検索し、結果の一覧から 「**Console App (.NET Framework)** for **C#**」 をクリックして 「**次へ**」 をクリック します。
 
-1. 「**新しいプロジェクトの構成**」 ページで、次の設定を指定します (他の設定は既定値のままにします)。
+1. 「**新しいプロジェクトの構成**」ページで、次の設定を指定し (他の設定は既定値のままにします)、「**作成**」をクリックします。
 
     |設定|値|
     |---|---|
