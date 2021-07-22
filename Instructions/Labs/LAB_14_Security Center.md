@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     title: '14 - Azure Security Center'
     module: 'モジュール 04 - セキュリティ操作の管理'
