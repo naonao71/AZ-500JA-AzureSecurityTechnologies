@@ -349,7 +349,7 @@ lab:
 1. Windows PowerShell コンソールから、次のコマンドを実行して MsOnline PowerShell モジュールをインストールします (メッセージが表示されたら、「続行するには NuGet プロバイダーが必要です」 ダイアログ ボックスで、「**Yes**」 と入力して Enter キーを押します)。
 
     ```powershell
-    「Net.ServicePointManager」::SecurityProtocol = 「Net.SecurityProtocolType」::Tls12
+    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
     Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
     Install-Module MsOnline -Force
     ```
