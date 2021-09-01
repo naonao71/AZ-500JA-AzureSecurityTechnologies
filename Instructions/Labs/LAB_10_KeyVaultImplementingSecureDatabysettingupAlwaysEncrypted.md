@@ -391,17 +391,17 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
 
 1. 「**Column Selection**」 ページで、「**SSN**」 列と 「**Birthdate**」 列を選択し、「**SSN**」 列の 「**Encryption Type**」 を 「**Deterministic**」 に、「**Birthdate**」 列を 「**Randomized**」 に設定し、「**Next**」 をクリックます。
 
-1. 「**Master Key Configuration**」 ページで、「**Azure Key Vault**」 を選択し、「**サインイン**」 をクリックします。認証を求められたら、このラボで行った Azure Key Vault インスタンスのプロビジョニングで使用したのと同じユーザー アカウントを使い認証します。「**Azure Key Vault の選択**」 ドロップ ダウン リストに該当のキー コンテナーが表示されるのを確認し、「**次へ**」 をクリックします。
+1. 「**Master Key Configuration**」 ページで、「**Azure Key Vault**」 を選択し、「**Sign In**」 をクリックします。認証を求められたら、このラボで行った Azure Key Vault インスタンスのプロビジョニングで使用したのと同じユーザー アカウントを使い認証します。「**Select an Azure Key Vault**」 ドロップ ダウン リストに該当のキー コンテナーが表示されるのを確認し、「**Next**」 をクリックします。
 
-1. 「**実行設定**」 ページで 「**次へ**」 をクリックします。
+1. 「**Run Settings**」 ページで 「**Next**」 をクリックします。
 	
-1. 「**概要**」 ページで、「**完了**」?をクリックして暗号化を続行します。要求されたら、このラボで Azure Key Vault インスタンスをプロビジョニングするために使用したのと同じユーザー アカウントを使用して、再度サインインします。
+1. 「**Summary**」 ページで、「**Finish**」をクリックして暗号化を続行します。認証を要求されたら、このラボで Azure Key Vault インスタンスをプロビジョニングするために使用したのと同じユーザー アカウントを使用して、再度サインインします。
 
-1. 暗号化プロセスが完了したら、「**結果**」 ページで 「**閉じる**」 をクリックします。
+1. 暗号化プロセスが完了したら、「**Results**」 ページで 「**Close**」 をクリックします。
 
-1. **SQL Server Management Studio** コンソールで、 「**Object Explorer**」 ウィンドウの 「**medical**」 ノードの下にある 「**セキュリティ**」 および 「**Always Encrypted Keys**」 サブノードを展開します。 
+1. **SQL Server Management Studio** コンソールで、 「**Object Explorer**」 ウィンドウの 「**medical**」 ノードの下にある 「**Security**」 および 「**Always Encrypted Keys**」 サブノードを展開します。 
 
-    >**注**: 「**Always Encrypted Keys**」 サブノードには、「**列マスター キー**」 と 「**列暗号化キー**」 のサブフォルダーが含まれています。
+    >**注**: 「**Always Encrypted Keys**」 サブノードには、「**Column Master Keys**」 と 「**Column Encryption Keys**」 のサブフォルダーが含まれています。
 
 
 ### 演習 4: Azure SQL データベースの暗号化における Azure Key Vault の使用方法を示す
@@ -416,29 +416,29 @@ Visual Studio を使用して暗号化列にデータを読み込むコンソー
 
 1. RDP セッションから **az500-10-vm1** まで、**スタート メニュー**から **Visual Studio 2019** を起動します。
 
-1. Visual Studio 2019 のウェルカム メッセージを表示するウィンドウに切り替え、「**サインイン**」 ボタンをクリックし、プロンプトが表示されたら、このラボで使用している Azure サブスクリプションへの認証に使用した資格情報を入力します。
+1. Visual Studio 2019 のウェルカム メッセージを表示するウィンドウに切り替え、「**Sign in**」 ボタンをクリックし、プロンプトが表示されたら、このラボで使用している Azure サブスクリプションへの認証に使用した資格情報を入力します。
 
-1. **はじめに** ページ で、「**新しいプロジェクトの作成**」 をクリックします。 
+1. **Get started** ページ で、「**Create a new project**」 をクリックします。 
 
-1. プロジェクト テンプレートの一覧で、 **Console App (.NET Framework)** を検索し、結果の一覧から 「**Console App (.NET Framework)** for **C#**」 をクリックして 「**次へ**」 をクリック します。
+1. プロジェクト テンプレートの一覧で、 **Console App (.NET Framework)** を検索し、結果の一覧から 「**Console App (.NET Framework)** for **C#**」 をクリックして 「**Next**」 をクリックします。
 
-1. 「**新しいプロジェクトの構成**」ページで、次の設定を指定し (他の設定は既定値のままにします)、「**作成**」をクリックします。
+1. 「**Configure your new project**」ページで、次の設定を指定し (他の設定は既定値のままにします)、「**Create**」をクリックします。
 
     |設定|値|
     |---|---|
-    |プロジェクト名|**OpsEncrypt**|
-    |ソリューション名|**OpsEncrypt**|
-    |フレームワーク|**.NET Framework 4.7.2.**|
+    |Project name|**OpsEncrypt**|
+    |Solution name|**OpsEncrypt**|
+    |Framework|**.NET Framework 4.7.2.**|
 
-1. Visual Studio コンソールで、「**ツール**」 メニューのドロップダウン メニューから 「**NuGet Package Manager**」 をクリックし、カスケード メニューの 「**パッケージ マネージャー コンソール**」 をクリックします。
+1. Visual Studio コンソールで、「**Tools**」 メニューのドロップダウン メニューから 「**NuGet Package Manager**」 をクリックし、カスケード メニューの 「**Package Manager Console**」 をクリックします。
 
-1. **「パッケージ マネージャー コンソール」** ペインで、次を実行して、最初に必要な **NuGet** パッケージをインストールします。
+1. **「Package Manager Console」** ペインで、次を実行して、最初に必要な **NuGet** パッケージをインストールします。
 
     ```powershell
     Install-Package Microsoft.SqlServer.Management.AlwaysEncrypted.AzureKeyVaultProvider
     ```
 
-1. **「パッケージ マネージャー コンソール」** ペインで、次を実行して、2 番目に必要な **NuGet** パッケージをインストールします。
+1. **「Package Manager Console」** ペインで、次を実行して、2 番目に必要な **NuGet** パッケージをインストールします。
 
     ```powershell
     Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory
@@ -454,13 +454,13 @@ Visual Studio を使用して暗号化列にデータを読み込むコンソー
 
 1. Visual Studio ウィンドウにある **Program.cs** ウィンドウの 17 行目で、`<key value noted earlier>` プレースホルダーを、このラボで前に記録した、登録済みアプリの **Key1** の値に置き換えます。 
 
-1. Visual Studio コンソールで、「**開始**」 ボタンをクリックして、コンソール アプリケーションの作成を開始します。
+1. Visual Studio コンソールで、「**Start**」 ボタンをクリックして、コンソール アプリケーションの作成を開始します。
 
 1. アプリケーションはコマンド プロンプト ウィンドウを起動します。パスワードの入力を求められたら、「**Pa55w.rd1234**」と入力して Azure SQL データベースに接続します。 
 
 1. コンソール アプリを実行したまま、**SQL Management Studio** コンソールに切り替えます。 
 
-1. 「**オブジェクト エクスプローラー**」 ペインで、医療用データベースを右クリックし、右クリック メニューで、「**新しいクエリ**」 をクリックします。
+1. 「**オブジェクト エクスプローラー**」 ペインで、medical データベースを右クリックし、右クリック メニューで、「**New Query**」 をクリックします。
 
 1. クエリ ウィンドウから次のクエリを実行して、コンソール アプリからデータベースに読み込まれたデータが暗号化されていることを確認します。
 
