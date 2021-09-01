@@ -126,7 +126,7 @@ Azure Container Registry と Azure Kubernetes Service を使用して概念実�
 
 1. Azure portal ページの上部の 「**リソース、サービス、ドキュメントの検索**」 テキスト ボックスで、**Kubernetes サービス** を入力し **Enter** キーを押します。
 
-1. 「**Kubernetes サービス**」 ブレードで 、「**+ 作成**」 をクリックし、ドロップダウン メニューで 「**Create a Kubernetes cluster**」 をクリックします
+1. 「**Kubernetes サービス**」 ブレードで 、「**+ 作成**」 をクリックし、ドロップダウン メニューで 「**Kubernetes クラスターの作成**」 をクリックします
 
 1. 「**Kubernetes クラスターを作成**」 ブレードの 「**基本**」 タブで、次の設定を指定します (既定値をそのままにします)。
 
@@ -137,6 +137,7 @@ Azure Container Registry と Azure Kubernetes Service を使用して概念実�
     |Kubernetes クラスター名|**MyKubernetesCluster**|
     |地域|**(US) 米国東部**|
     |可用性ゾーン |**なし**|
+    |スケーリング方法**手動**|
     |ノード数|**1**|
 
 1. **「次: ノード プール >」** をクリックし 「**Kubernetes クラスターを作成**」 ブレードの 「**ノード プール**」 タブで、次の設定を指定します (他の設定は既定値のままにします)。
