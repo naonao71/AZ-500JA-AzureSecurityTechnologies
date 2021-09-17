@@ -1,4 +1,4 @@
----
+﻿---
 lab:
     title: '02 - Azure Policy'
     module: 'モジュール 01 - ID とアクセスを管理する'
@@ -47,7 +47,7 @@ Azure Policy の使用方法を示す概念実証を作成するように求め�
 1. 「Cloud Shell」 ウィンドウ内の PowerShell セッションで、次のコマンドを実行してリソース グループを作成します (場所のパラメーターの値について講師に確認します)。
 
     ```powershell
-    New-AzResourceGroup -Name AZ500Lab02 -Location 'East US'
+    New-AzResourceGroup -Name AZ500LAB02 -Location 'East US'
     ```
 
 1. 「Cloud Shell」 ウィンドウ内の PowerShell セッションで、次の手順を実行してリソース グループを一覧表示し、新しいリソース グループが作成されたことを確認します。
@@ -113,7 +113,7 @@ Azure Policy の使用方法を示す概念実証を作成するように求め�
 
 1. Azure portal の 「**参照資料、サービス、ドキュメントの検索**」 テキスト ボックスで、Azure portal ページの上部に「**仮想ネットワーク**」と入力し、**Enter** キーを押します。
 
-1. 「**仮想ネットワーク**」 ブレードで、「**+ 作成**」 をクリックします。
+1. 「**Virtual Networks**」ブレードで、「**+ 作成**」をクリックします。
 
    > **注**: まず、米国東部で仮想ネットワークの作成を試みます。これは許可された場所ではないため、要求はブロックされます。 
 
@@ -148,7 +148,7 @@ Azure Policy の使用方法を示す概念実証を作成するように求め�
 1. 「クラウド シェル」 ウィンドウ内の 「PowerShell」 セッションで、次の手順を実行して、このラボで作成したリソース グループを削除します。
   
     ```powershell
-    Remove-AzResourceGroup -Name "AZ500Lab02" -Force -AsJob
+    Remove-AzResourceGroup -Name "AZ500LAB02" -Force -AsJob
     ```
 
 1.  **「Cloud Shell」** ペインを閉じます。 
