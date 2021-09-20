@@ -217,7 +217,6 @@ Azure ファイル共有のセキュリティ保護を実証するための概�
     |設定|値|
     |---|---|
     |名前|**my-file-share**|
-    |クォータ|**10**|
 
 1. **新しいファイル共有**ブレードで、**作成**をクリックします。
 
@@ -355,9 +354,9 @@ Azure ファイル共有のセキュリティ保護を実証するための概�
     ```powershell
     $connectTestResult = Test-NetConnection -ComputerName <storage_account_name>.file.core.windows.net -Port 445
     if ($connectTestResult.TcpTestSucceeded) {
-       #再起動時にドライブが持続するようにパスワードを保存します
+       # Save the password so the drive will persist on reboot
        cmd.exe /C "cmdkey /add:`"<storage_account_name>.file.core.windows.net`" /user:`"Azure\<storage_account_name>`"  /pass:`"<storage_account_key>`""
-       #ドライブをマウントする
+       # Mount the drive
        New-PSDrive -Name Z -PSProvider FileSystem -Root "\\<storage_account_name>.file.core.windows.net\my-file-share" -Persist
     } else {
        Write-Error -Message "Unable to reach the Azure storage account via port 445. Check to make sure your organization or ISP is not blocking port 445, or use Azure P2S VPN, Azure S2S VPN, or Express Route to tunnel SMB traffic over a different port."

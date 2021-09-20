@@ -80,7 +80,7 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
 ### 演習 2: キーとシークレットを使用してキー コンテナーのリソースを構成する
 
 >**注**: このラボのすべてのリソースに対して、**米国東部** リージョンを使用しています。クラスで使用する地域であることを講師に確認します。 
- 
+
 この演習では、次のタスクを行います。
 
 - タスク 1: Key Vault を作成して構成する
@@ -355,9 +355,9 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
 
     |設定|値|
     |---|---|
-    |Server type|**Database Engine**|
-    |Server name|このタスクで前に指定したサーバー名|
-    |Authentication|**SQL Server Authentication**|
+    |サーバー タイプ|**データベース エンジン**|
+    |サーバー名|このタスクで前に指定したサーバー名|
+    |認証|**SQL Server 認可**|
     |ログイン|**Student**|
     |パスワード|**Pa55w.rd1234**|
 
@@ -389,7 +389,7 @@ Azure SQL データベースの Always Encrypted 機能のサポートを利用�
 
 1. **Introduction**ページで 「**Next**」 をクリックします。
 
-1. 「**Column Selection**」 ページで、「**SSN**」 列と 「**Birthdate**」 列を選択し、「**SSN**」 列の 「**Encryption Type**」 を 「**Deterministic**」 に、「**Birthdate**」 列を 「**Randomized**」 に設定し、「**Next**」 をクリックます。
+1. 「**列の選択**」ページで、「**SSN**」列と「**Birthdate**」列を選択し、「**SSN**」列の「**暗号化の種類**」を「**確定的**」に、「**Birthdate**」列を「**ランダム化**」に設定し、「**次へ**」をクリックします。
 
 1. 「**Master Key Configuration**」 ページで、「**Azure Key Vault**」 を選択し、「**Sign In**」 をクリックします。認証を求められたら、このラボで行った Azure Key Vault インスタンスのプロビジョニングで使用したのと同じユーザー アカウントを使い認証します。「**Select an Azure Key Vault**」 ドロップ ダウン リストに該当のキー コンテナーが表示されるのを確認し、「**Next**」 をクリックします。
 
@@ -426,9 +426,9 @@ Visual Studio を使用して暗号化列にデータを読み込むコンソー
 
     |設定|値|
     |---|---|
-    |Project name|**OpsEncrypt**|
-    |Solution name|**OpsEncrypt**|
-    |Framework|**.NET Framework 4.7.2.**|
+    |プロジェクト名|**OpsEncrypt**|
+    |ソリューション名|**OpsEncrypt**|
+    |フレームワーク|**.NET Framework 4.7.2.**|
 
 1. Visual Studio コンソールで、「**Tools**」 メニューのドロップダウン メニューから 「**NuGet Package Manager**」 をクリックし、カスケード メニューの 「**Package Manager Console**」 をクリックします。
 
