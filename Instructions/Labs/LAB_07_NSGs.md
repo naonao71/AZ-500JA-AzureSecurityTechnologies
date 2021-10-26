@@ -1,4 +1,4 @@
----
+﻿---
 lab:
     title: '07 - ネットワーク セキュリティ グループとアプリケーション セキュリティ グループ'
     module: 'モジュール 02 - プラットフォーム保護の実装'
@@ -196,7 +196,7 @@ lab:
    |リソース グループ|**AZ500Lab07**|
    |仮想マシン名|**myVmWeb**|
    |リージョン|**(US) 米国東部**|
-   |画像|**Windows Server 2019 Datacenter - Gen 1**|
+   |イメージ|**Windows Server 2019 Datacenter - Gen 2**|
    |サイズ|**Standard D2s v3**|
    |ユーザー名|**student**|
    |パスワード|**Pa55w.rd1234**|
@@ -233,7 +233,7 @@ lab:
    |リソース グループ|**AZ500Lab07**|
    |仮想マシン名|**myVMMgmt**|
    |リージョン|(US) 米国東部|
-   |画像|**Windows Server 2019 Datacenter - Gen 1**|
+   |イメージ|**Windows Server 2019 Datacenter - Gen 2**|
    |サイズ|**Standard D2s v3**|
    |ユーザー名|**student**|
    |パスワード|**Pa55w.rd1234**|
