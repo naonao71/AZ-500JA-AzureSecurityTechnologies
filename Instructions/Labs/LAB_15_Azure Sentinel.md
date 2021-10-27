@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     title: '15 - Azure Sentinel'
     module: 'モジュール 04 - セキュリティ操作の管理'
