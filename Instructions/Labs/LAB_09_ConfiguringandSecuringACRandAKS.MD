@@ -61,25 +61,25 @@ Azure Container Registry と Azure Kubernetes Service を使用して概念実�
 1. 「Cloud Shell」 ウィンドウ内の Bash セッションで、次の手順を実行して、このラボ用の新しいリソース グループを作成します。
 
     ```sh
-    az group create --name AZ500Lab09 --location eastus
+    az group create --name AZ500LAB09 --location eastus
     ```
 
 1. 「Cloud Shell」 ウィンドウ内の Bash セッションで、次の手順を実行して、リソース グループが作成されたことを確認します。
 
-    ```sh
-    az group list --query "[?name=='AZ500Lab09']" -o table
+    ```
+    az group list --query "[?name=='AZ500LAB09']" -o table
     ```
 
 1. 「Cloud Shell」 ウィンドウ内の Bash セッションで、次のコマンドを実行して新しい Azure Container Registry (ACR) インスタンスを作成します (ACR の名前はグローバルに一意である必要があります)。 
 
     ```sh
-    az acr create --resource-group AZ500Lab09 --name az500$RANDOM$RANDOM --sku Basic
+    az acr create --resource-group AZ500LAB09 --name az500$RANDOM$RANDOM --sku Basic
     ```
 
 1. 「Cloud Shell」 ウィンドウ内の Bash セッションで、次の手順を実行して、新しい ACR が作成されたことを確認します。
 
     ```sh
-    az acr list --resource-group AZ500Lab09
+    az acr list --resource-group AZ500LAB09
     ```
 
     >**注**: ACR の名前を記録します。この名前は、次のタスクで必要になります。
@@ -99,7 +99,7 @@ Azure Container Registry と Azure Kubernetes Service を使用して概念実�
     >**注**: コマンド ラインの末尾の後続ピリオドが必要です。現在のディレクトリを Dockerfile の場所として指定します。 
 
     ```sh
-    ACRNAME=$(az acr list --resource-group AZ500Lab09 --query '[].{Name:name}' --output tsv)
+    ACRNAME=$(az acr list --resource-group AZ500LAB09 --query '[].{Name:name}' --output tsv)
 
     az acr build --image sample/nginx:v1 --registry $ACRNAME --file Dockerfile .
     ```
@@ -126,7 +126,7 @@ Azure Container Registry と Azure Kubernetes Service を使用して概念実�
 
 1. Azure portal ページの上部の 「**リソース、サービス、ドキュメントの検索**」 テキスト ボックスで、**Kubernetes サービス** を入力し **Enter** キーを押します。
 
-1. 「**Kubernetes サービス**」 ブレードで 、「**+ 作成**」 をクリックし、ドロップダウン メニューで 「**Kubernetes クラスターの作成**」 をクリックします
+1. 「**Kubernetes サービス**」 ブレードで 、「**+ 作成**」 をクリックし、ドロップダウン メニューで 「**Kubernetes クラスターの追加**」 をクリックします
 
 1. 「**Kubernetes クラスターを作成**」 ブレードの 「**基本**」 タブで、次の設定を指定します (既定値をそのままにします)。
 
@@ -137,7 +137,6 @@ Azure Container Registry と Azure Kubernetes Service を使用して概念実�
     |Kubernetes クラスター名|**MyKubernetesCluster**|
     |地域|**(US) 米国東部**|
     |可用性ゾーン |**なし**|
-    |スケーリング方法|**手動**|
     |ノード数|**1**|
 
 1. **「次: ノード プール >」** をクリックし 「**Kubernetes クラスターを作成**」 ブレードの 「**ノード プール**」 タブで、次の設定を指定します (他の設定は既定値のままにします)。
@@ -181,7 +180,7 @@ Azure Container Registry と Azure Kubernetes Service を使用して概念実�
 1. 「Cloud Shell」 ウィンドウ内の Bash セッションで、次の手順を実行して Kubernetes クラスターに接続します。
 
     ```sh
-    az aks get-credentials --resource-group AZ500Lab09 --name MyKubernetesCluster
+    az aks get-credentials --resource-group AZ500LAB09 --name MyKubernetesCluster
     ```
 
 1. 「Cloud Shell」 ウィンドウ内の Bash セッションで、Kubenetes クラスターのノードを一覧表示するには、次の手順を実行します。 
@@ -199,9 +198,9 @@ Azure Container Registry と Azure Kubernetes Service を使用して概念実�
 1. 「Cloud Shell」 ウィンドウ内の Bash セッションで、このラボで先ほど作成した Azure Container Registry インスタンスを使用するように AKS クラスターを構成するには、次の手順を実行します。 
 
     ```sh
-    ACRNAME=$(az acr list --resource-group AZ500Lab09 --query '[].{Name:name}' --output tsv)
+    ACRNAME=$(az acr list --resource-group AZ500LAB09 --query '[].{Name:name}' --output tsv)
 
-    az aks update -n MyKubernetesCluster -g AZ500Lab09 --attach-acr $ACRNAME
+    az aks update -n MyKubernetesCluster -g AZ500LAB09 --attach-acr $ACRNAME
     ```
 
     >**注**: このコマンドは、ACR に 'acrpull' ロールの割り当てを付与します。 
@@ -211,9 +210,9 @@ Azure Container Registry と Azure Kubernetes Service を使用して概念実�
 1. Cloud Shell ペイン内の Bash セッションで、以下を実行して、AKS クラスターにその仮想ネットワークへのコントリビューター ロールを付与します。 
 
     ```sh
-    RG_AKS=AZ500Lab09
+    RG_AKS=AZ500LAB09
     
-    AKS_VNET_NAME=AZ500Lab09-vnet
+    AKS_VNET_NAME=AZ500LAB09-vnet
     
     AKS_CLUSTER_NAME=MyKubernetesCluster
     
