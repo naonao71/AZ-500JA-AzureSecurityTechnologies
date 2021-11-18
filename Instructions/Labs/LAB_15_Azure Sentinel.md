@@ -11,7 +11,7 @@ lab:
 
 Azure Sentinel ベースの脅威検出と応答の概念実証を作成するよう依頼されました。具体的には、次のことを行います。
 
-- Azure アクティビティと Security Center からデータの収集を開始します。
+- Azure アクティビティと Microsoft Defender for Cloud からデータの収集を開始します。
 - 組み込みおよびカスタム アラートを追加する 
 - プレイブックを使用してインシデントへの応答を自動化する方法を確認します。
 
@@ -54,7 +54,7 @@ Azure Sentinel ベースの脅威検出と応答の概念実証を作成する�
 
 1. 「**ワークスペースに Azure Sentinel を追加**」ブレードで、Azure Monitor ラボで作成した Log Analytics ワークスペースを選択し、「**追加**」をクリックします。
 
-    >**注意**: Azure Sentinel には、ワークスペースに対して非常に具体的な要件があります。たとえば、Azure Security Center によって作成されたワークスペースは使用できません。[クイック スタート: Azure Sentinel をオンボードにする](https://docs.microsoft.com/ja-jp/azure/sentinel/quickstart-onboard)
+    >**注意**: Azure Sentinel には、ワークスペースに対して非常に具体的な要件があります。たとえば、Microsoft Defender for Cloud によって作成されたワークスペースは使用できません。[クイック スタート: Azure Sentinel をオンボードにする](https://docs.microsoft.com/ja-jp/azure/sentinel/quickstart-onboard)
 	
 #### タスク 2: Azure アクティビティ データ コネクタを使用するように Azure Sentinel を構成します。 
 
@@ -90,7 +90,7 @@ Azure Sentinel ベースの脅威検出と応答の概念実証を作成する�
 
 このタスクでは、Azure アクティビティ データ コネクタを使用するルールを確認し、作成します。 
 
-1. 「**Azure Sentinel \| 構成**」 ブレードで、「**分析**」をクリックします。 
+1. 「**Azure Sentinel \| 構成**」 エントリで、「**分析**」をクリックします。 
 
 1. 「**Azure Sentinel \| 分析**」 ブレードで、「**規則のテンプレート**」タブをクリックします。 
 
@@ -179,7 +179,7 @@ Azure Sentinel ベースの脅威検出と応答の概念実証を作成する�
     |設定|値|
     |---|---|
     |名前|**Playbook Demo**|
-    |方針|**Initial Access**|
+    |戦術|**Initial Access**|
 
 1. 「**次:ルールのロジックを設定 >**」 をクリックします。
 
@@ -212,11 +212,11 @@ Azure Sentinel ベースの脅威検出と応答の概念実証を作成する�
 
 #### タスク 6: インシデントを呼び出し、関連するアクションを確認します。
 
-1. Azure portal で、**セキュリティ センター** に移動します。
+1. Azure portal で、**Microsoft Defender for Cloud** に移動します。
 
     >**注意**: セキュア スコアを確認してください。すでに更新されているはずです。 
 
-1. 「**セキュリティ センター \| Azure Defender**」 ブレードで、「高度な保護」項目の「**Just-In-Time VM アクセス**」 セクションをクリックします。
+1. 「**Microsoft Defender for Cloud \| ワークロード保護**」 ブレードで、「高度な保護」項目の「**Just-In-Time VM アクセス**」 セクションをクリックします。
 
 1. 「**Just-In-Time VM アクセス**」 ブレードで 、**myVM** 仮想マシンを参照する行の右側で、**「省略」** ボタンをクリックし、**「削除」** をクリックし、**「はい」** をクリックします。
 
