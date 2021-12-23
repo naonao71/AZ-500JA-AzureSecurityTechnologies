@@ -1,18 +1,18 @@
 ---
 lab:
-    title: '14 - Azure Security Center'
-    module: 'モジュール 04 - セキュリティ操作の管理'
+    title: '14 - Microsoft Defender for Cloud'
+    module: 'モジュール 04 - Microsoft Defender for Cloud'
 ---
 
-# 課題 14: Microsoft Defender for Cloud
+# ラボ 14: Microsoft Defender for Cloud
 # 受講生用ラボ マニュアル
 
 ## ラボのシナリオ
 
-ベースの環境の概念実証を作成するように求められました。具体的には、次のことを行います。
+Microsoft Defender for Cloud ベースの環境の概念の証明を作成するように依頼されました。具体的には、次のことを行います。
 
-- 仮想マシンを監視するように Microsoft Defender for Cloud を構成します。
-- 仮想マシンの Microsoft Defender for Cloud の推奨事項を確認します。
+- 仮想マシンを監視するように Microsoft Defender for Cloud を構成します
+- 仮想マシンに対する Microsoft Defender for Cloud の推奨事項を確認します。
 - ゲスト構成と Just In Time VM アクセスの推奨事項を実装します。 
 - セキュア スコアを使用して、より安全なインフラストラクチャの作成に向けた進捗状況を判断する方法を確認します。
 
@@ -30,23 +30,23 @@ lab:
 
 - タスク 1: Microsoft Defender for Cloud を構成する
 - タスク 2: Microsoft Defender for Cloud の推奨事項を確認する
-- タスク 3: Just In Time VM アクセスを有効にするために Microsoft Defender for Cloud の推奨事項を実装する
+- タスク 3: Microsoft Defender for Cloud の推奨事項を実装して、ジャスト イン タイム VM アクセスを有効化する
 
 #### タスク 1: Microsoft Defender for Cloud を構成する
 
-このタスクでは、Microsoft Defender for Cloud をオンボードし、構成します。
+このタスクでは、Microsoft Defender for Cloud をオンボーディングおよび構成します。
 
 1. Azure portal **`https://portal.azure.com/`** にサインインします。
 
     >**注意**: このラボで使用している Azure サブスクリプションで所有者ロールまたは共同作成者ロールを持つアカウントを使用して Azure ポータルにサインインします。
 
-1. Azure portal の Azure portal ページの上部にある「**リソース、サービス、ドキュメントの検索**」 テキスト ボックスで、「**Microsoft Defender for Cloud**」と入力し、**Enter** キーを押します。
+1. Azure portal で Azure portal ページの上部にある「**リソース、サービス、ドキュメントの検索**」テキスト ボックスで、「**Microsoft Defender for Cloud**」と入力し、**Enter** キーを押します。
 
-1. 「**Microsoft Defender for Cloud \| はじめに**」 ブレードで 、「**エージェントのインストール**」 をクリックします。
+1. 「**Microsoft Defender for Cloud \| 開始**」ブレードで、「**アップグレード**」をクリックし、「**エージェントのインストール**」をクリックします。
      
-1. 「**Microsoft Defender for Cloud \| 概要**」 ブレードの左側の垂直メニューの 「**管理**」 セクションで、「**環境設定**」 をクリックします。
+1. 「**Microsoft Defender for Cloud \| 開始**」ブレードの左側の垂直方向のメニューの「**管理**」セクションで、「**価格と設定**」をクリックします。
 
-1. 「**Microsoft Defender for Cloud \| 環境設定**」 ブレードで、サブスクリプションを表すエントリをクリックし、「**設定 \| Defenderプラン**」 ブレードで、「**すべての Microsoft Defender for Cloud プランの有効化**」 が選択されていることを確認します。 
+1. 「**Microsoft Defender for Cloud \| 価格と設定**」ブレードで、サブスクリプションを表すエントリをクリックし、「**設定 \| Azure Defender プラン**」ブレードで、「**Azure Defender オン**」が選択されていることを確認します。 
 
     >**注意**: Microsoft Defender レベルの一部として使用できるすべての機能を確認し、各リソースの種類で Micrfosoft Defender がオンになっていることを確認します。 
 
@@ -64,13 +64,13 @@ lab:
 
 1. 「**ワークフロー自動化の追加**」 ブレードで、使用可能な設定を確認します。 
 
-    >**注意**: 脅威検出アラートおよび Security Center の推奨事項に基づいてアクションをトリガーできます。Logic Apps に基づいてアクションを構成することもできます。 
+    > **注**: 脅威検出アラートおよび Microsoft Defender for Cloud の推奨事項に基づいて、アクションをトリガーできます。Logic Apps に基づいてアクションを構成することもできます。 
 
 1. 「**ワークフロー自動化の追加**」ブレードで、「**キャンセル**」をクリックします。
 
-    >**注意**: セキュリティ センターは、システムの更新状況、OS セキュリティ構成、エンドポイント保護など、仮想マシンに関する多くの洞察を提供します。
+    > **注**: Microsoft Defender for Cloud は、システム更新プログラムの状態、OS セキュリティ構成、エンドポイント保護を含む仮想マシンに関する多く分析情報を提供します。
 
-1. 「**Microsoft Defender for Cloud \| 環境設定**」ブレードに戻り、前のラボで作成した Log Analytics ワークスペースを表すエントリをクリックします。
+1. 「**Microsoft Defender for Cloud \| 価格と設定**」ブレードに戻り、前のラボで作成した Log Analytics ワークスペースを表すエントリをクリックします。
 
 1. 「**設定 \| Defender プラン**」ブレードで、「**Microsoft Defender オン**」が選択されていることを確認し、「**保存**」をクリックします。
 
@@ -79,9 +79,9 @@ lab:
 
 このタスクでは、Microsoft Defender for Cloud の推奨事項を確認します。 
 
-1. Azure portal で、「**Microsoft Defender for Cloud \| 概要**」 ブレードに移動します。 
+1. Azure portal で、「**Microsoft Defender for Cloud \| 概要**」ブレードに戻ります。 
 
-1. 「**Microsoft Defender for Cloud \| 概要**」 ブレードで、「**セキュア スコア**」 タイルを確認します。
+1. 「**Microsoft Defender for Cloud \| 概要**」ブレードで、「**セキュア スコア**」タイルを確認します。
 
     >**注意**: あれば、現在のスコアを記録します。
 
@@ -94,11 +94,11 @@ lab:
 1. 「**リソース正常性**」ブレードの「**推奨事項**」タブで、**myVM** の推奨事項のリストを確認します。
 
 
-#### タスク 3: Just In Time VM アクセスを有効にするために Microsoft Defender for Cloud の推奨事項を実装する
+#### タスク 3: Microsoft Defender for Cloud の推奨事項を実装して、ジャスト イン タイム VM アクセスを有効化する
 
-このタスクでは、仮想マシンでの Just In Time VM アクセスを有効にする Security Center の推奨事項を実装します。 
+このタスクでは、Microsoft Defender for Cloud の推奨事項を実装して、仮想マシン上でジャスト イン タイム VM アクセスを有効化します。 
 
-1. Azure portal で、「**Microsoft Defender for Cloud \| 概要**」ブレードに戻り、「**ワークロード保護**」タイルを選択します。
+1. Azure portal で、「**Microsoft Defender for Cloud \| 概要**」ブレードに戻り、「**Azure Defender**」タイルを選択します。
 
 1. 「**ワークロード保護**」ブレードの「**高度な保護**」セクションで「**Just-In-Time VM アクセス**」タイルをクリックします。
 
@@ -116,7 +116,7 @@ lab:
 
     >**注意**: このラボでの推奨事項の実装がセキュア スコアに反映されるまでに時間がかかる場合があります。セキュア スコアを定期的にチェックして、これらの機能の実装による影響を判断します。 
 
-> 結果: Microsoft Defender for Cloud にオンボードし、仮想マシンの推奨事項を実装しています。 
+> 結果: Microsoft Defender for Cloud をオンボーディングし、仮想マシンの推奨事項を実装しました。 
 
 
 >**注意**: Azure Sentinel ラボで必要ですので、リソースをこのラボから削除しないでください。
