@@ -1,4 +1,4 @@
----
+﻿---
 lab:
     title: '01 - ロール ベースのアクセス制御'
     module: 'モジュール 01 - ID とアクセスを管理する'
@@ -40,28 +40,28 @@ Azure ユーザーとグループの作成方法を示す概念実証を作成�
 
 このタスクでは、Joseph Price のユーザー アカウントを作成します。 
 
-1. Azure portal **`https://portal.azure.com/`** にサインインします。
+1. ブラウザー セッションを開始して、Azure portal **`https://portal.azure.com/`** にサインインします。
 
     >**注**: このラボで使用している Azure サブスクリプションの所有者または共同作成者のロールと、そのサブスクリプションに関連付けられている Azure AD テナントのグローバル管理者の役割を持つアカウントを使用して、Azure portal にサインインします。
 
-1. Azure portal ページの上部にある 「**リソース、サービス、ドキュメントを検索**」 テキスト ボックスに「**Azure Active Directory**」と入力し、**Enter** キーを押します。
+2. Azure portal ページの上部にある「**リソース、サービス、ドキュメントを検索**」テキスト ボックスに「**Azure Active Directory**」と入力し、**Enter** キーを押します。
 
-1. Azure Active Directory テナントの 「**概要**」 ブレードの 「**管理**」 セクションで、「**ユーザー**」 を選択し、次に 「**+ 新しいユーザー**」 を選択します。
+3. Azure Active Directory テナントの「**概要**」ブレードの「**管理**」セクションで、「**ユーザー**」を選択し、次に「**+ 新しいユーザー**」を選択します。
 
-1. 「**新しいユーザー**」 ブレードで、「**ユーザーの作成**」 オプションが選択されていることを確認し、次の設定を指定します。
+4. 「**新しいユーザー**」ブレードで、「**ユーザーの作成**」オプションが選択されていることを確認し、次の設定を指定します。
 
    |設定|値|
    |---|---|
    |ユーザー名|**Joseph**|
    |名前|**Joseph Price**|
 
-1. 「**ユーザー名**」 の横にあるコピー アイコンをクリックして、完全なユーザーをコピーします。
+5. 「**ユーザー名**」の横にあるコピー アイコンをクリックして、完全なユーザーをコピーします。
 
-1. 「パスワードの**自動生成**」 が選択されていることを確認し、「**パスワードを表示**」 チェックボックスを選択して、自動生成されたパスワードを特定します。このパスワードは、ユーザー名と共に Joseph に提供する必要があります。 
+6. パスワードの「**自動生成**」が選択されていることを確認し、「**パスワードを表示**」チェックボックスを選択して、自動生成されたパスワードを特定します。このパスワードは、ユーザー名と共に Joseph に提供する必要があります。 
 
-1. 「**作成**」 をクリックします。
+7. 「**作成**」をクリックします。
 
-1. **ユーザー** の更新 **\|** 「**すべてのユーザー**」 ブレードで、新しいユーザーが Azure AD テナントに作成されたことを確認します。
+8. 「**ユーザー \| すべてのユーザー**」ブレードを更新し、新しいユーザーが Azure AD テナントに作成されたことを確認します。
 
 #### タスク 2: Azure portal を使用して「Senior Admins」グループを作成し、Joseph Price のユーザー アカウントをグループに追加します。
 
@@ -69,9 +69,9 @@ Azure ユーザーとグループの作成方法を示す概念実証を作成�
 
 1. Azure portal で、Azure Active Directory テナントを表示しているブレードに戻ります。 
 
-1. 「**管理**」 セクションで、「**グループ**」 をクリックし、「**+ 新しいグループ**」 を選択します。
+2. 「**管理**」セクションで、「**グループ**」をクリックし、「**+ 新しいグループ**」を選択します。
  
-1. 「**新しいグループ**」 ブレードで、次の設定を指定します (他の設定は既定値のままにします)。
+3. 「**新しいグループ**」ブレードで、次の設定を指定します (他の設定は既定値のままにします)。
 
    |設定|値|
    |---|---|
@@ -79,11 +79,11 @@ Azure ユーザーとグループの作成方法を示す概念実証を作成�
    |グループ名|**Senior Admins**|
    |メンバーシップの種類|**割り当て済み**|
     
-1. 「**所有者が選択されていません**」 リンクをクリックし、「**所有者を追加**」 ブレードで 「**Joseph Price**」 を選択して、「**選択**」 をクリックします。
+4. 「**所有者が選択されていません**」リンクをクリックし、「**所有者を追加**」ブレードで 「**Joseph Price**」を選択して、「**選択**」をクリックします。
 
-1. 「**メンバーが選択されていません**」 リンクをクリックし、「**メンバーを追加**」 ブレードで、「**Joseph Price**」 を選択して、「**選択**」 をクリックします。
+5. 「**メンバーが選択されていません**」リンクをクリックし、「**メンバーを追加**」ブレードで、「**Joseph Price**」を選択して、「**選択**」をクリックします。
 
-1. 「**新しいグループ**」 ブレードに戻り、「**作成**」 をクリックします。
+6. 「**新しいグループ**」ブレードに戻り、「**作成**」をクリックします。
 
 > 結果: Azure portal を使用してユーザーとグループを作成し、ユーザーをグループに割り当てました。 
 
@@ -102,40 +102,40 @@ Azure ユーザーとグループの作成方法を示す概念実証を作成�
 
 1. Azure portal の右上にある最初のアイコンをクリックして、Cloud Shell を開きます。メッセージが表示されたら、「**PowerShell**」 と 「**ストレージの作成**」 を選択します。
 
-1. 「Cloud Shell」 ウィンドウの左上隅にあるドロップダウン メニューで 「**PowerShell**」 が選択されていることを確認します。
+2. Cloud Shell ペインの左上隅にあるドロップダウン メニューで 「**PowerShell**」が選択されていることを確認します。
 
    > **注**: コピーしたテキストを Cloud Shell に貼り付けるには、ペイン ウィンドウ内で右クリックして、「**貼り付け**」を選択します。または、**Shift + Insert** キーの組み合わせを使用できます。
 
-1. Cloud Shell ペイン内の PowerShell セッションで、次を実行してパスワード プロファイル オブジェクトを作成します。
+3. Cloud Shell ペイン内の PowerShell セッションで、次を実行してパスワード プロファイル オブジェクトを作成します。
 
     ```powershell
     $passwordProfile = New-Object -TypeName Microsoft.Open.AzureAD.Model.PasswordProfile
     ```
 
-1. Cloud Shell ペイン内の PowerShell セッションで次を実行して、プロファイル オブジェクト内のパスワードの値を設定します。
+4. Cloud Shell ペイン内の PowerShell セッションで次を実行して、プロファイル オブジェクト内のパスワードの値を設定します。
     ```powershell
-    $passwordProfile.Password = 'Pa55w.rd1234'
+    $passwordProfile.Password = "Pa55w.rd1234"
     ```
 
-1. Cloud Shell ペイン内の PowerShell セッションで、次のコマンドを実行して Azure Active Directory に接続します。
+5. Cloud Shell ペイン内の PowerShell セッションで、次のコマンドを実行して Azure Active Directory に接続します。
 
     ```powershell
     Connect-AzureAD
     ```
       
-1. Cloud Shell ペイン内の PowerShell セッションで次を実行して、Azure AD テナントの名前を識別します。 
+6. Cloud Shell ペイン内の PowerShell セッションで次を実行して、Azure AD テナントの名前を識別します。 
 
     ```powershell
     $domainName = ((Get-AzureAdTenantDetail).VerifiedDomains)[0].Name
     ```
 
-1. Cloud Shell ペイン内の PowerShell セッションで次を実行して、Isabel Garcia のユーザー アカウントを作成します。 
+7. Cloud Shell ペイン内の PowerShell セッションで次を実行して、Isabel Garcia のユーザー アカウントを作成します。 
 
     ```powershell
     New-AzureADUser -DisplayName 'Isabel Garcia' -PasswordProfile $passwordProfile -UserPrincipalName "Isabel@$domainName" -AccountEnabled $true -MailNickName 'Isabel'
     ```
 
-1. Cloud Shell ペイン内の PowerShell セッションで次のコマンドを実行して、Azure AD ユーザーを一覧表示します (Joseph と Isabel のアカウントが一覧に表示されます)。 
+8. Cloud Shell ペイン内の PowerShell セッションで次のコマンドを実行して、Azure AD ユーザーを一覧表示します (Joseph と Isabel のアカウントが一覧に表示されます)。 
 
     ```powershell
     Get-AzureADUser 
@@ -151,25 +151,25 @@ Azure ユーザーとグループの作成方法を示す概念実証を作成�
     New-AzureADGroup -DisplayName 'Junior Admins' -MailEnabled $false -SecurityEnabled $true -MailNickName JuniorAdmins
     ```
 
-1. Cloud Shell ウィンドウ内の PowerShell セッションで、次のコマンドを実行して、Azure AD テナント内のグループを一覧表示します (一覧には、「Senior Admins」グループと「Junior Admins」グループが含まれている必要があります)。
+2. Cloud Shell ペイン内の PowerShell セッションで、次のコマンドを実行して、Azure AD テナント内のグループを一覧表示します (一覧には、上級管理者グループとジュニア管理者グループが含まれている必要があります)。
 
     ```powershell
     Get-AzureADGroup
     ```
 
-1. Cloud Shell ペイン内の PowerShell セッションで次を実行して、Isabel Garcia のユーザー アカウントへの参照を取得します。
+3. Cloud Shell ペイン内の PowerShell セッションで次を実行して、Isabel Garcia のユーザー アカウントへの参照を取得します。
 
     ```powershell
     $user = Get-AzureADUser -Filter "MailNickName eq 'Isabel'"
     ```
 
-1. Cloud Shell ペイン内の PowerShell セッションで、次のコマンドを実行して、Isabel のユーザー アカウントを「Junior Admins」グループに追加します。
+4. Cloud Shell ペイン内の PowerShell セッションで、次のコマンドを実行して、Isabel のユーザー アカウントをジュニア管理者グループに追加します。
 	
     ```powershell
     Add-AzADGroupMember -MemberUserPrincipalName $user.userPrincipalName -TargetGroupDisplayName "Junior Admins" 
     ```
 
-1. Cloud Shell ペイン内の PowerShell セッションで次を実行して、「Junior Admins」グループに Isabel のユーザー アカウントが含まれていることを確認します。
+5. Cloud Shell ペイン内の PowerShell セッションで次を実行して、ジュニア管理者グループに Isabel のユーザー アカウントが含まれていることを確認します。
 
     ```powershell
     Get-AzADGroupMember -GroupDisplayName "Junior Admins"
@@ -193,19 +193,19 @@ Azure ユーザーとグループの作成方法を示す概念実証を作成�
 
 1. Cloud Shell ペインの左上隅にあるドロップダウン メニューで、「**Bash**」 を選択し、プロンプトが表示されたら、「**確認**」 をクリックします。 
 
-1. Cloud Shell ペイン内の Bash セッションで次を実行して、Azure AD テナントの名前を識別します。
+2. Cloud Shell ペイン内の Bash セッションで次を実行して、Azure AD テナントの名前を識別します。
 
     ```cli
     DOMAINNAME=$(az ad signed-in-user show --query 'userPrincipalName' | cut -d '@' -f 2 | sed 's/\"//')
     ```
 
-1. Cloud Shell ペイン内の Bash セッションで次を実行して、ユーザーの Dylan Williams を作成します。*yourdomain* を使用します。
+3. Cloud Shell ペイン内の Bash セッションで次を実行して、ユーザーの Dylan Williams を作成します。*yourdomain* を使用します。
  
     ```cli
     az ad user create --display-name "Dylan Williams" --password "Pa55w.rd1234" --user-principal-name Dylan@$DOMAINNAME
     ```
       
-1. Cloud Shell ペイン内の Bash セッションで、次を実行して Azure AD ユーザー アカウントを一覧表示します (一覧には、Joseph、Isabel、および Dylan のユーザー アカウントが含まれます)
+4. Cloud Shell ペイン内の Bash セッションで、次を実行して Azure AD ユーザー アカウントを一覧表示します (一覧には、Joseph、Isabel、および Dylan のユーザー アカウントが含まれます)
 	
     ```cli
     az ad user list --output table
@@ -221,37 +221,37 @@ Azure ユーザーとグループの作成方法を示す概念実証を作成�
     az ad group create --display-name "Service Desk" --mail-nickname "ServiceDesk"
     ```
  
-1. Cloud Shell ペイン内の Bash セッションで次を実行して、Azure AD グループを一覧表示します (一覧には「Service Desk」、「Senior Admins」、および「Junior Admins」グループが含まれます)。
+2. Cloud Shell ペイン内の Bash セッションで次を実行して、Azure AD グループを一覧表示します (一覧にはサービス デスク、シニア管理者、およびジュニア管理者グループが含まれます)。
 
     ```cli
     az ad group list -o table
     ```
 
-1. Cloud Shell ペイン内の Bash セッションで次を実行して、Dylan Williams のユーザー アカウントの参照を取得します。 
+3. Cloud Shell ペイン内の Bash セッションで次を実行して、Dylan Williams のユーザー アカウントの参照を取得します。 
 
     ```cli
     USER=$(az ad user list --filter "displayname eq 'Dylan Williams'")
     ```
 
-1. Cloud Shell ペイン内の Bash セッションで次の手順を実行して、Dylan Williams のユーザー アカウントの objectId プロパティを取得します。 
+4. Cloud Shell ペイン内の Bash セッションで次の手順を実行して、Dylan Williams のユーザー アカウントの objectId プロパティを取得します。 
 
     ```cli
     OBJECTID=$(echo $USER | jq '.[].objectId' | tr -d '"')
     ```
 
-1. Cloud Shell ペイン内の Bash セッションで次の手順を実行して、Dylan のユーザー アカウントを「Service Desk」グループに追加します。 
+5. Cloud Shell ペイン内の Bash セッションで次の手順を実行して、Dylan のユーザー アカウントをサービス デスク グループに追加します。 
 
     ```cli
     az ad group member add --group "Service Desk" --member-id $OBJECTID
     ```
 
-1. Cloud Shell ペイン内の Bash セッションで次のコマンドを実行して、「Service Desk」グループのメンバーを一覧表示し、Dylan のユーザー アカウントが含まれていることを確認します。
+6. Cloud Shell ペイン内の Bash セッションで次のコマンドを実行して、サービス デスク グループのメンバーを一覧表示し、Dylan のユーザー アカウントが含まれていることを確認します。
 
     ```cli
     az ad group member list --group "Service Desk"
     ```
 
-1. 「Cloud Shell」 ペインを閉じます。
+7. 「Cloud Shell」ペインを閉じます。
 
 > 結果: Azure CLI を使用して、ユーザー アカウントとグループ アカウントを作成し、そのユーザー アカウントをグループに追加しました。 
 
@@ -269,7 +269,7 @@ Azure ユーザーとグループの作成方法を示す概念実証を作成�
 
 1. Azure portal の、Azure portal ページの上部にある **「ソース、サービス、ドキュメントの検索」** テキスト ボックスで、 **「リソース グループ」**と入力し、**「Enter」** キーを押します。
 
-1. 「**リソース グループ**」ブレードで、「**+ 新規**」をクリックして、次の設定を指定します。
+2. 「**リソース グループ**」ブレードで、「**+ 新規**」をクリックして、次の設定を指定します。
 
    |設定|値|
    |---|---|
@@ -277,40 +277,40 @@ Azure ユーザーとグループの作成方法を示す概念実証を作成�
    |リソース グループ|**AZ500Lab01**|
    |リージョン|"(US)米国東部"|
 
-1. **確認および作成**をクリックし、**作成**をクリックします。
+3. **確認して作成**をクリックし、**作成**をクリックします。
 
    >**注**: リソース グループがデプロイされるまで待ちます。**通知**アイコン (右上) を使用して、デプロイの状態の進行状況を追跡します。
 
-1. 「**リソース グループ**」 ブレードに戻り、ページを更新して、新しいリソース グループがリソース グループの一覧に表示されることを確認します。
+4. 「**リソース グループ**」ブレードに戻り、ページを更新して、新しいリソース グループがリソース グループの一覧に表示されることを確認します。
 
 
 #### タスク 2: 仮想マシン共同作成者ロールを「Service Desk」グループに割り当てます。 
 
 1. 「**リソース グループ**」 ブレードで、**AZ500Lab01**リソース グループのエントリをクリックします。
 
-1. 「**AZ500Lab01**」 ブレードで、「**アクセス制御 (IAM)**」 をクリックします。
+2. 「**AZ500Lab01**」ブレードで、中央ペインの「**アクセス制御 (IAM)**」をクリックします。
 
-1. **「AZ500Lab01」 \| 「アクセス制御 (IAM)」** ブレードで、「**+ 追加**」 をクリックし、ドロップダウン メニューで 「**ロールの割り当ての追加**」 をクリックします。
+3. 「**AZ500Lab01 \| アクセス制御 (IAM)**」ブレードで、「**+ 追加**」をクリックし、ドロップダウン メニューで「**ロール割り当ての追加**」をクリックします。
 
-1. 「**ロールの割り当ての追加**」 ブレードで、次の設定を指定します。
+4. 「**ロール割り当ての追加**」ブレードで、次のように設定し、各手順の後で、「**設定**」をクリックします。
 
    |設定|値|
    |---|---|
-   |役割|**仮想マシン共同作成者**|
-   |アクセスの割り当て先|**ユーザー、グループ、またはサービス プリンシパル**|
-   |選択|**Service Desk**|
+   |検索タブのロール|**仮想マシンの共同作成者**|
+   |アクセスの割り当て (「メンバー」ペインの下)|**ユーザー、グループ、またはサービス プリンシパル**|
+   |選択 (+ メンバーの選択)|**サービス デスク**|
 
-1. **保存**を選択して、ロールの割り当てを作成します。
+5. 「**確認 + 割り当て**」をクリックして、ロールの割り当てを作成します。
 
-1. 「**アクセス制御 (IAM)**」 ブレードで、「**ロールの割り当て**」タブを選択し、作成されたロールを確認します。
+6. 「**Access Control (IAM)**」ブレードで、「**ロール割り当て**」を選択します。
 
-1. **「AZ500Lab01」 \| 「アクセス制御 (IAM)」** ブレードの 「**アクセスの確認**」 タブで、「**名前またはメール アドレスで検索**」 テキスト ボックスに「**Dylan Williams**」と入力します
+7. 「**AZ500Lab01 \| Access Control (IAM)**」ブレードの「**アクセス権の確認**」タブで、「**名前またはメール アドレスで検索**」テキスト ボックスに「**Dylan Williams**」と入力します
 
-1. 検索結果の一覧で、Dylan Williams のユーザー アカウントを選択し、「**Dylan Williams の割り当て - AZ500Lab01**」 ブレードで、新しく作成された割り当てを表示します。
+8. 検索結果の一覧で、Dylan Williams のユーザー アカウントを選択し、「**Dylan Williams の割り当て - AZ500Lab01**」ブレードで、新しく作成された割り当てを表示します。
 
-1. 「**Dylan Williams の割り当て - AZ500Lab01**」 ブレードを閉じます。
+9. 「**Dylan Williams の割り当て - AZ500Lab01**」ブレードを閉じます。
 
-1. 最後の 2 つの同じ手順を繰り返して、**Joseph Price** のアクセス権を確認します。 
+10. 最後の 2 つの同じ手順を繰り返して、**Joseph Price** のアクセス権を確認します。 
 
 > 結果: RBAC 権限を割り当てて確認しました。 
 
@@ -320,12 +320,12 @@ Azure ユーザーとグループの作成方法を示す概念実証を作成�
 
 1. Azure portal から、Azure portal の右上にあるアイコンをクリックして、 Cloud Shell を開きます。 
 
-1. 「Cloud Shell」 ウィンドウの左上隅にあるドロップダウン メニューで 「**PowerShell**」 を選択し、メッセージが表示されたら 「**確認**」 をクリックします。 
+2. Cloud Shell ペインの左上隅にあるドロップダウン メニューで「**PowerShell**」を選択し、メッセージが表示されたら「**確認**」をクリックします。 
 
-1. 「クラウド シェル」 ウィンドウ内の 「PowerShell」 セッションで、次の手順を実行して、このラボで作成したリソース グループを削除します。
+3. Cloud Shell ペイン内の PowerShell セッションで、次の手順を実行して、このラボで作成したリソース グループを削除します。
   
     ```
     Remove-AzResourceGroup -Name "AZ500LAB01" -Force -AsJob
     ```
 
-1.  **「Cloud Shell」** ペインを閉じます。 
+4.  「**Cloud Shell**」ペインを閉じます。 
