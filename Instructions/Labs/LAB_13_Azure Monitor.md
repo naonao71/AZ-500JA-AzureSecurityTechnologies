@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     title: '13 - Azure Monitor'
     module: 'モジュール 04 - セキュリティ操作の管理'
