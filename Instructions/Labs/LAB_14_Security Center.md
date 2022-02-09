@@ -1,4 +1,4 @@
-﻿---
+---
 lab:
     title: '14 - Microsoft Defender for Cloud'
     module: 'モジュール 04 - Microsoft Defender for Cloud'
