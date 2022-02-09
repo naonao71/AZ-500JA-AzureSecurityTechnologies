@@ -36,7 +36,7 @@ Microsoft Defender for Cloud ベースの環境の概念の証明を作成する
 
 このタスクでは、Microsoft Defender for Cloud をオンボーディングおよび構成します。
 
-1. Azure portal **'https://portal.azure.com/'** にサインインします。
+1. Azure portal **`https://portal.azure.com/`** にサインインします。
 
     > **注**: このラボで使用している Azure サブスクリプションで所有者ロールまたは共同作成者ロールを持つアカウントを使用して Azure portal にサインインします。
 
@@ -52,7 +52,7 @@ Microsoft Defender for Cloud ベースの環境の概念の証明を作成する
 
 1. 変更を行った場合は、「**保存**」をクリックします。
 
-1. 「**設定 \| **「**Azure Defender プラン**」ブレードで、「**すべて有効にする**」を選択して「**保存**」をクリックします。
+1. 「**設定 \| 「zure Defender プラン**」ブレードで、「**すべて有効にする**」を選択して「**保存**」をクリックします。
 
 1. 「**設定 \| Azure Defender プラン**」ブレードの左側にある垂直方向のメニュー バーで、「**自動プロビジョニング**」をクリックします。
 
