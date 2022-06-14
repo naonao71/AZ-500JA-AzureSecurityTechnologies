@@ -236,7 +236,7 @@ Azure ユーザーとグループの作成方法を示す概念実証を作成�
 4. Cloud Shell ペイン内の Bash セッションで次の手順を実行して、Dylan Williams のユーザー アカウントの objectId プロパティを取得します。 
 
     ```cli
-    OBJECTID=$(echo $USER | jq '.[].objectId' | tr -d '"')
+    OBJECTID=$(echo $USER | jq '.[].d' | tr -d '"')
     ```
 
 5. Cloud Shell ペイン内の Bash セッションで次の手順を実行して、Dylan のユーザー アカウントをサービス デスク グループに追加します。 
