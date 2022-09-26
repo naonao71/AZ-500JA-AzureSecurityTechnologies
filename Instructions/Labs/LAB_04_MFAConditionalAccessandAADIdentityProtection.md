@@ -77,7 +77,7 @@ Azure Active Directory (Azure AD) 認証を強化する機能の概念実証を�
    |VM サイズ|**Standard_D2s_v3**|
    |VM 名|**az500-04-vm1**|
    |管理者ユーザー名|**Student**|
-   |管理者のパスワード|**Pa55w.rd1234**|
+   |管理者のパスワード|**独自のパスワード（後で参照するため記録してください）**|
    |仮想ネットワーク名|**az500-04-vnet1**|
 
     >**注**: Azure VM をプロビジョニングできる Azureリージョンを特定するには、次を参照してください。[**https://azure.microsoft.com/ja-jp/regions/offers/**](https://azure.microsoft.com/ja-jp/regions/offers/)
@@ -474,7 +474,7 @@ Azure Active Directory (Azure AD) 認証を強化する機能の概念実証を�
    |設定|値|
    |---|---|
    |ユーザー名|**Student**|
-   |パスワード|**Pa55w.rd1234**|
+   |パスワード|**作成した独自パスワード**|
 
     >**注**: リモート デスクトップ セッションと **サーバー マネージャー** が読み込まれるまで待ちます。  
 
