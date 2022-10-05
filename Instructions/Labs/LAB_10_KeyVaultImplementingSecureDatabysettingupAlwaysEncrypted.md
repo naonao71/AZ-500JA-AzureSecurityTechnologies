@@ -448,7 +448,7 @@ Visual Studio を使用して暗号化列にデータを読み込むコンソー
 
 1. Visual Studio コンソールに切り替えて、「**Solution Explorer**」 ウィンドウで 「**Program.cs**」 をクリックし、その内容をクリップボードにコピーしたコードに置き換えます。
 
-1. Visual Studio ウィンドウにある **Program.cs** ウィンドウの 15 行目で、`<connection string noted earlier>` プレースホルダーを、このラボで前に記録した Azure SQL データベース **ADO.NET** の接続文字列に置き換えます。接続文字列で、 `{your_password}` プレースホルダーを `Pa55w.rd1234` に置き換えます。
+1. Visual Studio ウィンドウにある **Program.cs** ウィンドウの 15 行目で、`<connection string noted earlier>` プレースホルダーを、このラボで前に記録した Azure SQL データベース **ADO.NET** の接続文字列に置き換えます。接続文字列で、 `{your_password}` プレースホルダーを `独自パスワード` に置き換えます。
 
 1. Visual Studio ウィンドウにある **Program.cs** ウィンドウの 16 行目で、`<client id noted earlier>` プレースホルダーを、このラボで前に記録した、登録済みアプリの**Application (client) ID** の値に置き換えます。 
 
@@ -456,7 +456,7 @@ Visual Studio を使用して暗号化列にデータを読み込むコンソー
 
 1. Visual Studio コンソールで、「**開始**」 ボタンをクリックして、コンソール アプリケーションの作成を開始します。
 
-1. アプリケーションはコマンド プロンプト ウィンドウを起動します。パスワードの入力を求められたら、「**Pa55w.rd1234**」と入力して Azure SQL データベースに接続します。 
+1. アプリケーションはコマンド プロンプト ウィンドウを起動します。パスワードの入力を求められたら、「**独自パスワード**」を入力して Azure SQL データベースに接続します。 
 
 1. コンソール アプリを実行したまま、**SQL Management Studio** コンソールに切り替えます。 
 
