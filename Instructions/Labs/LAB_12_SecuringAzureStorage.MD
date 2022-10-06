@@ -267,9 +267,9 @@ Azure ファイル共有のセキュリティ保護を実証するための概�
     |リソース グループ|**AZ500Lab12**|
     |仮想マシン名|**myVmPrivate**|
     |地域|**(US) 米国東部**|
-    |画像|**Windows Server 2019 Datacenter - Gen 1**|
+    |画像|**Windows Server 2022 Datacenter - Gen 2**|
     |ユーザー名|**localadmin**|
-    |パスワード|**Pa55w.rd1234**|
+    |パスワード|**独自パスワード**|
     |パブリック受信ポート|**なし**|
     |既存の Windows Server ライセンスを使用しますか?|**いいえ**|
 
