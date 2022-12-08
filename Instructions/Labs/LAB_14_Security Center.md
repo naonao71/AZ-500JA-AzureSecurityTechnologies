@@ -112,4 +112,4 @@ Microsoft Defender for Cloud ベースの環境の概念の証明を作成する
 > 結果: Microsoft Defender for Cloud をオンボーディングし、仮想マシンの推奨事項を実装しました。 
 
 
-> **注**: Azure Sentinel ラボで必要ですので、リソースをこのラボから削除しないでください。
+> **注**: Microsoft Sentinel ラボで必要ですので、リソースをこのラボから削除しないでください。
