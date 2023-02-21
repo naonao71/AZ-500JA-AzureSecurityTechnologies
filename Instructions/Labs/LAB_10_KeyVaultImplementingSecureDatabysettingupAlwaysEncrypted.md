@@ -430,15 +430,15 @@ Visual Studio を使用して暗号化列にデータを読み込むコンソー
     |ソリューション名|**OpsEncrypt**|
     |フレームワーク|**.NET Framework 4.7.2.**|
 
-1. Visual Studio コンソールで、「**ツール**」 メニューのドロップダウン メニューから 「**NuGet Package Manager**」 をクリックし、カスケード メニューの 「**パッケージ マネージャー コンソール**」 をクリックします。
+1. Visual Studio コンソールで、「**Tools**」 メニューのドロップダウン メニューから 「**NuGet Package Manager**」 をクリックし、カスケード メニューの 「**Package Manager Console**」 をクリックします。
 
-1. **「パッケージ マネージャー コンソール」** ペインで、次を実行して、最初に必要な **NuGet** パッケージをインストールします。
+1. **「Package Manager Console」** ペインで、次を実行して、最初に必要な **NuGet** パッケージをインストールします。
 
     ```powershell
     Install-Package Microsoft.SqlServer.Management.AlwaysEncrypted.AzureKeyVaultProvider
     ```
 
-1. **「パッケージ マネージャー コンソール」** ペインで、次を実行して、2 番目に必要な **NuGet** パッケージをインストールします。
+1. **「Package Manager Console」** ペインで、次を実行して、2 番目に必要な **NuGet** パッケージをインストールします。
 
     ```powershell
     Install-Package Microsoft.IdentityModel.Clients.ActiveDirectory
