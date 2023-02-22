@@ -133,7 +133,7 @@ lab:
 
 1. **「Windows パフォーマンス カウンター」** タブをクリックし、**「+ パフォーマンス カウンターの追加」** をクリックして、使用可能なパフォーマンス カウンターのリストを確認し、次のものを追加します。
 
-    - Process(*)\% Processor Time
+    - Process(*)%%\% Processor Time
     - Event Tracing for Windows\Total Memory Usage --- Non-Paged Pool
     - Event Tracing for Windows\Total Memory Usage --- Paged Pool
 
