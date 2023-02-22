@@ -133,12 +133,12 @@ lab:
 
 1. **「Windows パフォーマンス カウンター」** タブをクリックし、**「+ パフォーマンス カウンターの追加」** をクリックして、使用可能なパフォーマンス カウンターのリストを確認し、次のものを追加します。
 
-    - Process(*)%%\% Processor Time
+    - Process(*)\% Processor Time
     - Event Tracing for Windows\Total Memory Usage --- Non-Paged Pool
     - Event Tracing for Windows\Total Memory Usage --- Paged Pool
 
-
-    >**注**: カウンターが追加され、60 秒の収集サンプル間隔で構成されます。
+:::note warn
+**注**: カウンターが追加され、60 秒の収集サンプル間隔で構成されます。
   
 1. 「**エージェントの構成**」 ブレードで、「**適用**」 をクリックします。
 
