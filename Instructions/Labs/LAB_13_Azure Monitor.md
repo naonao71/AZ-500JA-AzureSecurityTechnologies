@@ -186,5 +186,5 @@ lab:
 
 **リソースをクリーン アップする**
 
->**注**: Azure Security Center ラボおよび Azure Sentinel ラボに必要なリソースは、このラボから削除しないでください。
+>**注**: Microsoft Defender for Cloud ラボおよび Microsoft Sentinel ラボに必要なリソースは、このラボから削除しないでください。
  
