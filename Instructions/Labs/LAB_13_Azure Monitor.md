@@ -136,7 +136,7 @@ lab:
     - Process(*)`\`% Processor Time
     - Event Tracing for Windows\Total Memory Usage --- Non-Paged Pool
     - Event Tracing for Windows\Total Memory Usage --- Paged Pool
-</BR>
+    </BR>
 
     >**注**: カウンターが追加され、60 秒の収集サンプル間隔で構成されます。
 
